@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script src = "cart.js"></script>
+        <style>
+            .cover {
+                object-fit: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="allproducts.html">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="sortedallproducts.html">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="sortedallproducts.html">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex"  action = "cart.html">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill" id = "cartNumber">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <main id="product-main">
+            <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6  border">
+                <img id="product-image" src="" class="img-fluid border cover" alt="Product Image">
+                </div>
+                <div class="col-md-6">
+                <h1 id="product-name">Product Name</h1>
+                <p id="product-type" class="lead">Product Type</p>
+                <p id="product-description" class="lead">This is a brief description of the product. It highlights the key features and benefits.</p>
+                <h2 id="product-price">$99.99</h2>
+                <p id="product-review-average" class="lead">Average Review: 4.5/5</p>
+                <button id = "addToCart" class="btn btn-primary" onclick = "addCart()">Add to Cart</button>
+                
+                </div>
+            </div>
+            
+            </div>
+        </main>
+
+        <script>
+           
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    var queryString = window.location.search;
+                    var urlParams = new URLSearchParams(queryString);
+                    var productId = urlParams.get('id');
+                    data.forEach(element => {
+                        if (element.name == productId){
+                        document.getElementById('product-name').textContent = element.name;
+                        document.getElementById('product-type').textContent = element.item;
+                        document.getElementById('product-description').textContent = element.description;
+                        document.getElementById('product-price').textContent = element.price;
+                        document.getElementById('product-review-average').textContent = `Average Review: ${element.review_average}/5`;
+                        
+                        document.getElementById('product-image').src = element.image;
+                    }
+                        
+                    });
+                    
+                    
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        </script>
+        <footer>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <script src = "cart.js"></script>
+        <script>
+            document.getElementById("cartNumber").innerText = priceCart.length
+        </script>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
