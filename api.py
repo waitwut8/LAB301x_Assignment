@@ -29,8 +29,9 @@ async def login(login_info: LoginInfo):
             return {"message": "Login successful"}
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
 
-@app.get("/products", status_code=200)
+@app.get("/products/{token}", status_code=200)
 async def get_all_products():
+    
     return products
 
 @app.get("/product/{product_id}", status_code=200)
