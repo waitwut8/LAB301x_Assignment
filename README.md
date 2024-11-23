@@ -24,15 +24,16 @@ git clone https://github.com/yourusername/your-repo.git
 cd your-repo
 
 # Install dependencies
-npm install
+pip install uvicorn
+pip install fastapi
 ```
 
 ## Usage
 
 ```bash
-npm start
+fastapi dev api.py
 ```
-
+Start a live server later, make sure to not take up port 8000
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
