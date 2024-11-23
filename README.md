@@ -1,4 +1,7 @@
-# BIG DEVELOPMENT PROJECT IN 8 WEEKS!!!
+# Development Project
+
+## Current Deadline
+8 Weeks
 
 ## Description
 
@@ -6,9 +9,10 @@ A comprehensive project aimed at delivering robust solutions within an 8-week ti
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Logging in
+- Token Authentication
+- Easy Product Searching
+
 
 ## Installation
 
