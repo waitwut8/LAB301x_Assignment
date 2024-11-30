@@ -1,5 +1,17 @@
-import requests
-r = (requests.post('https://dummyjson.com/auth/login', json={'username': 'emilys', 'password': 'emilyspass'}).json()['accessToken'])
-print(r)
-t = requests.get('https://dummyjson.com/auth/me', headers={'Authorization': f'Bearer {r}'})
-print(t.json())
+from lib.lib_jwt import sign_jwt, decode_jwt
+
+
+
+def main():
+    test = {
+        'a': 'a',
+        'b': 'b'
+    }
+    signed_string = (sign_jwt('test', test['a'], test['b']))
+    print(decode_jwt(signed_string))
+
+if __name__ == "__main__":
+    main()
+
+
+
