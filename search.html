@@ -37,7 +37,7 @@
         </div>
         <div class="search-results" id="search-results"></div>
     </div>
-
+    
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -45,7 +45,8 @@
 
     <script>
         async function searchProducts() {
-            token = '42ae0f8a-b8c3-4e66-9d2c-0e5dea05c433'
+            
+            token = document.cookie.split("=")[1]
             const keyword = document.getElementById('search-input').value;
             const response = await fetch(`http://127.0.0.1:8000/search/${keyword}`, {
                 method: 'POST',
@@ -68,8 +69,8 @@
                     productDiv.className = 'product card mb-3';
                     productDiv.innerHTML = `
                         <div class="card-body">
-                            <h5 class="card-title">${product.title}</h5>
-                            <img src="${product.images[0]}" class="img-fluid" alt="${product.title}">
+                            <h4 class="card-title">${product.title}</h5>
+                            <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" bgcolor = "white"/>
                             <p class="card-text">${product.description}</p>
                         </div>
                     `;

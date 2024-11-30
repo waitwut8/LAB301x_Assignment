@@ -2,9 +2,9 @@ import json
 import uuid
 from datetime import datetime, timedelta
 import jmespath
-from fastapi import FastAPI, HTTPException, status, Response, Request
+from fastapi import FastAPI, HTTPException, status, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
-
+from lib.lib_jwt import sign_jwt, decode_jwt, ExpiryTime, JWTBearer, get_current_user
 from schemas import LoginInfo, LoginResponse
 
 app = FastAPI()
@@ -29,28 +29,8 @@ users = load_json("database/users.json")
 products = load_json("database/products.json")
 
 
-# Helper function to check token
-def check_token(request: Request) -> bool:
-    token = request.headers.get("Authorization", None)
-    if not token or not token.startswith("Bearer "):
-        return False
-
-    token = token.split(" ")[1]
-
-    user = jmespath.search(f"[?accessToken=='{token}']", users)
-    if not user:
-        return False
-
-   
-
-    token_expiry = user[0].get("tokenExpiry", None)
-    return bool(token_expiry and token_expiry >= datetime.now())
-
-    # return token_expiry and token_expiry > datetime.now()
-
-
 # Login endpoint
-@app.post("/login", response_model=LoginResponse)
+@app.post("/login")
 async def login(login_info: LoginInfo):
     user = next(
         (
@@ -65,32 +45,20 @@ async def login(login_info: LoginInfo):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
         )
+    signed_jstr = sign_jwt(user["username"], ExpiryTime.ONE_HOUR)
 
-    response = LoginResponse(
-        tokenType="Bearer",
-        accessToken=str(uuid.uuid4()),
-        tokenExpiry=datetime.now() + timedelta(minutes=30),
-    )
-    user.update(response)
-    return response
+    return signed_jstr
 
 
 # Get all products endpoint
-@app.get("/products", status_code=200)
+@app.get("/products", status_code=200, dependencies=[Depends(JWTBearer())])
 async def get_all_products(response: Response, request: Request):
-    if not check_token(request):
-        response.status_code = status.HTTP_401_UNAUTHORIZED
-        return {"detail": "Unauthorized"}
-
     return products
 
 
 # Get product by ID endpoint
-@app.get("/product/{product_id}", status_code=200)
+@app.get("/product/{product_id}", status_code=200, dependencies=[Depends(JWTBearer())])
 async def get_product(product_id: int, response: Response, request: Request):
-    if not check_token(request):
-        response.status_code = status.HTTP_401_UNAUTHORIZED
-        return {"detail": "Unauthorized"}
 
     if product := next((p for p in products if p["id"] == product_id), None):
         return product
@@ -100,20 +68,45 @@ async def get_product(product_id: int, response: Response, request: Request):
         )
 
 
-@app.post("/search/{keyword}", status_code=200)
+@app.post("/search/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
 async def search_products(keyword: str, response: Response, request: Request):
-    if check_token(request):
-        bearer_token = request.headers.get("Authorization")
+    try:
+        product_id = int(keyword)
+        return jmespath.search(
+            f"[?id == {product_id} || contains(description, '{keyword}')]",
+            products,
+        )
+    except Exception as e:
+        return jmespath.search(
+            f"[?contains(title, '{keyword}') || contains(description, '{keyword}')]",
+            products,
+        )
+
+
+@app.put("/product/{product_id}", status_code=200, dependencies=[Depends(JWTBearer())])
+async def update_product(
+    product_id: int, request: Request, current_user=Depends(get_current_user)
+):
+    print(current_user)
+    user_name = current_user.get("user_name", None)
+    if not user_name:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid user"
+        )
     else:
-        response.status_code = status.HTTP_401_UNAUTHORIZED
-        return {"message": "Unauthorized"}
+        role = jmespath.search(f"[?username=='{user_name}'].role | [0]", users)
+        if not role:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid role"
+            )
+        if role != "admin":
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized"
+            )
 
-    return jmespath.search(
-        f"[?contains(title, '{keyword}') || contains(description, '{keyword}')]",
-        products,
-    )
+    ### do later
 
-
+    return {"message": "this is a fake update"}
 
 
 if __name__ == "__main__":

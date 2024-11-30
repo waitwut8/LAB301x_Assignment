@@ -14558,5 +14558,11 @@
       "network": "Ethereum (ERC20)"
     },
     "role": "user"
+  },
+
+  {
+    "username":"admin",
+    "password": "admin",
+    "role": "user"
   }
 ]

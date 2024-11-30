@@ -52,7 +52,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <p class="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
                 </div>
             </div>
         </header>
@@ -269,3 +269,51 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const response = await fetch('database/products.json');
+        const products = await response.json();
+        const productsContainer = document.querySelector('.row');
+
+        productsContainer.innerHTML = '';
+        var list_of_items = []
+        for (let index = 0; index < 8; index++) {
+            list_of_items.push(Math.floor(Math.random() * products.length))
+            
+        }
+        token = document.cookie.split("=")[1];
+        list_of_items.forEach(async element => {
+            let product = await fetch(`http://127.0.0.1:8000/product/${element}`, {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer admin",
+                    "Content-Type": "application/json"
+                }
+            });
+            product = await product.json();
+            let discounted = product.price * (1 - 1/(product.discountPercentage));
+            discounted = +discounted.toFixed(2);
+            let images = product.images
+            images = images[0]
+            const productCard = `
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="${images}" alt="${product.title}" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">${product.title}</h5>
+                                <span class="text-muted text-decoration-line-through">$${product.price}</span> $<span>${discounted}</span>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">See More Information</a></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productsContainer.insertAdjacentHTML('beforeend', productCard);
+        });
+        
+    
+    });
+</script>
