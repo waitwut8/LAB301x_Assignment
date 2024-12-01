@@ -1,0 +1,20 @@
+necessary fields:
+class Product(BaseModel):
+    title: str
+    description: str
+    category: list
+    price: float
+    discountPercentage: float
+    stock: int
+    tags: list
+    brand: str
+    weight: int
+    dimensions: list
+    warrantyInformation: str
+    shippingInformation: str
+    availabilityStatus: str
+    returnPolicy: str
+    minimumOrderQuantity: int
+    images: list
+    thumbnail: str
+    
