@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from typing import Literal
 from pydantic import BaseModel, Field, field_serializer
 
 class LoginInfo(BaseModel):
@@ -18,5 +18,10 @@ class LoginResponse(BaseModel):
     def serialize_created_at(self, v: datetime) -> str:
         return v.isoformat()
     
+class PriceRange(BaseModel):
+    minPrice: float
+    maxPrice: float
     
-    
+class KeywordFilter(BaseModel):
+    keyword: str | int
+    search_type: Literal["title", "description", "tags", "brand"]

@@ -19,8 +19,7 @@ class ExpiryTime(int, Enum):
 
 def decode_jwt(token: str) -> dict:
     try:
-        decoded_token = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
-        return decoded_token
+        return jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
     except jwt.ExpiredSignatureError:
         print("Token has expired")
         return {}
@@ -57,30 +56,24 @@ class JWTBearer(HTTPBearer):
         credentials: HTTPAuthorizationCredentials = await super(
             JWTBearer, self
         ).__call__(request)
-        if credentials:
-            if not credentials.scheme == "Bearer":
-                raise HTTPException(
-                    status_code=403, detail="Invalid authentication scheme."
-                )
-            if not self.verify_jwt(credentials.credentials):
-                raise HTTPException(
-                    status_code=403, detail="Invalid token or expired token."
-                )
-            return credentials.credentials
-        else:
+        if not credentials:
             raise HTTPException(status_code=403, detail="Invalid authorization code.")
+        if credentials.scheme != "Bearer":
+            raise HTTPException(
+                status_code=403, detail="Invalid authentication scheme."
+            )
+        if not self.verify_jwt(credentials.credentials):
+            raise HTTPException(
+                status_code=403, detail="Invalid token or expired token."
+            )
+        return credentials.credentials
 
-    def verify_jwt(self, jwtoken: str) -> bool:
-        isTokenValid: bool = False
-
+    def verify_jwt(self, jwt_token: str) -> bool:
         try:
-            payload = decode_jwt(jwtoken)
-        except:
+            payload = decode_jwt(jwt_token)
+        except Exception:
             payload = None
-        if payload:
-            isTokenValid = True
-
-        return isTokenValid
+        return bool(payload)
 
 
 def get_current_user(token: str = Depends(JWTBearer())) -> dict:

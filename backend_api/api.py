@@ -5,7 +5,8 @@ import jmespath
 from fastapi import FastAPI, HTTPException, status, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .lib_jwt import sign_jwt, decode_jwt, ExpiryTime, JWTBearer, get_current_user
-from .schemas import LoginInfo, LoginResponse
+from .schemas import LoginInfo, LoginResponse, PriceRange
+from .schemas import KeywordFilter as keywordFilter
 from .json_man import JSONManager
 
 app = FastAPI()
@@ -37,7 +38,7 @@ products = products_manager.data
 # Login endpoint
 @app.post("/login")
 async def login(login_info: LoginInfo):
-    user = next(
+    if user := next(
         (
             u
             for u in users
@@ -45,14 +46,12 @@ async def login(login_info: LoginInfo):
             and u["password"] == login_info.password
         ),
         None,
-    )
-    if not user:
+    ):
+        return sign_jwt(user["username"], ExpiryTime.ONE_HOUR)
+    else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
         )
-    signed_jwt_str = sign_jwt(user["username"], ExpiryTime.ONE_HOUR)
-
-    return signed_jwt_str
 
 
 # Get all products endpoint
@@ -89,38 +88,42 @@ async def search_products(keyword: str):
 
 
 @app.put("/product/{product_id}", status_code=200, dependencies=[Depends(JWTBearer())])
-async def update_product(
-    product_id: int, current_user=Depends(get_current_user)
-):
+async def update_product(product_id: int, current_user=Depends(get_current_user)):
     print(current_user)
-    user_name = current_user.get("user_name", None)
-    if not user_name:
+    if not (user_name := current_user.get("user_name", None)):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid user"
         )
-    else:
-        role = jmespath.search(f"[?username=='{user_name}'].role | [0]", users)
-        if not role:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid role"
-            )
-        if role != "admin":
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized"
-            )
+    role = jmespath.search(f"[?username=='{user_name}'].role | [0]", users)
+    if not role:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid role"
+        )
+    if role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized"
+        )
 
     ### do later
 
     return {"message": "this is a fake update"}
 
+
 # get product items via tags, names, prices or anything else
 @app.get("/filter/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
-async def filter_products(keyword: int|str):
-    found_products = jmespath.search(
-        f"[?contains(title, '{keyword}') || contains(description, '{keyword}') || contains(tags, '{keyword}' || contains (brand, '{keyword}') ) || price == `{keyword}`]",
+async def filter_products(filter: keywordFilter):
+
+    return jmespath.search(f"[?contains({filter.search_type}, '{filter.keyword}')]")
+
+
+@app.get("/price/{price}", status_code=200, dependencies=[Depends(JWTBearer())])
+async def filter_price(price_filter: PriceRange):
+
+    return jmespath.search(
+        f"[?price >= {price_filter.minPrice} && price <= {price_filter.maxPrice}]",
         products,
     )
-    return found_products
+
 
 if __name__ == "__main__":
     import uvicorn
