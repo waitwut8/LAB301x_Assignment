@@ -30,6 +30,8 @@ users_manager = JSONManager("database/users.json")
 users = users_manager.data
 products_manager = JSONManager("database/products.json")
 products = products_manager.data
+cart_manager = JSONManager("database/carts.json")
+carts = cart_manager.data
 
 # users = load_json("database/users.json")
 # products = load_json("database/products.json", mode="r+")
@@ -47,7 +49,7 @@ async def login(login_info: LoginInfo):
         ),
         None,
     ):
-        return sign_jwt(user["username"], ExpiryTime.ONE_HOUR)
+        return sign_jwt(user.get("username"),user.get("id"), ExpiryTime.ONE_HOUR)
     else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
@@ -124,6 +126,14 @@ async def filter_price(price_filter: PriceRange):
         products,
     )
 
+@app.get("/review/{product_id}", status_code=200, dependencies=[Depends(JWTBearer())])
+async def get_reviews(product_id: int):
+
+    return jmespath.search(f"[?product_id == {product_id}].review", products)
+
+@app.get("/cart/{user_id}", status_code=200, dependencies=[Depends(JWTBearer())])
+async def get_cart(user_id: int):
+    return jmespath.search(f"[?owner_id=={user_id}]", carts)
 
 if __name__ == "__main__":
     import uvicorn

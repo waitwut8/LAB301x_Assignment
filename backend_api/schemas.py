@@ -25,3 +25,14 @@ class PriceRange(BaseModel):
 class KeywordFilter(BaseModel):
     keyword: str | int
     search_type: Literal["title", "description", "tags", "brand"]
+    
+class Review(BaseModel):
+    rating: int
+    comment: str
+    user: str
+    product_id: int
+    created_at: datetime = Field(default_factory=datetime.now)
+    
+    @field_serializer("created_at")
+    def serialize_created_at(self, v: datetime) -> str:
+        return v.isoformat()
