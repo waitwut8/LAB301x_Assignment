@@ -54,7 +54,7 @@
                     'Authorization': `Bearer ${token}` // Add your token here
                 }
             });
-
+            
             const results = await response.json();
             const resultsContainer = document.getElementById('search-results');
             resultsContainer.innerHTML = '';
@@ -77,7 +77,7 @@
                     resultsContainer.appendChild(productDiv);
                 });
             } else {
-                resultsContainer.innerHTML = `<p class="text-danger">${results.message}</p>`;
+                resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
             }
         }
     </script>
