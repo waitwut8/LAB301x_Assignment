@@ -19,31 +19,38 @@ class ExpiryTime(int, Enum):
 
 def decode_jwt(token: str) -> dict:
     try:
-        decoded_token = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
-        return decoded_token
+        return jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
     except jwt.ExpiredSignatureError:
         print("Token has expired")
         return {}
     except jwt.InvalidTokenError:
-        print("Invalid token")
+        print("Invalid token " + token)
         return {}
 
 
-def sign_jwt(user_name: str, expiration: int = ExpiryTime.FIFTEEN_MINUTES) -> dict:
+def sign_jwt(user_name: str, user_id: int, expiration: int = ExpiryTime.FIFTEEN_MINUTES) -> dict:
 
     now_timestamp = datetime.now(timezone.utc).timestamp()
     expiry_time = now_timestamp + expiration
     payload = {
         "user_name": user_name,
+        "user_id": user_id,
         "exp": expiry_time,
         "iat": datetime.now(timezone.utc).timestamp(),
     }
+    payload_refresh = {
+        "user_name": user_name,
+        "user_id": user_id,
+        "exp": expiry_time + 3600,
+        "iat": datetime.now(timezone.utc).timestamp(),
+    }
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
-
+    refresh_token = jwt.encode(payload_refresh, JWT_SECRET, algorithm=JWT_ALGORITHM)
     return {
         "user_name": user_name,
+        "user_id": user_id,
         "access_token": token,
-        "refresh_token": token,
+        "refresh_token": refresh_token,
         "expiry_time": datetime.fromtimestamp(expiry_time),
         "issued_at": datetime.fromtimestamp(now_timestamp),
     }
@@ -57,30 +64,24 @@ class JWTBearer(HTTPBearer):
         credentials: HTTPAuthorizationCredentials = await super(
             JWTBearer, self
         ).__call__(request)
-        if credentials:
-            if not credentials.scheme == "Bearer":
-                raise HTTPException(
-                    status_code=403, detail="Invalid authentication scheme."
-                )
-            if not self.verify_jwt(credentials.credentials):
-                raise HTTPException(
-                    status_code=403, detail="Invalid token or expired token."
-                )
-            return credentials.credentials
-        else:
-            raise HTTPException(status_code=403, detail="Invalid authorization code.")
+        if not credentials:
+            raise HTTPException(status_code=401, detail="Invalid authorization code.")
+        if credentials.scheme != "Bearer":
+            raise HTTPException(
+                status_code=401, detail="Invalid authentication scheme."
+            )
+        if not self.verify_jwt(credentials.credentials):
+            raise HTTPException(
+                status_code=401, detail="Invalid token or expired token."
+            )
+        return credentials.credentials
 
-    def verify_jwt(self, jwtoken: str) -> bool:
-        isTokenValid: bool = False
-
+    def verify_jwt(self, jwt_token: str) -> bool:
         try:
-            payload = decode_jwt(jwtoken)
-        except:
+            payload = decode_jwt(jwt_token)
+        except Exception:
             payload = None
-        if payload:
-            isTokenValid = True
-
-        return isTokenValid
+        return bool(payload)
 
 
 def get_current_user(token: str = Depends(JWTBearer())) -> dict:

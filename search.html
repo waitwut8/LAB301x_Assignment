@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,15 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         .search-container {
             margin-bottom: 20px;
         }
+
         .search-results {
             margin-top: 20px;
         }
+
         .product {
             border: 1px solid #ccc;
             padding: 10px;
@@ -24,6 +28,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="my-4">Product Search</h1>
@@ -37,15 +42,86 @@
         </div>
         <div class="search-results" id="search-results"></div>
     </div>
-    
+
+
+    <!-- <div class="filter-options">
+        <h5>Filter Options</h5>
+        <div class="form-group">
+            <label for="category-select">Category</label>
+            <select id="category-select" class="form-control">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="books">Books</option>
+                <option value="clothing">Clothing</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="brand-select">Brand</label>
+            <select id="brand-select" class="form-control">
+                <option value="">All Brands</option>
+                <option value="brand1">Brand 1</option>
+                <option value="brand2">Brand 2</option>
+                <option value="brand3">Brand 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="type-select">Type of Item</label>
+            <select id="type-select" class="form-control">
+                <option value="">All Types</option>
+                <option value="type1">Type 1</option>
+                <option value="type2">Type 2</option>
+                <option value="type3">Type 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price-range">Price Range</label>
+            <input type="range" class="form-control-range" id="price-range" min="0" max="1000" step="10">
+        </div>
+        <div class="form-group">
+            <label for="rating-select">Rating</label>
+            <select id="rating-select" class="form-control">
+                <option value="">All Ratings</option>
+                <option value="1">1 Star & Up</option>
+                <option value="2">2 Stars & Up</option>
+                <option value="3">3 Stars & Up</option>
+                <option value="4">4 Stars & Up</option>
+                <option value="5">5 Stars</option>
+            </select>
+        </div>
+    </div> -->
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
     <script>
+        
+
+        async function addToCart(id) {
+            // const token = document.cookie.split("=")[1];
+            // console.log(id);
+            const response = await fetch(`http://127.0.0.1:8000/cart`, {
+                method: 'POST',
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "quantity": 1,
+                    "product_name": id
+                })
+            });
+            if (response.status === 200) {
+                alert('Product added to cart');
+            } 
+            else {
+                alert('Failed to add product to cart');
+            }
+        }
         async function searchProducts() {
-            
+
             token = document.cookie.split("=")[1]
             const keyword = document.getElementById('search-input').value;
             const response = await fetch(`http://127.0.0.1:8000/search/${keyword}`, {
@@ -69,17 +145,21 @@
                     productDiv.className = 'product card mb-3';
                     productDiv.innerHTML = `
                         <div class="card-body">
-                            <h4 class="card-title">${product.title}</h5>
-                            <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" bgcolor = "white"/>
-                            <p class="card-text">${product.description}</p>
-                        </div>
+        <h4 class="card-title">${product.title}</h5>
+        <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" color = "white"/>
+        <p class="card-text">${product.description}</p>
+        <button onclick = "addToCart('${product.title}')" class="btn btn-primary">Add to Cart</button>
+    </div>
                     `;
+
                     resultsContainer.appendChild(productDiv);
                 });
             } else {
-                resultsContainer.innerHTML = `<p class="text-danger">${results.message}</p>`;
+                resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
             }
+
         }
     </script>
 </body>
+
 </html>
