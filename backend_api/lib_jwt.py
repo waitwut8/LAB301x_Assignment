@@ -24,7 +24,7 @@ def decode_jwt(token: str) -> dict:
         print("Token has expired")
         return {}
     except jwt.InvalidTokenError:
-        print("Invalid token")
+        print("Invalid token " + token)
         return {}
 
 
@@ -38,13 +38,19 @@ def sign_jwt(user_name: str, user_id: int, expiration: int = ExpiryTime.FIFTEEN_
         "exp": expiry_time,
         "iat": datetime.now(timezone.utc).timestamp(),
     }
+    payload_refresh = {
+        "user_name": user_name,
+        "user_id": user_id,
+        "exp": expiry_time + 3600,
+        "iat": datetime.now(timezone.utc).timestamp(),
+    }
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
-
+    refresh_token = jwt.encode(payload_refresh, JWT_SECRET, algorithm=JWT_ALGORITHM)
     return {
         "user_name": user_name,
         "user_id": user_id,
         "access_token": token,
-        "refresh_token": token,
+        "refresh_token": refresh_token,
         "expiry_time": datetime.fromtimestamp(expiry_time),
         "issued_at": datetime.fromtimestamp(now_timestamp),
     }
@@ -59,14 +65,14 @@ class JWTBearer(HTTPBearer):
             JWTBearer, self
         ).__call__(request)
         if not credentials:
-            raise HTTPException(status_code=403, detail="Invalid authorization code.")
+            raise HTTPException(status_code=401, detail="Invalid authorization code.")
         if credentials.scheme != "Bearer":
             raise HTTPException(
-                status_code=403, detail="Invalid authentication scheme."
+                status_code=401, detail="Invalid authentication scheme."
             )
         if not self.verify_jwt(credentials.credentials):
             raise HTTPException(
-                status_code=403, detail="Invalid token or expired token."
+                status_code=401, detail="Invalid token or expired token."
             )
         return credentials.credentials
 
