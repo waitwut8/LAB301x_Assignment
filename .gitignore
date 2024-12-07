@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 test.py
 temp/
+node_modules
+
+
+

@@ -38,7 +38,9 @@ cart_manager = JSONManager("database/carts.json")
 carts = cart_manager.data
 post_manager = JSONManager("database/posts.json")
 posts = post_manager.data
-
+@app.post("/validate", status_code=200)
+async def validate(token: str):
+    return decode_jwt(token)
 
 @app.post("/login")
 async def login(login_info: LoginInfo):

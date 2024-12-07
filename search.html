@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Search</title>
     <!-- Bootstrap CSS -->
+    <script src="js/interceptor.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -44,51 +45,7 @@
     </div>
 
 
-    <!-- <div class="filter-options">
-        <h5>Filter Options</h5>
-        <div class="form-group">
-            <label for="category-select">Category</label>
-            <select id="category-select" class="form-control">
-                <option value="">All Categories</option>
-                <option value="electronics">Electronics</option>
-                <option value="books">Books</option>
-                <option value="clothing">Clothing</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="brand-select">Brand</label>
-            <select id="brand-select" class="form-control">
-                <option value="">All Brands</option>
-                <option value="brand1">Brand 1</option>
-                <option value="brand2">Brand 2</option>
-                <option value="brand3">Brand 3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="type-select">Type of Item</label>
-            <select id="type-select" class="form-control">
-                <option value="">All Types</option>
-                <option value="type1">Type 1</option>
-                <option value="type2">Type 2</option>
-                <option value="type3">Type 3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="price-range">Price Range</label>
-            <input type="range" class="form-control-range" id="price-range" min="0" max="1000" step="10">
-        </div>
-        <div class="form-group">
-            <label for="rating-select">Rating</label>
-            <select id="rating-select" class="form-control">
-                <option value="">All Ratings</option>
-                <option value="1">1 Star & Up</option>
-                <option value="2">2 Stars & Up</option>
-                <option value="3">3 Stars & Up</option>
-                <option value="4">4 Stars & Up</option>
-                <option value="5">5 Stars</option>
-            </select>
-        </div>
-    </div> -->
+ 
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -100,7 +57,7 @@
         
 
         async function addToCart(id) {
-            // const token = document.cookie.split("=")[1];
+            const token = document.cookie.split("=")[1];
             // console.log(id);
             const response = await fetch(`http://127.0.0.1:8000/cart`, {
                 method: 'POST',
