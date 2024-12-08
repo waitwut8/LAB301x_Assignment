@@ -177,6 +177,39 @@
                 "total": 34.99,
                 "discountedPrice": 34.986501000000004,
                 "discountedTotal": 34.986501000000004
+            },
+            {
+                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
+                "title": "Essence Mascara Lash Princess",
+                "price": 9.99,
+                "discountPercentage": 7.17,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+                "quantity": 1,
+                "total": 9.99,
+                "discountedPrice": 9.273717,
+                "discountedTotal": 9.273717
+            },
+            {
+                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
+                "title": "Essence Mascara Lash Princess",
+                "price": 9.99,
+                "discountPercentage": 7.17,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+                "quantity": 1,
+                "total": 9.99,
+                "discountedPrice": 9.273717,
+                "discountedTotal": 9.273717
+            },
+            {
+                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
+                "title": "Essence Mascara Lash Princess",
+                "price": 9.99,
+                "discountPercentage": 7.17,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+                "quantity": 1,
+                "total": 9.99,
+                "discountedPrice": 9.273717,
+                "discountedTotal": 9.273717
             }
         ],
         "total": 0.0,
