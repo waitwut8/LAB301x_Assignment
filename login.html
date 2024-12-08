@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <script src = "js/scripts.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,7 +56,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form method="post" action="index.html">
+        <form method="post">
 
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -64,49 +65,7 @@
         <p id="products"></p>
     </div>
     <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', async (e) => {
-            var r = JSON.stringify({
-                'username': form.username.value,
-                'password': form.password.value
-            })
-            console.log(r)
-            e.preventDefault();
-            const formData = new FormData(form);
-            var x = document.cookie;
-            if (x != null) {
-                var response = await fetch("http://127.0.0.1:8000/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: r
-
-                });
-                var s = await (response.json());
-                console.log(s)
-                var token = s['access_token']
-                document.cookie = `token=${token};SameSite=None;Secure`;
-                
-            }
-            else {
-                window.location.href = "index.html"
-            }
-
-
-
-            if (response.status == 200) {
-                window.location.href = "index.html"
-            }
-            else {
-                document.getElementById("products").innerHTML = "Please try logging in again"
-            }
-
-
-
-
-
-        });
+        login(document.querySelector("form"))   
     </script>
 </body>
 

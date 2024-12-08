@@ -1,1 +1,6 @@
-let response = fetch("http://127.0.0.1:8000/validate")
+let redirect = function (page) {window.location.href = page}
+let check_response = function (res){
+    if (!res.ok){
+        redirect("login.html")
+    }
+}
