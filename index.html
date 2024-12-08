@@ -96,6 +96,13 @@
             </div>
         </div>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios.post("url", {name: "data"}).then(function (response) {
+        console.log(response)
+        // do whatever you want if console is [object object] then stringify the response
+    })
+    </script>
     <script src="js/scripts.js"></script>
     <!-- Header-->
     <header class="bg-dark py-5">

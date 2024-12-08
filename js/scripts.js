@@ -1,28 +1,68 @@
-/*!
- * Start Bootstrap - Shop Homepage v5.0.6 (https://startbootstrap.com/template/shop-homepage)
- * Copyright 2013-2023 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
- */
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
-const api_url = "http://127.0.0.1:8000";
 
-const getToken = function () {
+const api_url = "http://127.0.0.1:8000";
+// Add a response interceptor
+const api = axios.create({
+  baseURL: api_url,
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
+
+api.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  async function (error) {
+    if (
+      error.response.status === 401 &&
+      error.response.data.detail.includes("expire")
+    ) {
+      let res = await axios.post(`${api_url}/refresh`,{}, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("refresh_token")}`,
+        },
+      });
+      if (res.status != 200){
+        alert("Your session has expired. Please login again");
+        window.location.href = "login.html"
+      }
+      else{
+        
+        localStorage.setItem("refresh_token", res.data["refresh_token"]);
+        localStorage.setItem("access_token", res.data["access_token"]);
+      }
+
+    } else if (error.response.status === 401) {
+      console.log(error.response);
+      alert("Unauthorized access, please login");
+      window.location.href = "login.html";
+    }
+
+    return Promise.reject(error);
+  }
+);
+
+api.interceptors.request.use(function (config) {
+  const token = localStorage.getItem("access_token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+function getToken() {
   return localStorage.getItem("access_token");
-};
+}
 async function loadHome() {
   const productsContainer = document.querySelector(".row");
 
   productsContainer.innerHTML = "";
-  let list_of_items = await fetch(`${api_url}/product_noLogin/18`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  list_of_items = await list_of_items.json();
 
+  let list_of_items = await api.get(`${api_url}/product_noLogin/18`);
+  list_of_items = list_of_items.data;
   addCards(list_of_items, productsContainer);
+
 }
 function addCards(list_of_items, productsContainer) {
   for (const product of list_of_items) {
@@ -70,23 +110,14 @@ function addCards(list_of_items, productsContainer) {
 }
 
 function logout() {
-  document.cookie.split(";").forEach(function (c) {
-    document.cookie = c
-      .replace(/^ +/, "")
-      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-  });
+  localStorage.clear();
   alert("Logged out");
 }
 
 async function cartLoad(token) {
-  response = await fetch(`${api_url}/cart`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
 
-  let data = await response.json();
+  let response = await api.get("/cart");
+  let data = await response.data;
 
   console.log(data);
   localStorage.setItem("cart", JSON.stringify(data));
@@ -168,13 +199,14 @@ async function cartLoad(token) {
   });
 }
 async function loadPost(postId) {
-  let response = fetch(`127.0.0.1:8000/posts/${postId}`);
+
+  let response = fetch(`/posts/${postId}`);
   if (response.status !== 200) {
     console.log("Error fetching post data");
     alert("Error fetching post data");
     return;
   }
-  let data = await response.json();
+  let data = await response.data;
   let documentPostTitle = document.getElementsByClassName("card-title")[0],
     documentPostBody = document.getElementsByClassName("cart-text"),
     postTitle = data["title"],
@@ -190,17 +222,10 @@ async function loadPost(postId) {
 
 async function addToCart(id) {
   const token = getToken();
-  // console.log(id);
-  const response = await fetch(`${api_url}/cart`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      quantity: 1,
-      product_name: id,
-    }),
+
+  let response = await api.post("/cart", {
+    quantity: 1,
+    product_name: id,
   });
   if (response.status === 200) {
     alert("Product added to cart");
@@ -216,14 +241,10 @@ async function searchProducts() {
     resultsContainer.innerHTML = `<p class="text-danger">Please enter a keyword.</p>`;
     return;
   }
-  const response = await fetch(`${api_url}/search/${keyword}`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`, // Add your token here
-    },
-  });
 
-  const results = await response.json();
+  let response = await api.post(`/search/${keyword}`);
+
+  const results = await response.data;
 
   resultsContainer.innerHTML = "";
 
@@ -254,34 +275,29 @@ async function searchProducts() {
 }
 function login(form) {
   form.addEventListener("submit", async (e) => {
-    let r = JSON.stringify({
+    let r = {
       username: form.username.value,
       password: form.password.value,
-    });
+    };
     console.log(r);
     e.preventDefault();
     let x = localStorage.getItem("access_token");
-    if (x != null) {
-      var response = await fetch(`${api_url}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: r,
-      });
-      let s = await response.json();
-      console.log(s);
-      let token = s["access_token"];
-      localStorage.setItem("access_token", token);
-    } else {
-      window.location.href = "index.html";
-    }
 
-    if (response.status == 200) {
+    let res = await axios.post(`${api_url}/login`, r);
+
+    let s = await res.data;
+
+    let token = s["access_token"],
+      r_token = s["refresh_token"];
+
+    localStorage.setItem("access_token", token);
+    localStorage.setItem("refresh_token", r_token);
+    if (res.status == 200) {
       window.location.href = "index.html";
     } else {
       document.getElementById("products").innerHTML =
         "Please try logging in again";
     }
+
   });
 }

@@ -63,7 +63,7 @@ async def login(login_info: LoginInfo):
 
 @app.post("/refresh", status_code=200, dependencies=[Depends(JWTBearer())])
 async def refresh_token(current_user=Depends(get_current_user)):
-    return sign_jwt(current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.ONE_MINUTE)
+    return sign_jwt(current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.FIFTEEN_MINUTES)
 @app.get("/products", status_code=200, dependencies=[Depends(JWTBearer())])
 async def get_all_products():
     return products
@@ -91,11 +91,13 @@ async def getProduct(products_needed: str):
 
 
 @app.post("/search/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
-async def search_products(keyword: str):
+async def search_products(keyword: str, request: Request):
+    print(request.headers)
     return jmespath.search(
         f"[?contains(title, '{keyword}') || contains(description, '{keyword}')|| contains(category, '{keyword}')|| contains(brand, '{keyword}') ]",
         products,
     )
+    
 
 
 

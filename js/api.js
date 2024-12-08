@@ -24,15 +24,19 @@ api.interceptors.request.use(
 );
 
 // API endpoints
-export const getProducts = () => {
-    return api.get('/products');
-};
-export const login = (user, pass) => {
-    console.log("login")
-    return api.post('/login', { username: user, password: pass });
+export const getProduct_NoAuth = () => {
+    return api.get('/products_nologin/18');
+    
 }
+// export const getProducts = () => {
+//     return api.get('/products');
+// };
+// export const login = (user, pass) => {
+//     console.log("login")
+//     return api.post('/login', { username: user, password: pass });
+// }
 
-export const logout = () => {
-    localStorage.removeItem('token');
-}
+// export const logout = () => {
+//     localStorage.removeItem('token');
+// }
 export default api;

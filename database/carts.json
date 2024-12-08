@@ -133,6 +133,50 @@
                 "total": 12.99,
                 "discountedPrice": 10.518003,
                 "discountedTotal": 10.518003
+            },
+            {
+                "id": "050fb6b6-4580-4da7-b1ef-51794a92d5ed",
+                "title": "Apple MacBook Pro 14 Inch Space Grey",
+                "price": 1999.99,
+                "discountPercentage": 9.25,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
+                "quantity": 1,
+                "total": 1999.99,
+                "discountedPrice": 1814.990925,
+                "discountedTotal": 1814.990925
+            },
+            {
+                "id": "012de47f-f23b-49d2-a753-2d610a7952e1",
+                "title": "Powder Canister",
+                "price": 14.99,
+                "discountPercentage": 18.14,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png",
+                "quantity": 1,
+                "total": 14.99,
+                "discountedPrice": 12.270814,
+                "discountedTotal": 12.270814
+            },
+            {
+                "id": "012de47f-f23b-49d2-a753-2d610a7952e1",
+                "title": "Powder Canister",
+                "price": 14.99,
+                "discountPercentage": 18.14,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png",
+                "quantity": 1,
+                "total": 14.99,
+                "discountedPrice": 12.270814,
+                "discountedTotal": 12.270814
+            },
+            {
+                "id": "87019e56-3a01-4d8d-9b63-50e55ff46e2d",
+                "title": "Red Shoes",
+                "price": 34.99,
+                "discountPercentage": 0.01,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/thumbnail.png",
+                "quantity": 1,
+                "total": 34.99,
+                "discountedPrice": 34.986501000000004,
+                "discountedTotal": 34.986501000000004
             }
         ],
         "total": 0.0,
