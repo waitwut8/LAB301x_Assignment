@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
+    <script src="js/interceptor.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -19,27 +20,7 @@
         </div>
     </div>
     <script>
-        const postId = localStorage.getItem("postId");
-        document.addEventListener("DOMContentLoaded", async () => {
-            let response = fetch(`127.0.0.1:8000/posts/${postId}`)
-            if (response.status !== 200) {
-                console.log("Error fetching post data");
-                alert("Error fetching post data");
-                return;
-            }
-            let data = await response.json();
-            let documentPostTitle = document.getElementsByClassName("card-title")[0], documentPostBody = document.getElementsByClassName("cart-text"), postTitle = data['title'], postBody = data['body']
-            if (postTitle && postBody){
-                documentPostTitle.textContent = postTitle
-                documentPostBody.textContent = postBody
-            }
-            else{
-                alert("Content not loaded, redirecting to login page")
-                window.location.href = "login.html"
-            }
-            
-
-        })
+        
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
