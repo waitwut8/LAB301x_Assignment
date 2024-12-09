@@ -37,6 +37,7 @@ products = products_manager.data
 cart_manager = JSONManager("database/carts.json")
 carts = cart_manager.data
 post_manager = JSONManager("database/posts.json")
+print(post_manager)
 posts = post_manager.data
 @app.post("/validate", status_code=200)
 async def validate(token: str):
@@ -179,13 +180,10 @@ async def add_to_cart(cart_request: CartAddRequest, current_user=Depends(get_cur
     cart_product = jmespath.search(f"[?title=='{cart_request.product_name}']", products)
     if not cart_product:
         return {"message": "Product not found"}
-    cart_product = CartItem(**cart_product[0]) 
-
-    if _products := [
-        x
-        for x in user_cart['products']
-        if x['id'] == cart_request.product_name
-    ]:
+    cart_product = CartItem(**cart_product[0])
+    if _products := jmespath.search(
+        f"[?id=='{cart_request.product_id}']", user_cart['products']
+    ):
         _products[0]['quantity'] += cart_request.quantity
 
     else:
@@ -233,10 +231,14 @@ async def delete_from_cart(
         return {"message": "Product removed"}
     return 
     
-@app.get("/posts/{id}", status_code = 200, dependencies = [Depends(JWTBearer())])
+@app.get("/posts/{id}", status_code = 200)
 async def get_post(id: int):
     return jmespath.search(f"[?id==`{id}`]", posts)    
 
+@app.get("/posts_noLogin/{number}", status_code = 200)
+async def get_random_posts(number: int):
+    print(type(posts))
+    return random.sample(posts, number)
 
 
 @app.get("/promo", status_code = 200)

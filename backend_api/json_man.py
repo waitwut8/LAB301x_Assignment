@@ -7,7 +7,7 @@ class JSONManager:
 
     def load_json(self):
         
-        with open(self.file_path) as file:
+        with open(self.file_path, errors = "replace") as file:
             try:
                 data = json.load(file)
             except Exception as e:

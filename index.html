@@ -35,9 +35,9 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#!"" role = " button" data-bs-toggle="dropdown"
-                            aria-expanded="false">About</a>
+                            aria-expanded="false">More</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li class="nav-item"><a class="nav-link" href="#!">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="posthome.html">Posts and Stories</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -62,8 +62,9 @@
                             <li><a class="dropdown-item btn btn-primary" href="search.html">Search</a></li>
                         </ul>
                     </li>
-                </ul>
-                <form class="d-flex ms-1 px-1">
+                </ul><div class = "col-6">
+                    
+                <form class="d-flex col-2">
                     
                     <button class="btn btn-outline-dark" onclick = "logout()">
                         <i class = "fa-solid fa-right-from-bracket me-1"></i>
@@ -71,7 +72,7 @@
     
                     </button>
                 </form>
-                <form class="d-flex ms-1 px-1" action="login.html">
+                <form class="d-flex col-2" action="login.html">
                     <button class="btn btn-outline-dark" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
@@ -85,7 +86,7 @@
                     </button>
                 </form>
     
-                <form class="d-flex" action="cart.html">
+                <form class="d-flex col-2" action="cart.html">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
@@ -94,7 +95,9 @@
                     
                 </form>
             </div>
+            </div>
         </div>
+    </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
