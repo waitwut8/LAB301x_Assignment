@@ -103,6 +103,17 @@
                     <p><strong>Discounted Total:</strong> $128,504.41</p>
                     <p><strong>Total Products:</strong> 3</p>
                     <p><strong>Total Quantity:</strong> 11</p>
+                    <div class="d-grid gap-2">
+                        <button
+                            type="button"
+                            name=""
+                            id="checkout"
+                            class="btn btn-primary"
+                        >
+                            Checkout
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
             <div class="card mt-4">
@@ -136,7 +147,7 @@
     </main>
     <script>
        cartLoad(getToken());
-                // You can now use the cart object to update the DOM as needed
+        loadCheckout()       // You can now use the cart object to update the DOM as needed
             
         
     </script>

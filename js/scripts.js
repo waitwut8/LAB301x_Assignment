@@ -13,6 +13,7 @@ api.interceptors.response.use(
     return response;
   },
   async function (error) {
+    console.log(error)
     if (
       error.response.status === 401 &&
       error.response.data.detail.includes("expire")
@@ -89,7 +90,21 @@ async function loadPosts() {
     postContainer.insertAdjacentHTML("beforeend", productCard);
   }
 }
-
+async function checkout(){
+  let response = await api.post("/checkout", {});
+  if (response.status === 200) {
+    alert("Checkout successful");
+    window.location.href = "index.html";
+  } else {
+    alert("Failed to checkout");
+  }
+}
+async function loadCheckout(){
+  document.getElementById("checkout").addEventListener("click", async (e) =>{
+    e.preventDefault();
+    checkout()
+  })
+}
 async function loadPost(id) {
   let post_data = await api.get(`${api_url}/posts/${id}`);
   let post = post_data.data;
@@ -347,11 +362,16 @@ async function addToCart(id) {
     quantity: 1,
     product_name: id,
   });
-  if (response.status === 200) {
-    alert("Product added to cart");
-  } else {
-    alert("Failed to add product to cart");
-  }
+  // if (!response.ok){
+  //   alert("Failed to add product to cart")
+  // }
+  // if (response.status === 200) {
+  //   alert("Product added to cart");
+  // } else {
+  //   alert("Failed to add product to cart");
+  // }
+  // Prevent page reload
+  return false;
 }
 async function searchProducts() {
   const resultsContainer = document.getElementById("search-results");
@@ -382,18 +402,27 @@ async function searchProducts() {
               <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" />
               <p class="card-text">${product.description}</p>
               <hr>
-              <button id="${product.id}" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+             
+              <button  id="${product.id}" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+         
           </div>
       `;
 
       resultsContainer.appendChild(productDiv);
 
-      const addToCartButton = document.getElementById(`${product.id}`);
-      addToCartButton.addEventListener("click", (event) => {
-        event.preventDefault();
+      document.getElementById(`${product.id}`).addEventListener("click", async (event) => {
         addToCart(product.title);
-      });
+        event.preventDefault();
+
+      }, false)
+    //   const addToCartButton = document.getElementById(`${product.id}`);
+      
+    //   addToCartButton.addEventListener("click", async (event) => {
+    //     addToCart(product.title);
+    //     event.preventDefault();
+    //    }, false);
     });
+ 
   } else {
     resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
   }
