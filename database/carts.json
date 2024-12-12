@@ -1,3 +1,99 @@
 [
-    
+    {},
+    {
+        "id": "84460cf2-3f5b-4639-a6ff-b8fc98f404c4",
+        "products": [
+            {
+                "id": "b777ede9-87d1-4b1b-a1c0-a7d72d8f7e64",
+                "title": "Rolex Submariner Watch",
+                "price": 13999.99,
+                "discountPercentage": 0.82,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/thumbnail.png",
+                "quantity": 3,
+                "total": 13999.99,
+                "discountedPrice": 13885.190082,
+                "discountedTotal": 13885.190082
+            },
+            {
+                "id": "270de56f-44c2-4169-a47b-3441916fde34",
+                "title": "Bedside Table African Cherry",
+                "price": 299.99,
+                "discountPercentage": 9.58,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+                "quantity": 1,
+                "total": 299.99,
+                "discountedPrice": 271.250958,
+                "discountedTotal": 271.250958
+            },
+            {
+                "id": "12068e47-aeef-4afa-beab-128ae05831e2",
+                "title": "Gucci Bloom Eau de",
+                "price": 79.99,
+                "discountPercentage": 8.9,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png",
+                "quantity": 1,
+                "total": 79.99,
+                "discountedPrice": 72.87089,
+                "discountedTotal": 72.87089
+            },
+            {
+                "id": "33e0cb4b-1256-4374-8375-bcde9d2fcf9d",
+                "title": "Apple Watch Series 4 Gold",
+                "price": 349.99,
+                "discountPercentage": 5.14,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/thumbnail.png",
+                "quantity": 1,
+                "total": 349.99,
+                "discountedPrice": 332.000514,
+                "discountedTotal": 332.000514
+            },
+            {
+                "id": "af5bc76c-5046-4635-bf32-e52036679778",
+                "title": "Amazon Echo Plus",
+                "price": 99.99,
+                "discountPercentage": 16.3,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/thumbnail.png",
+                "quantity": 1,
+                "total": 99.99,
+                "discountedPrice": 83.69162999999999,
+                "discountedTotal": 83.69162999999999
+            },
+            {
+                "id": "f42c5240-5fb7-4fad-9bd2-7403abca5ca1",
+                "title": "Rolex Cellini Date Black Dial",
+                "price": 8999.99,
+                "discountPercentage": 14.28,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Date%20Black%20Dial/thumbnail.png",
+                "quantity": 6,
+                "total": 8999.99,
+                "discountedPrice": 7714.7914279999995,
+                "discountedTotal": 7714.7914279999995
+            },
+            {
+                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
+                "title": "Essence Mascara Lash Princess",
+                "price": 9.99,
+                "discountPercentage": 7.17,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+                "quantity": 2,
+                "total": 9.99,
+                "discountedPrice": 9.273717,
+                "discountedTotal": 9.273717
+            }
+        ],
+        "total": 0.0,
+        "discountedTotal": 0.0,
+        "userId": 207,
+        "totalProducts": 0,
+        "totalQuantity": 0
+    },
+    {
+        "id": "3ddda2b3-d661-495c-b052-35da78af3b40",
+        "products": [],
+        "total": 0,
+        "discountedTotal": 0,
+        "userId": 1,
+        "totalProducts": 0,
+        "totalQuantity": 0
+    }
 ]

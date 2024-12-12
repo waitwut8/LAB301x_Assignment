@@ -55,7 +55,7 @@ function getToken() {
   return localStorage.getItem("access_token");
 }
 async function loadHome() {
-  const productsContainer = document.querySelector(".row");
+  const productsContainer = document.querySelector("#row");
 
   productsContainer.innerHTML = "";
 
@@ -89,6 +89,7 @@ async function loadPosts() {
     postContainer.insertAdjacentHTML("beforeend", productCard);
   }
 }
+
 async function loadPost(id) {
   let post_data = await api.get(`${api_url}/posts/${id}`);
   let post = post_data.data;
@@ -104,9 +105,87 @@ async function loadPostPage() {
     postviews = document.getElementById("viewsCount");
   postTitle.textContent = post.title;
   postBody.textContent = post.body;
-  postLikes.textContent = post['reactions']['likes'];
+  postLikes.textContent = post["reactions"]["likes"];
   postDislikes.textContent = post.reactions.dislikes;
   postviews.textContent = post.views;
+}
+let setProduct = async function (id) {
+  let res = await api.get(`/product/${id}`);
+  let product = JSON.stringify(res.data);
+  console.log(product);
+  localStorage.setItem("product", product);
+  window.location.href = "product.html";
+};
+async function loadProductPage() {
+  let product = JSON.parse(localStorage.getItem("product"));
+  if (!product) {
+    alert("product has not loaded yet, try again");
+    window.location.href = "index.html";
+  }
+  let name = getDoc("title");
+  let category = getDoc("category");
+  let price = getDoc("prices");
+  let desc = getDoc("description");
+  let weight = getDoc("weight");
+  let dims = getDoc("dimensions");
+  let warranty = getDoc("warranty");
+  let productDims = product.dimensions;
+  let dimString = `${productDims.width} x ${productDims.height} x ${productDims.depth} cm`;
+  element = getDoc("carousel-inner");
+  if ((product.images.length == 1)) {
+    let noImg =getDoc("noimg")
+    noImg.src = product.images[0]
+  } else {
+    for (const image of product.images) {
+      let carousel_object = `<div class="carousel-item">
+                        <img class="d-block w-50" src="${image}">
+                      </div>`;
+      console.log(carousel_object);
+
+      element.innerHTML += carousel_object;
+    }
+  }
+
+  setTextByList(
+    [name, price, desc, weight, dims, warranty, category],
+    [
+      product.title,
+      "$" + product.price,
+      product.description,
+      product.weight + "g",
+      dimString,
+      product.warrantyInformation,
+      product.category,
+    ]
+  );
+  let reviews = getDoc("reviews")
+  for (const review of product.reviews) {
+    let review_card = `<div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">John Doe</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">5 stars</h6>
+                            <p class="card-text">This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
+                        </div>
+                    </div>
+                </div>`
+  }
+}
+function setText(element, text) {
+  element.textContent = text;
+}
+function setTextByList(elementList, textList) {
+  for (let index = 0; index < elementList.length; index++) {
+    const element = elementList[index];
+    const text = textList[index];
+    setText(element, text);
+  }
+}
+function setHTML(element, HTML) {
+  element.innerHTML = HTML;
+}
+function getDoc(id) {
+  return document.getElementById(id);
 }
 function addCards(list_of_items, productsContainer) {
   for (const product of list_of_items) {
@@ -144,7 +223,8 @@ function addCards(list_of_items, productsContainer) {
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">See More Information</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto"  onclick = 'setProduct("${product.id}")'>See More Information</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto"  onclick = 'addToCart("${product.title}")'>Buy now</a></div>
                             </div>
                         </div>
                     </div>
@@ -158,7 +238,7 @@ function logout() {
   alert("Logged out");
 }
 
-async function cartLoad(token) {
+async function cartLoad() {
   let response = await api.get("/cart");
   let data = await response.data;
 
@@ -208,16 +288,16 @@ async function cartLoad(token) {
 
     const totalPrice = document.createElement("div");
     totalPrice.classList.add("col-md-8");
-    totalPrice.innerHTML = `<p><strong>Total:</strong> $${product.total.toFixed(
-      2
-    )}</p>`;
-    sumTotal += product.total;
+    totalPrice.innerHTML = `<p><strong>Total:</strong> $${
+      product.total.toFixed(2) * product.quantity
+    }</p>`;
+    sumTotal += product.total * product.quantity;
     const discountedTotalPrice = document.createElement("div");
     discountedTotalPrice.classList.add("col-md-4");
-    discountedTotalPrice.innerHTML = `<p><strong>Discounted Total:</strong> $${product.discountedTotal.toFixed(
-      2
-    )}</p>`;
-    sumDiscountedTotal += product.discountedTotal;
+    discountedTotalPrice.innerHTML = `<p><strong>Discounted Total:</strong> $${
+      product.discountedTotal.toFixed(2) * product.quantity
+    }</p>`;
+    sumDiscountedTotal += product.discountedTotal * product.quantity;
     totalRow.appendChild(totalPrice);
     totalRow.appendChild(discountedTotalPrice);
     totalRow.appendChild(document.createElement("hr"));
@@ -263,8 +343,6 @@ async function cartLoad(token) {
 // }
 
 async function addToCart(id) {
-  const token = getToken();
-
   let response = await api.post("/cart", {
     quantity: 1,
     product_name: id,
@@ -299,17 +377,22 @@ async function searchProducts() {
       const productDiv = document.createElement("div");
       productDiv.className = "product card mb-3";
       productDiv.innerHTML = `
-                <div class="card-body">
-                <h4 class="card-title">${product.title}</h5>
-                <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" color = "white"/>
-                <p class="card-text">${product.description}</p>
-                <hr>
-
-                <button onclick = "addToCart('${product.title}')" class="btn btn-primary">Add to Cart</button>
-                </div>
-            `;
+          <div class="card-body">
+              <h4 class="card-title">${product.title}</h4>
+              <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" />
+              <p class="card-text">${product.description}</p>
+              <hr>
+              <button id="${product.id}" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+          </div>
+      `;
 
       resultsContainer.appendChild(productDiv);
+
+      const addToCartButton = document.getElementById(`${product.id}`);
+      addToCartButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        addToCart(product.title);
+      });
     });
   } else {
     resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;

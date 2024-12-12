@@ -56,7 +56,7 @@ async def login(login_info: LoginInfo):
         None,
     ):
         print(user)
-        return sign_jwt(user.get("username"), user.get("id"), ExpiryTime.ONE_MINUTE)
+        return sign_jwt(user.get("username"), user.get("id"), ExpiryTime.THIRTY_MINUTES)
     else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
@@ -64,7 +64,7 @@ async def login(login_info: LoginInfo):
 
 @app.post("/refresh", status_code=200, dependencies=[Depends(JWTBearer())])
 async def refresh_token(current_user=Depends(get_current_user)):
-    return sign_jwt(current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.FIFTEEN_MINUTES)
+    return sign_jwt(current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.ONE_HOUR)
 @app.get("/products", status_code=200, dependencies=[Depends(JWTBearer())])
 async def get_all_products():
     return products
@@ -182,7 +182,7 @@ async def add_to_cart(cart_request: CartAddRequest, current_user=Depends(get_cur
         return {"message": "Product not found"}
     cart_product = CartItem(**cart_product[0])
     if _products := jmespath.search(
-        f"[?id=='{cart_request.product_id}']", user_cart['products']
+        f"[?title=='{cart_request.product_name}']", user_cart['products']
     ):
         _products[0]['quantity'] += cart_request.quantity
 
@@ -221,12 +221,12 @@ async def delete_from_cart(
             status = status.HTTP_404_NOT_FOUND, detail = "Cart is empty"
         )
     if _products := [
-        x for x in user_cart.products if x.id == cart_request.product_id
+        x for x in user_cart.products if x.title == cart_request.product_name
     ]:
         _products = _products[0]
         _products.quantity -= cart_request.quantity
         if _products.quantity <= 0:
-            user_cart['products'].remove()
+            user_cart.products.remove(_products)
         carts[_index] = user_cart.model_dump()
         return {"message": "Product removed"}
     return 
@@ -240,7 +240,52 @@ async def get_random_posts(number: int):
     print(type(posts))
     return random.sample(posts, number)
 
+@app.post("/checkout", status_code=200, dependencies=[Depends(JWTBearer())])
+async def checkout(current_user=Depends(get_current_user)):
+    user_id = current_user.get("user_id")
+    cart = jmespath.search(f"[?userId==`{user_id}`]", carts)
+    print(user_id)
+    print(cart)
+    if not cart:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found")
+    
+    cart = cart[0]  # Get the first matching cart
+    cart_index = carts.index(cart)
+    
+    for item in cart.get('products', []):
+        reduce_stock(item.get('title'), item.get('quantity'))
+    
+    carts[cart_index] = {}  # Clear the cart after checkout
+    ##cart_manager.save_data(carts)  # Save the updated carts data
+    
+    return {"message": "Checkout successful"}
 
+def reduce_stock(product_name, quantity):
+    if not isinstance(product_name, str) or not isinstance(quantity, (int, float)):
+        raise ValueError("Invalid input types for product_name or quantity")
+    
+    if quantity < 0:
+        raise ValueError("Quantity cannot be negative")
+    
+    product = jmespath.search(f"[?title=='{product_name}']", products)
+    if not product:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Product not found")
+    
+    product = product[0]  # Get the first matching product
+    product_index = products.index(product)
+    
+    product['stock'] -= quantity
+    if product['stock'] <= 0:
+        product['stock'] = 0
+        product['availabilityStatus'] = "Out of stock"
+        print("out of stock now")
+    
+    products[product_index] = product  # Update the product in the list
+    # products_manager(products)  # Save the updated products data
+    
+    return product['stock']
+    
+    
 @app.get("/promo", status_code = 200)
 
 async def get_promo():

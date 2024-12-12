@@ -62,17 +62,17 @@
                             <li><a class="dropdown-item btn btn-primary" href="search.html">Search</a></li>
                         </ul>
                     </li>
-                </ul><div class = "col-6">
+                </ul><div class = "row">
                     
-                <form class="d-flex col-2">
+                <form class="d-flex col-3">
                     
                     <button class="btn btn-outline-dark" onclick = "logout()">
                         <i class = "fa-solid fa-right-from-bracket me-1"></i>
-                        Logout
+                        <p style = "font-size: 1rem">Logout</p>
     
                     </button>
                 </form>
-                <form class="d-flex col-2" action="login.html">
+                <form class="d-flex col-4" action="login.html">
                     <button class="btn btn-outline-dark" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
@@ -86,7 +86,7 @@
                     </button>
                 </form>
     
-                <form class="d-flex col-2" action="cart.html">
+                <form class="d-flex col-4 h-15" action="cart.html">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
@@ -101,10 +101,9 @@
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        axios.post("url", {name: "data"}).then(function (response) {
-        console.log(response)
+       
         // do whatever you want if console is [object object] then stringify the response
-    })
+    
     </script>
     <script src="js/scripts.js"></script>
     <!-- Header-->
@@ -119,7 +118,7 @@
     <br>
     <h2 class = "text-center">Featured Products</h2>
     <!-- Section-->
-    <div class="row"></div>
+    <div class="row" id = "row"></div>
     <!-- Footer-->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
