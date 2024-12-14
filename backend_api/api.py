@@ -8,6 +8,7 @@ from datetime import timezone
 from fastapi import FastAPI, HTTPException, status, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .lib_jwt import sign_jwt, decode_jwt, ExpiryTime, JWTBearer, get_current_user
+from .lib_sender import send_email
 from .codegenerator import get_promo_code
 from .schemas import (
     LoginInfo,
@@ -19,7 +20,7 @@ from .schemas import (
 )
 from .schemas import KeywordFilter as keywordFilter
 from .json_man import JSONManager
-
+import jinja2
 app = FastAPI()
 
 app.add_middleware(
@@ -95,7 +96,7 @@ async def getProduct(products_needed: str):
 async def search_products(keyword: str, request: Request):
     print(request.headers)
     return jmespath.search(
-        f"[?contains(title, '{keyword}') || contains(description, '{keyword}')|| contains(category, '{keyword}')|| contains(brand, '{keyword}') ]",
+        f"[?contains(title, '{keyword}') || contains(description, '{keyword}')|| contains(category, '{keyword}')|| contains(brand, '{keyword}') && stock > `0`]",
         products,
     )
     
@@ -243,7 +244,9 @@ async def get_random_posts(number: int):
 @app.post("/checkout", status_code=200, dependencies=[Depends(JWTBearer())])
 async def checkout(current_user=Depends(get_current_user)):
     user_id = current_user.get("user_id")
+    user_name = current_user.get("user_name")
     cart = jmespath.search(f"[?userId==`{user_id}`]", carts)
+    
     print(user_id)
     print(cart)
     if not cart:
@@ -251,13 +254,15 @@ async def checkout(current_user=Depends(get_current_user)):
     
     cart = cart[0]  # Get the first matching cart
     cart_index = carts.index(cart)
-    
+    message = f"{cart.get('products')[0]['title']} and {len(cart.get('products'))-1} others"
     for item in cart.get('products', []):
         reduce_stock(item.get('title'), item.get('quantity'))
     
-    carts[cart_index] = {}  # Clear the cart after checkout
+    carts[cart_index] = {}
+    ## TODO: write an email with the cart and saying it will be delivered shortly
+    # Clear the cart after checkout
     ##cart_manager.save_data(carts)  # Save the updated carts data
-    
+    send_email("waitwut8@gmail.com", "waitwut8@gmail.com", "Order Confirmation", personalize_message(user_name, message))
     return {"message": "Checkout successful"}
 
 def reduce_stock(product_name, quantity):
@@ -285,15 +290,33 @@ def reduce_stock(product_name, quantity):
     
     return product['stock']
     
+  
+def personalize_message(name, message):
+    return f"""
+        <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cart Checkout</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="checkout-message">
+            <h1>Dear, {name}</h1>
+            <h2>Thank you for your purchase!</h2>
+            <p>Your order of {message} has been successfully placed.</p>
+        </div>
+    </body>
+    </html>
+    """
+  
     
 @app.get("/promo", status_code = 200)
 
 async def get_promo():
-    """_summary_
-
-    Returns:
-        _type_: _description_
-    """    
+    
     return get_promo_code()
     
 if __name__ == "__main__":
