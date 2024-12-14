@@ -117,23 +117,11 @@ async function addToCart(id) {
     quantity: 1,
     product_name: id,
   })
-  return;
-  // if (response.ok) {
-  //   return true
-  // } else {
-  //   return false
-  // }
-  // try {
-  //   const response = api.post("/cart", {
-  //     quantity: 1,
-  //     product_name: id,
-  //   });
-  //   return response;
-  // } catch (error) {
-  //   console.log(error)
-  // }
-  
+  if (response.status === 200) {
+    alert("Product added to cart");
+  }
 
+  return;
 
 }
 
