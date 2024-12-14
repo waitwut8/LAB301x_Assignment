@@ -15,6 +15,6 @@ class JSONManager:
             else:
                 return data
 
-    def dump_json(self, data):
-        with open(self.file_path, "r+") as file:
-            json.dump(data, file, indent=4)
+    def dump_json(self):
+        with open(self.file_path, "r+", errors = "ignore") as file:
+            json.dump(self.data, file, indent=4)

@@ -36,7 +36,7 @@ def send_email(sender, receiver, subject, message):
 {message}
 """
     html_part = MIMEText(html, "html")
-    message_body.attach(html_part)
+    message_body.attach(html_part) 
     try:
         with smtplib.SMTP(host=host, port=port) as server:
             server.starttls(context=context) # Secure the connection

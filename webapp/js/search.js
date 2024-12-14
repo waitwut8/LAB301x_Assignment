@@ -1,19 +1,19 @@
-async function searchProducts() {
-    const resultsContainer = document.getElementById("search-results");
-    token = getToken();
-    const keyword = document.getElementById("search-input").value;
-    if (keyword == "") {
-      resultsContainer.innerHTML = `<p class="text-danger">Please enter a keyword.</p>`;
-      return;
-    }
-  
-    let response = await api.post(`/search/${keyword}`);
-  
-    const results = await response.data;
-  
+
+
+function searchProducts() {
+  const resultsContainer = document.getElementById("search-results");
+  token = getToken();
+  const keyword = document.getElementById("search-input").value;
+  if (keyword == "") {
+    resultsContainer.innerHTML = `<p class="text-danger">Please enter a keyword.</p>`;
+    return;
+  }
+
+  let response = api.post(`/search/${keyword}`).then((res) => {
+    results = res.data;
     resultsContainer.innerHTML = "";
-  
-    if (response.status === 200) {
+
+    if (res.status === 200) {
       if (results.length === 0) {
         resultsContainer.innerHTML = "<p>No products found</p>";
         return;
@@ -32,24 +32,18 @@ async function searchProducts() {
            
             </div>
         `;
-  
+
         resultsContainer.appendChild(productDiv);
-  
         document.getElementById(`${product.id}`).addEventListener("click", (event) => {
           event.preventDefault();
           addToCart(product.title);
           
-  
-        }, false)
-      //   const addToCartButton = document.getElementById(`${product.id}`);
-        
-      //   addToCartButton.addEventListener("click", async (event) => {
-      //     addToCart(product.title);
-      //     event.preventDefault();
-      //    }, false);
+        });
       });
-   
     } else {
       resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
     }
-  }
+    
+
+  });
+}

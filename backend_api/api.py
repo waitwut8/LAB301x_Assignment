@@ -36,6 +36,7 @@ users = users_manager.data
 products_manager = JSONManager("database/products.json")
 products = products_manager.data
 cart_manager = JSONManager("database/carts.json")
+print(cart_manager.data)
 carts = cart_manager.data
 post_manager = JSONManager("database/posts.json")
 print(post_manager)
@@ -191,7 +192,7 @@ async def add_to_cart(cart_request: CartAddRequest, current_user=Depends(get_cur
         cart_product.quantity = cart_request.quantity
         user_cart['products'].append(cart_product.model_dump())  # Store as dict
     carts[_index] = user_cart  # Update the cart in the main list
-    cart_manager.dump_json(carts)
+    cart_manager.dump_json()
 
 @app.delete("/cart", status_code = 200, dependencies = [Depends(JWTBearer())])
 async def delete_from_cart(
@@ -254,7 +255,7 @@ async def checkout(current_user=Depends(get_current_user)):
     
     cart = cart[0]  # Get the first matching cart
     cart_index = carts.index(cart)
-    message = f"{cart.get('products')[0]['title']} and {len(cart.get('products'))-1} others"
+    message = get_message(cart)
     for item in cart.get('products', []):
         reduce_stock(item.get('title'), item.get('quantity'))
     
@@ -312,7 +313,14 @@ def personalize_message(name, message):
     </html>
     """
   
-    
+def get_message(cart):
+    msg = ""
+    count = 1
+    for i in cart.get('products'):
+        msg += f"{count}. {i.get('quantity')} x {i.get('title')}\n "
+        count+=1
+    return msg
+        
 @app.get("/promo", status_code = 200)
 
 async def get_promo():

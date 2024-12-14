@@ -112,21 +112,29 @@ function logout() {
 //   }
 // }
 
-function addToCart(id) {
-  let response = api.post("/cart", {
+async function addToCart(id) {
+  const response = await api.post("/cart", {
     quantity: 1,
     product_name: id,
-  });
-  // if (!response.ok){
-  //   alert("Failed to add product to cart")
-  // }
-  // if (response.status === 200) {
-  //   alert("Product added to cart");
+  })
+  return;
+  // if (response.ok) {
+  //   return true
   // } else {
-  //   alert("Failed to add product to cart");
+  //   return false
   // }
-  // Prevent page reload
-  return 
+  // try {
+  //   const response = api.post("/cart", {
+  //     quantity: 1,
+  //     product_name: id,
+  //   });
+  //   return response;
+  // } catch (error) {
+  //   console.log(error)
+  // }
+  
+
+
 }
 
 
