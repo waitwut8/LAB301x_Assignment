@@ -8,7 +8,7 @@ from datetime import timezone
 from fastapi import FastAPI, HTTPException, status, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .lib_jwt import sign_jwt, decode_jwt, ExpiryTime, JWTBearer, get_current_user
-from .lib_sender import send_email
+from .lib_sender import send_email, get_email_from_cart
 from .codegenerator import get_promo_code
 from .schemas import (
     LoginInfo,
@@ -263,7 +263,7 @@ async def checkout(current_user=Depends(get_current_user)):
     ## TODO: write an email with the cart and saying it will be delivered shortly
     # Clear the cart after checkout
     ##cart_manager.save_data(carts)  # Save the updated carts data
-    send_email("waitwut8@gmail.com", "waitwut8@gmail.com", "Order Confirmation", personalize_message(user_name, message))
+    send_email("waitwut8@gmail.com", "waitwut8@gmail.com", "Order Confirmation", get_email_from_cart(cart))
     return {"message": "Checkout successful"}
 
 def reduce_stock(product_name, quantity):

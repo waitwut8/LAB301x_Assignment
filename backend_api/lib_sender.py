@@ -48,5 +48,12 @@ def send_email(sender, receiver, subject, message):
         
     except Exception as e:
         print(e)
+def get_email_from_cart(cart):
+    environment = Environment(loader=FileSystemLoader("templates/"))
+    template = environment.get_template("cart_checkout.html")
+    context = {
+        "cart": cart.get("products")
+    }
+    print(template.render(context))
 if __name__ == "__main__":
     send_email(sender = "waitwut8@gmail.com", receiver = "waitwut8@gmail.com", subject = "Hello at 3:31", message="hello world at 3:31")

@@ -36,7 +36,32 @@
     <div class="checkout-message">
         <h1>Dear, {{name}}</h1>
         <h2>Thank you for your purchase!</h2>
-        <p>Your order of {{message}} has been successfully placed.</p>
+        <h2>Your order:</h2>
+        <div
+            class="table-responsive"
+        >
+            <table
+                class="table table-primary table-hover"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart %}
+                    <tr>
+                    <td>{{item.title}}</td>
+                    <td>{{item.quantity}}</td>
+                </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
     </div>
 </body>
 </html>
+
