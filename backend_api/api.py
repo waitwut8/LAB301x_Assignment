@@ -119,14 +119,7 @@ async def getProduct(products_needed: str):
 @app.post("/search/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
 async def search_products(keyword: str, request: Request):
     print(request.headers)
-    # return jmespath.search(
-    #     f"[?contains(title, '{keyword}') || contains(description, '{keyword}')|| contains(category, '{keyword}')|| contains(brand, '{keyword}') && stock > `0`]",
-    #     products,
-    # )
-    # return search(
-    #     f"$[$contains(id, '{keyword}') or $contains(title, '{keyword}') or $contains(description, '{keyword}') or $contains(category, '{keyword}') or $contains(brand, '{keyword}')][stock>0]"
-    #     , products
-    # )
+    
     print(keyword)
     data = search(
         f"$append($[$contains(title, /{keyword}/i) or $contains(description, /{keyword}/i) or $contains(category, /{keyword}/i) or $contains(brand, /{keyword}/i)], [])", products
@@ -245,6 +238,17 @@ async def delete_from_cart(
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="invalid user"
         )
+    if not isinstance(product_name, str) or not isinstance(quantity, (int, float)):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid input types for product_name or quantity"
+        )
+
+    if quantity < 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Quantity cannot be negative"
+        )
     user_cart = search(f"$[userId={user_id}]", carts)
     if not user_cart:
         return {"message": "Cart not found"}
@@ -311,7 +315,7 @@ async def checkout(promo: str, current_user=Depends(get_current_user)):
     print(cart)
     if not cart:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found, try creating one?"
         )
 
       # Get the first matching cart
