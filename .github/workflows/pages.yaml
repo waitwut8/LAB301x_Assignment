@@ -3,7 +3,7 @@ name: Deploy website
 on:
   push:
     branches:
-      - production
+      - main
   pull_request:
 
 jobs:
