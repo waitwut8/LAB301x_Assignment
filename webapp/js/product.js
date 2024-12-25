@@ -13,8 +13,8 @@ async function loadProductPage() {
     let warranty = getDoc("warranty");
     let productDims = product.dimensions;
     let dimString = `${productDims.width} x ${productDims.height} x ${productDims.depth} cm`;
-    element = getDoc("carousel-inner");
-    if ((product.images.length == 1)) {
+    let element = getDoc("carousel-inner");
+    if ((product.images.length === 1)) {
       let noImg =getDoc("noimg")
       noImg.src = product.images[0]
     } else {
@@ -40,16 +40,6 @@ async function loadProductPage() {
         product.category,
       ]
     );
-    let reviews = getDoc("reviews")
-    for (const review of product.reviews) {
-      let review_card = `<div class="col-md-4 mb-3">
-                      <div class="card">
-                          <div class="card-body">
-                              <h5 class="card-title">John Doe</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">5 stars</h6>
-                              <p class="card-text">This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
-                          </div>
-                      </div>
-                  </div>`
-    }
+
+
   }

@@ -1,4 +1,39 @@
 const api_url = "http://127.0.0.1:8000";
+function setModal_Login() {
+  let modal = `<div id="login_modal" class="modal fade">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                            <div class="icon-box">
+                                <i class="material-icons">&#xE5CD;</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h4>Ooops!</h4>\t
+                            <p>Seems like your session has expired. Try logging in again.</p>
+                            <button class="btn btn-success" data-dismiss="modal" id = "login-button">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+
+  let body = document.getElementsByTagName('body')[0]
+  if (body) {
+    body.innerHTML += modal
+  }
+}
+
+function callModal(id){
+  let modal = new bootstrap.Modal(document.getElementById(id), {})
+  modal.show()
+  document.getElementById('login-button').addEventListener('click', function(){
+    window.location.href = "login.html"
+  })
+
+}
 // Add a response interceptor
 const api = axios.create({
   baseURL: api_url,
@@ -13,27 +48,32 @@ api.interceptors.response.use(
     return response;
   },
   async function (error) {
-    console.log(error)
+
     if (
-      error.response.status === 401 &&
-      error.response.data.detail.includes("expire")
+      error.response.status === 401 
+
     ) {
-      let res = await axios.post(
-        `${api_url}/refresh`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("refresh_token")}`,
-          },
-        }
-      );
-      if (res.status != 200) {
-        alert("Your session has expired. Please login again");
-        window.location.href = "login.html";
-      } else {
+      try {
+        let res = await axios.post(
+            `${api_url}/refresh`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("refresh_token")}`,
+              },
+            }
+        )
         localStorage.setItem("refresh_token", res.data["refresh_token"]);
         localStorage.setItem("access_token", res.data["access_token"]);
+        console.log(res.response.status)
+        location.reload();
       }
+      catch (e) {
+        callModal('login_modal')
+      }
+
+
+      
     } else if (error.response.status === 401) {
       console.log(error.response);
       alert("Unauthorized access, please login");
@@ -51,7 +91,10 @@ api.interceptors.request.use(function (config) {
   }
   return config;
 });
-
+function capitalize(s)
+{
+    return String(s[0]).toUpperCase() + String(s).slice(1);
+}
 function getToken() {
   return localStorage.getItem("access_token");
 }
@@ -121,7 +164,7 @@ async function addToCart(id) {
     alert("Product added to cart");
   }
 
-  return;
+
 
 }
 

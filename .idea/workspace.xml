@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0b0e317d-e51d-4855-bbf8-4a1939f632dc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend_api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/codegenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/codegenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/json_man.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/json_man.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/lib_jwt.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/lib_jwt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/lib_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/lib_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/templates/cart_checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/carts.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/carts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/search.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2qTYS8h9hjGiiDWcFcTlKrDFcJT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "production",
+    "last_opened_file_path": "C:/Users/roreo/dev-proj/webapp",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b0e317d-e51d-4855-bbf8-4a1939f632dc" name="Changes" comment="" />
+      <created>1734688031953</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734688031953</updated>
+      <workItem from="1734688032470" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

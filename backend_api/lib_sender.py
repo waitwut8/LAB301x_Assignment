@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from os import getenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from jinja2 import Environment, FileSystemLoader
 load_dotenv()
 def send_email(sender, receiver, subject, message):
     host = getenv("SMTP_HOST")
@@ -48,12 +49,16 @@ def send_email(sender, receiver, subject, message):
         
     except Exception as e:
         print(e)
-def get_email_from_cart(cart):
-    environment = Environment(loader=FileSystemLoader("templates/"))
+def get_email_from_cart(cart, username):
+    loader = FileSystemLoader("backend_api/")
+    environment = Environment(loader=loader)
+    print(loader.list_templates())
     template = environment.get_template("cart_checkout.html")
     context = {
-        "cart": cart.get("products")
+        "cart": cart.get("products"),
+        "name": username
     }
     print(template.render(context))
+    return template.render(context)
 if __name__ == "__main__":
     send_email(sender = "waitwut8@gmail.com", receiver = "waitwut8@gmail.com", subject = "Hello at 3:31", message="hello world at 3:31")

@@ -6,7 +6,7 @@ function login(form) {
       };
       console.log(r);
       e.preventDefault();
-      let x = localStorage.getItem("access_token");
+
   
       let res = await axios.post(`${api_url}/login`, r);
   
@@ -17,8 +17,10 @@ function login(form) {
   
       localStorage.setItem("access_token", token);
       localStorage.setItem("refresh_token", r_token);
-      if (res.status == 200) {
-        window.location.href = "index.html";
+      localStorage.setItem("user_name", r.username)
+      if (res.status === 200) {
+        window.history.back()
+        
       } else {
         document.getElementById("products").innerHTML =
           "Please try logging in again";

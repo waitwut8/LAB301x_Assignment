@@ -41,13 +41,14 @@ def sign_jwt(user_name: str, user_id: int, expiration: int = ExpiryTime.FIFTEEN_
     payload_refresh = {
         "user_name": user_name,
         "user_id": user_id,
-        "exp": expiry_time + 3600,
+        "exp": expiry_time + 1,
         "iat": datetime.now(timezone.utc).timestamp(),
     }
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
     refresh_token = jwt.encode(payload_refresh, JWT_SECRET, algorithm=JWT_ALGORITHM)
     return {
         "user_name": user_name,
+        
         "user_id": user_id,
         "access_token": token,
         "refresh_token": refresh_token,

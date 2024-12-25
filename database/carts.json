@@ -1,185 +1,19 @@
 [
-    {},
-    {},
-    {},
-    {},
     {
-        "id": "e7651fba-0d34-4be9-a7da-d90c4dbd6bfe",
-        "products": [
-            {
-                "id": "ed8bcb18-d50c-4a33-989e-3fed2fa011fd",
-                "title": "Men Check Shirt",
-                "price": 27.99,
-                "discountPercentage": 14.21,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/thumbnail.png",
-                "quantity": 2,
-                "total": 27.99,
-                "discountedPrice": 24.012621,
-                "discountedTotal": 24.012621
-            },
-            {
-                "id": "15c997cb-c1fb-46e3-8798-8b5249e6c8be",
-                "title": "Eyeshadow Palette with Mirror",
-                "price": 19.99,
-                "discountPercentage": 5.5,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png",
-                "quantity": 1,
-                "total": 19.99,
-                "discountedPrice": 18.890549999999998,
-                "discountedTotal": 18.890549999999998
-            },
-            {
-                "id": "13da2da6-765a-461a-bcf1-27ad487f29d8",
-                "title": "Apple Airpods",
-                "price": 129.99,
-                "discountPercentage": 4.82,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png",
-                "quantity": 1,
-                "total": 129.99,
-                "discountedPrice": 123.72448200000001,
-                "discountedTotal": 123.72448200000001
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 61,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "743f3905-cf99-4f23-b396-3c71e8922bce",
-                "title": "Annibale Colombo Bed",
-                "price": 1899.99,
-                "discountPercentage": 0.29,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
-                "quantity": 1,
-                "total": 1899.99,
-                "discountedPrice": 1894.480029,
-                "discountedTotal": 1894.480029
-            }
-        ],
+        "id": "3f4b6e8b-049a-4b05-9b8b-034a043c4bd8",
+        "products": [],
         "total": 0,
         "discountedTotal": 0,
-        "userId": 207,
+        "userId": 1,
         "totalProducts": 0,
         "totalQuantity": 0
     },
-    {},
     {
-        "id": "93ceb26f-879b-4ba2-9d4e-0b05bf2b5ead",
-        "products": [
-            {
-                "id": "743f3905-cf99-4f23-b396-3c71e8922bce",
-                "title": "Annibale Colombo Bed",
-                "price": 1899.99,
-                "discountPercentage": 0.29,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
-                "quantity": 3,
-                "total": 1899.99,
-                "discountedPrice": 1894.480029,
-                "discountedTotal": 1894.480029
-            }
-        ],
+        "id": "11e3cd92-641a-46db-b2df-00045fbe365a",
+        "products": [],
         "total": 0,
         "discountedTotal": 0,
-        "userId": 1,
-        "totalProducts": 0,
-        "totalQuantity": 0
-    }
-] And Black",
-                "price": 149.99,
-                "discountPercentage": 15.82,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/thumbnail.png",
-                "quantity": 1,
-                "total": 149.99,
-                "discountedPrice": 126.261582,
-                "discountedTotal": 126.261582
-            },
-            {
-                "id": "13da2da6-765a-461a-bcf1-27ad487f29d8",
-                "title": "Apple Airpods",
-                "price": 129.99,
-                "discountPercentage": 4.82,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png",
-                "quantity": 1,
-                "total": 129.99,
-                "discountedPrice": 123.72448200000001,
-                "discountedTotal": 123.72448200000001
-            },
-            {
-                "id": "24993b58-29d3-46fa-98f9-041c01f3b9a2",
-                "title": "Apple AirPods Max Silver",
-                "price": 549.99,
-                "discountPercentage": 11.7,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/thumbnail.png",
-                "quantity": 1,
-                "total": 549.99,
-                "discountedPrice": 485.64117,
-                "discountedTotal": 485.64117
-            },
-            {
-                "id": "b58e2cf7-d0ac-45ac-ac07-53fe1ba6dff0",
-                "title": "Apple MagSafe Battery Pack",
-                "price": 99.99,
-                "discountPercentage": 10.27,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/thumbnail.png",
-                "quantity": 1,
-                "total": 99.99,
-                "discountedPrice": 89.72102699999999,
-                "discountedTotal": 89.72102699999999
-            },
-            {
-                "id": "aaf4bd7a-dcbf-4c79-b230-b219128d2d67",
-                "title": "Samsung Galaxy Tab S8 Plus Grey",
-                "price": 599.99,
-                "discountPercentage": 8.11,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/thumbnail.png",
-                "quantity": 2,
-                "total": 599.99,
-                "discountedPrice": 551.330811,
-                "discountedTotal": 551.330811
-            },
-            {
-                "id": "270de56f-44c2-4169-a47b-3441916fde34",
-                "title": "Bedside Table African Cherry",
-                "price": 299.99,
-                "discountPercentage": 9.58,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
-                "quantity": 1,
-                "total": 299.99,
-                "discountedPrice": 271.250958,
-                "discountedTotal": 271.250958
-            },
-            {
-                "id": "743f3905-cf99-4f23-b396-3c71e8922bce",
-                "title": "Annibale Colombo Bed",
-                "price": 1899.99,
-                "discountPercentage": 0.29,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
-                "quantity": 1,
-                "total": 1899.99,
-                "discountedPrice": 1894.480029,
-                "discountedTotal": 1894.480029
-            },
-            {
-                "id": "e08e0f83-1122-47d7-9679-f905bf80d32f",
-                "title": "Samsung Galaxy Tab White",
-                "price": 349.99,
-                "discountPercentage": 4.82,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/thumbnail.png",
-                "quantity": 3,
-                "total": 349.99,
-                "discountedPrice": 333.120482,
-                "discountedTotal": 333.120482
-            }
-        ],
-        "total": 0,
-        "discountedTotal": 0,
-        "userId": 1,
+        "userId": 206,
         "totalProducts": 0,
         "totalQuantity": 0
     }

@@ -16,5 +16,5 @@ class JSONManager:
                 return data
 
     def dump_json(self):
-        with open(self.file_path, "r+", errors = "ignore") as file:
-            json.dump(self.data, file, indent=4)
+        with open(self.file_path, "w", errors = "replace") as file:
+            json.dump(self.data, file, indent =4)
