@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Literal
-from pydantic import BaseModel, Field, field_serializer, computed_field
+from pydantic import BaseModel, Field, field_serializer, computed_field, ConfigDict
 
 class LoginInfo(BaseModel):
     username: str
@@ -43,6 +43,7 @@ class CartItem(BaseModel):
     id: str
     title: str
     price: float
+
     discountPercentage: float
     thumbnail: str
     quantity: int = 0
@@ -67,11 +68,24 @@ class Cart(BaseModel):
     totalProducts: int = 0
     totalQuantity: int = 0
     
+class Order(BaseModel):
 
-class Post(BaseModel):
-    id: int
-    body: str
-    tags: list[str]
-    reactions: dict[str, int]
-    views: int
+
+    id : str
+    products: list[CartItem]
+    total: float
+    promoCode: str = 'NO CODE'
     userId: int
+    
+
+    @computed_field
+    @property
+    def discountedTotal(self) -> float:
+        try:
+            return self.total * int(self.promoCode[-2:])/100
+        except Exception as e:
+            return self.total
+
+
+    model_config = ConfigDict(extra='ignore')
+    created_at: str = str(datetime.now())

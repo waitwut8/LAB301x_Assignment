@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "8 Weeks",
   "main": "api.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
@@ -13,6 +12,7 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
+    "algoliasearch": "^5.18.0",
     "axios": "^1.7.9"
   },
   "devDependencies": {

@@ -1,143 +1,19 @@
 [
     {
-        "id": "3b04e85b-ad4a-4e15-8e21-8c123efabb0b",
-        "products": [
-            {
-                "id": "8dc95724-9dac-439b-96d1-e7bdd8684cde",
-                "title": "Rolex Datejust Women",
-                "price": 10999.99,
-                "discountPercentage": 17.72,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/thumbnail.png",
-                "quantity": 26,
-                "total": 285999.74,
-                "discountedPrice": 9050.791771999999,
-                "discountedTotal": 235320.58607199998
-            },
-            {
-                "id": "f3108b1f-36db-42c6-b0e8-972e81bbf3c3",
-                "title": "Watch Gold for Women",
-                "price": 799.99,
-                "discountPercentage": 6.37,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/thumbnail.png",
-                "quantity": 3,
-                "total": 2399.9700000000003,
-                "discountedPrice": 749.0306370000001,
-                "discountedTotal": 2247.0919110000004
-            },
-            {
-                "id": "8dc95724-9dac-439b-96d1-e7bdd8684cde",
-                "title": "Rolex Datejust Women",
-                "price": 10999.99,
-                "discountPercentage": 17.72,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/thumbnail.png",
-                "quantity": 1,
-                "total": 10999.99,
-                "discountedPrice": 9050.791771999999,
-                "discountedTotal": 9050.791771999999
-            },
-            {
-                "id": "8dc95724-9dac-439b-96d1-e7bdd8684cde",
-                "title": "Rolex Datejust Women",
-                "price": 10999.99,
-                "discountPercentage": 17.72,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/thumbnail.png",
-                "quantity": 1,
-                "total": 10999.99,
-                "discountedPrice": 9050.791771999999,
-                "discountedTotal": 9050.791771999999
-            },
-            {
-                "id": "050fb6b6-4580-4da7-b1ef-51794a92d5ed",
-                "title": "Apple MacBook Pro 14 Inch Space Grey",
-                "price": 1999.99,
-                "discountPercentage": 9.25,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
-                "quantity": 1,
-                "total": 1999.99,
-                "discountedPrice": 1814.990925,
-                "discountedTotal": 1814.990925
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 1,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 1,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 1,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 1,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "97d22b8b-b724-4ce1-bf92-b4125a5966be",
-                "title": "Essence Mascara Lash Princess",
-                "price": 9.99,
-                "discountPercentage": 7.17,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-                "quantity": 1,
-                "total": 9.99,
-                "discountedPrice": 9.273717,
-                "discountedTotal": 9.273717
-            },
-            {
-                "id": "ece60535-670c-45dd-a4c8-4d5504e5ac48",
-                "title": "Red Lipstick",
-                "price": 12.99,
-                "discountPercentage": 19.03,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png",
-                "quantity": 1,
-                "total": 12.99,
-                "discountedPrice": 10.518003,
-                "discountedTotal": 10.518003
-            },
-            {
-                "id": "ece60535-670c-45dd-a4c8-4d5504e5ac48",
-                "title": "Red Lipstick",
-                "price": 12.99,
-                "discountPercentage": 19.03,
-                "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png",
-                "quantity": 1,
-                "total": 12.99,
-                "discountedPrice": 10.518003,
-                "discountedTotal": 10.518003
-            }
-        ],
-        "total": 0.0,
-        "discountedTotal": 0.0,
+        "id": "3f4b6e8b-049a-4b05-9b8b-034a043c4bd8",
+        "products": [],
+        "total": 0,
+        "discountedTotal": 0,
         "userId": 1,
+        "totalProducts": 0,
+        "totalQuantity": 0
+    },
+    {
+        "id": "11e3cd92-641a-46db-b2df-00045fbe365a",
+        "products": [],
+        "total": 0,
+        "discountedTotal": 0,
+        "userId": 206,
         "totalProducts": 0,
         "totalQuantity": 0
     }

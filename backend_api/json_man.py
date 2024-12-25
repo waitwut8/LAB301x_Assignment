@@ -7,7 +7,7 @@ class JSONManager:
 
     def load_json(self):
         
-        with open(self.file_path) as file:
+        with open(self.file_path, errors = "replace") as file:
             try:
                 data = json.load(file)
             except Exception as e:
@@ -15,6 +15,6 @@ class JSONManager:
             else:
                 return data
 
-    def dump_json(self, data):
-        with open(self.file_path, "r+") as file:
-            json.dump(data, file, indent=4)
+    def dump_json(self):
+        with open(self.file_path, "w", errors = "replace") as file:
+            json.dump(self.data, file, indent =4)
