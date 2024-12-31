@@ -18,11 +18,34 @@
         "totalQuantity": 0
     },
     {
-        "id": "331554c2-02e4-45a7-b0e4-bcd47892896f",
-        "products": [],
+        "id": "a0cfa296-95fe-4a12-9692-68f36255da89",
+        "products": [
+            {
+                "id": "e109fb8e-86f1-403b-ac7c-0182a07071a6",
+                "title": "New DELL XPS 13 9300 Laptop",
+                "price": 1499.99,
+                "discountPercentage": 11.7,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/thumbnail.png",
+                "quantity": 1,
+                "total": 1499.99,
+                "discountedPrice": 1324.49117,
+                "discountedTotal": 1324.49117
+            },
+            {
+                "id": "44079b65-a5f9-46cc-a49b-526cec3c9c78",
+                "title": "Wooden Bathroom Sink With Mirror",
+                "price": 799.99,
+                "discountPercentage": 11.22,
+                "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/thumbnail.png",
+                "quantity": 1,
+                "total": 799.99,
+                "discountedPrice": 710.231122,
+                "discountedTotal": 710.231122
+            }
+        ],
         "total": 0,
         "discountedTotal": 0,
-        "userId": 207,
+        "userId": 208,
         "totalProducts": 0,
         "totalQuantity": 0
     }

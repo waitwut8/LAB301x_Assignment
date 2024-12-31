@@ -60,5 +60,14 @@ def get_email_from_cart(cart, username):
     }
     print(template.render(context))
     return template.render(context)
+
+
+def generic_email(context, template):
+    loader = FileSystemLoader("backend_api/")
+    environment = Environment(loader=loader)
+    print(loader.list_templates())
+    template = environment.get_template(template)
+    print(template.render(context))
+    return template.render(context)
 if __name__ == "__main__":
     send_email(sender = "waitwut8@gmail.com", receiver = "waitwut8@gmail.com", subject = "Hello at 3:31", message="hello world at 3:31")
