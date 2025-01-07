@@ -1,4 +1,5 @@
 const api_url = "http://127.0.0.1:8000";
+localStorage.setItem('loadedBefore', window.location.href)
 function setModal_Login() {
   let modal = `<div id="login_modal" class="modal fade">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -167,6 +168,16 @@ async function addToCart(id) {
 
 
 }
+
+function hideLogin(){
+  if(localStorage.getItem('access_token') && localStorage.getItem('refresh_token')){
+    $("a[href*=login]").hide()
+  }
+}
+if (!window.location.href.endsWith("login.html")){
+  hideLogin()
+}
+
 
 
 

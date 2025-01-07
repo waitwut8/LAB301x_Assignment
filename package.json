@@ -13,7 +13,8 @@
   "private": true,
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.8",
-    "algoliasearch": "^5.18.0"
+    "algoliasearch": "^5.18.0",
+    "simple-datatables": "^9.2.1"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
