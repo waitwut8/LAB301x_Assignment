@@ -16,5 +16,6 @@
     <orderEntry type="library" name="jquery-3.7.1" level="application" />
     <orderEntry type="library" name="simple-datatables" level="application" />
     <orderEntry type="library" name="lodash" level="application" />
+    <orderEntry type="library" name="lodash.js" level="application" />
   </component>
 </module>

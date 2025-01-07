@@ -65,19 +65,20 @@ if __name__ == "__main__":
     order_data = []
     orders = JSONManager('../database/orders.json')
     order_data = orders.data
-    with alive_progress.alive_bar(100) as bar:
-        for i in range(100):
-                user = random.choice(users)
-                
-                try:
-                    user_id = user['id']
-                except:
-                    user_id = random.randint(1, 208)  # Example user ID
-                random_order = generate_random_order(user_id)
-                
-                order_data.append(random_order.model_dump())
-                bar()
-                
+    for i in range(2):
+        with alive_progress.alive_bar(100) as bar:
+            for i in range(100):
+                    user = random.choice(users)
+                    
+                    try:
+                        user_id = user['id']
+                    except:
+                        user_id = random.randint(1, 208)  # Example user ID
+                    random_order = generate_random_order(user_id)
+                    
+                    order_data.append(random_order.model_dump())
+                    bar()
+                    
                 
                 
     orders.data = order_data

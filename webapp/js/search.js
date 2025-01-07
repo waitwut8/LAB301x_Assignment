@@ -3,10 +3,11 @@ const dataset = api.get("/products_name").then((res) => {
     console.log(JSON.stringify(res));
 });
 
-const data = JSON.parse(localStorage.getItem(('data'))).data
+let data = JSON.parse(localStorage.getItem(('data'))).data
 let _input = document.getElementById('search-input');
 let brand_filters = new Set()
 let category_filters = new Set()
+
 
 // constructs the suggestion engine
 var products = new Bloodhound({
@@ -23,12 +24,17 @@ $('#bloodhound .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1,
+        highlighter: function(item){
+            return `<div><button>hello?</button></div>`
+        },
 
     },
     {
         name: 'products',
         source: products
-    });
+    },
+
+);
 window.addEventListener("keydown", (event) =>{
     console.log(event.key)
     if (event.key==="Enter"){
@@ -39,10 +45,11 @@ window.addEventListener("keydown", (event) =>{
 
 
 
-set_filters()
+
 
 const extracted = (product, resultsContainer) => {
     const productDiv = document.createElement("div");
+
     productDiv.className = "product card mb-3";
     productDiv.innerHTML = `
             <div class="card-body">
@@ -62,6 +69,7 @@ const extracted = (product, resultsContainer) => {
         addToCart(product.title).then();
 
     });
+
 }
 
 function searchProducts(keyword, b_filters, c_filters) {
@@ -77,16 +85,19 @@ function searchProducts(keyword, b_filters, c_filters) {
     api.post(`/search/${keyword}`).then((res) => {
         let results = res.data;
         resultsContainer.innerHTML = "";
+        let _set = new Set()
         console.log(b_filters)
         if (res.status === 200) {
             if (results.length === 0) {
                 resultsContainer.innerHTML = "<p>No products found</p>";
                 return;
             }
+
             if (b_filters.size===0 && c_filters.size===0){
                 console.log("no filter")
             results.forEach((product) => {
                 extracted(product, resultsContainer);
+
             });}
             else{
                 console.log("there is a filter: ", b_filters, c_filters)
@@ -97,43 +108,47 @@ function searchProducts(keyword, b_filters, c_filters) {
                     }
                 });
             }
+
         } else {
             resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
         }
+        if (_.isEmpty(category_filters)){
+            dis_filter(new Set())
+        }
+        else{
+            dis_filter(category_filters)
+        }
+
 
 
     });
 }
-function set_filters(){
-    api.get("/get_filters").then((res)=>{
-        let data = res.data
-        console.log(data[0], data[1])
-        let brand_filter = document.getElementById("type-filter");
 
-            let brands =  new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.whitespace,
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                // `states` is an array of state names defined in "The Basics"
-                local: data[0],
-
-            });
-            $('#brand-filter .typeahead').typeahead({
-                    limit:10,
-                    hint: true,
-                    highlight: true,
-                    minLength: 1,
-
-                },
-                {
-                    name: 'products',
-                    source: brands
-                });
-            $("#brand-filter-adder")[0].addEventListener("click", (event) => {
-                event.preventDefault();
-                brand_filters.add($("#brand-search")[0].value)
+function check_for_change() {
+    let checkboxes = $("[type=checkbox][name=checker]")
+    checkboxes.change(function () {
+        let enabledSettings = checkboxes
+            .filter(":checked") // Filter out unchecked boxes.
+            .map(function () { // Extract values using jQuery map.
+                return this.value;
             })
-        for (const el of data[1]){
-            brand_filter.innerHTML+=`
+            .get() // Get array.
+
+        console.log(enabledSettings);
+        category_filters = new Set(enabledSettings)
+        console.log(brand_filters, category_filters)
+        searchProducts($("#search-input")[0].value, brand_filters, category_filters)
+    });
+}
+
+function dis_filter(filter) {
+    console.log(filter)
+    brand_filter = $("#type-filter")[0]
+
+
+        brand_filter.innerHTML=""
+        for (const el of filter) {
+            brand_filter.innerHTML += `
             <div class="form-check">
   <input class="form-check-input  border border-dark" type="checkbox" value="${el}" name = "checker">
   <label class="form-check-label" for="defaultCheck1">
@@ -142,23 +157,22 @@ function set_filters(){
 </div>
 <br>
             `
-            let checkboxes = $("[type=checkbox][name=checker]")
-            checkboxes.change(function() {
-                let enabledSettings = checkboxes
-                    .filter(":checked") // Filter out unchecked boxes.
-                    .map(function() { // Extract values using jQuery map.
-                        return this.value;
-                    })
-                    .get() // Get array.
 
-                console.log(enabledSettings);
-                category_filters = new Set(enabledSettings)
-                console.log(brand_filters, category_filters)
-                searchProducts($("#search-input")[0].value, brand_filters, category_filters)
-            });
 
         }
-    })
+
+    localStorage.setItem("innerTypeHtml", brand_filter.innerHTML)
+    check_for_change();
+
+
+}
+
+
+
+
+
+function show_filters(){
+
 }
 
 

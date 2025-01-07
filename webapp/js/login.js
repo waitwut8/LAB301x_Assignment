@@ -19,7 +19,23 @@ function login(form) {
       localStorage.setItem("refresh_token", r_token);
       localStorage.setItem("user_name", r.username)
       if (res.status === 200) {
-        window.history.back()
+        localStorage.setItem("logged_in", "true")
+        api.get(`/get_role?user_id=${s.user_id}`).then((res)=>{
+          if (res.status === 200) {
+            data = res.data;
+            if (data && data.length > 0) {
+              if (data === 'admin'){
+                window.location.href = "admin_index.html"
+              }
+            }
+          }
+        })
+        if (localStorage.getItem('loadedBefore')){
+          window.location.href = localStorage.getItem('loadedBefore')
+        }
+        else{
+          window.location.href = 'index.html'
+        }
         
       } else {
         document.getElementById("products").innerHTML =

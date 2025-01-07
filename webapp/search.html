@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src = "js/bloodhound.js"></script>
     <script src = "js/typeahead.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +28,9 @@
 
         .search-results {
             margin-top: 20px;
+        }
+        .tt-menu{
+            position: static !important;
         }
 
 
@@ -60,9 +64,9 @@
                         Brand
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body typeahead" id = "brand-filter">
-                        <label for="brand-search"></label><input type="text" name="brand" id="brand-search" class = "typeahead">
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body typeahead container-fluid" id = "brand-filter" style ="height: auto">
+                        <label for="brand-search"></label><input type="text" name="brand border border-primary" id="brand-search" class = "typeahead" style = "height: auto; width: auto;">
                         <button class = "btn btn-primary" id = "brand-filter-adder">Add filter</button>
                     </div>
                 </div>

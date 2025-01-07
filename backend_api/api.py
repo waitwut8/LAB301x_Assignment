@@ -27,6 +27,7 @@ import jinja2
 from .lib_analytics import top_products, rev_over_time, plot_orders_over_time, prod_over_time
 from dotenv import load_dotenv
 from os import getenv
+from .lib_recommender_peer import recommend_for_user, user_item_table
 load_dotenv()
 ## GLOBAL VARIABLES #################################################
 app = FastAPI()
@@ -54,6 +55,8 @@ posts = post_manager.data
 
 order_manager = JSONManager("database/orders.json")
 orders = order_manager.data
+
+
 stages = {
         1: DeliveryState.ST_01,
         2: DeliveryState.ST_02,
@@ -61,6 +64,8 @@ stages = {
         4: DeliveryState.ST_04,
     }
 ## GLOBAL VARIABLES #################################################
+
+
 
 @app.post("/validate", status_code=200)
 async def validate(token: str):
@@ -503,6 +508,17 @@ def update_order_stage(order_id: str, stage: int, current_user = Depends(get_cur
         "order_stage.html")
     )  
 
+@app.get("/rec_products", status_code=200, dependencies=[Depends(JWTBearer())])
+def get_recommended_products(current_user=Depends(get_current_user)):
+    user_id = current_user.get("user_id")
+    
+    table = user_item_table(orders)
+    return recommend_for_user(user_id, orders, table, n=4)
+
+@app.get("/get_role", status_code=200)
+def get_role(user_id: int):
+    return get_user_role(user_id)
+    
 
 if __name__ == "__main__":
     import uvicorn
