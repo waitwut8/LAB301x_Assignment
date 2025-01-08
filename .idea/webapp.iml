@@ -17,5 +17,6 @@
     <orderEntry type="library" name="simple-datatables" level="application" />
     <orderEntry type="library" name="lodash" level="application" />
     <orderEntry type="library" name="lodash.js" level="application" />
+    <orderEntry type="library" name="all" level="application" />
   </component>
 </module>

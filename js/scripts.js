@@ -133,6 +133,7 @@ function getDoc(id) {
 function logout() {
   localStorage.clear();
   alert("Logged out");
+  window.location.href = "index.html"
 }
 
 // async function loadPost(postId) {

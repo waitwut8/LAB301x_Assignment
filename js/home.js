@@ -1,3 +1,20 @@
+let loadUsername = async function () {
+    let username = localStorage.getItem("user_name");
+    let topelement = $(".username-title")[0]
+    let titleelement = $("#username")[0]
+    if (username){
+
+        username = username.slice(0, -1)
+        console.log(username)
+        topelement.innerHTML = username;
+        titleelement.innerHTML = "Hello, " + username;
+    }
+    else{
+        setText(topelement, "Welcome!")
+        setText(titleelement, "Welcome!")
+    }
+}
+loadUsername()
 async function loadHome() {
     const productsContainer = document.querySelector("#row");
   
@@ -18,6 +35,7 @@ async function loadHome() {
     setText(getDoc("company_roles"), comment_username.data[1])
     
   }
+
   function addCards(list_of_items, productsContainer) {
       let carousel_array;
       let isFirst;
@@ -90,14 +108,5 @@ async function loadHome() {
       productsContainer.insertAdjacentHTML("beforeend", productCard);
     }
   }
-  let loadUsername = async function () {
-    let username = localStorage.getItem("user_name");
-    if (username){
-    let element = getDoc("username");
-    username = username.slice(0, -1)
-    console.log(username)
-    setText(element, "Hello, " + capitalize(username));
-    }
-  }
-  loadUsername().then()
+
   
