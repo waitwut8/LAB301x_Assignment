@@ -21,154 +21,174 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container px-4 px-lg-5">
-            
-                    <a class="navbar-brand" href="#!" id = "username" style = "p::first-letter {
-                        text-transform: capitalize;
-                    }">Start Bootstrap</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#!"" role = " button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">More</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li class="nav-item"><a class="nav-link" href="posthome.html">Posts and Stories</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider" />
-                                    </li>
-                                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
-                                </ul>
-            
-                            </li>
-            
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider" />
-                                    </li>
-                                    <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                    <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider" />
-                                    </li>
-                                    <li><a class="dropdown-item btn btn-primary" href="search.html">Search</a></li>
-                                </ul>
-                            </li>
-                        </ul><div class = "row">
-                            
-                        <form class="d-flex col-4 h-15">
-                            
-                            <button class="btn btn-outline-dark" onclick = "logout()">
-                                <i class = "fa-solid fa-right-from-bracket me-1"></i>
-                                Logout
-            
-                            </button>
-                        </form>
-                        <form class="d-flex col-4 h-15" action="login.html">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z" />
-                                    <path
-                                        d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925" />
-                                </svg>
-                                Login
-            
-                            </button>
-                        </form>
-            
-                        <form class="d-flex col-4 h-15" action="cart.html">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <i class="fa-cart-shopping fa-solid me-1"></i>
-                                Cart
-                                
-                            </button>
-                            
+                <div class="container-fluid justify-content-between">
+                    <!-- Left elements -->
+                    <div class="d-flex">
+                        <!-- Brand -->
+                        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                            <img
+                                    src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                                    height="20"
+                                    alt="MDB Logo"
+                                    loading="lazy"
+                                    style="margin-top: 2px;"
+                            />
+                        </a>
+
+                        <!-- Search form -->
+                        <form class="input-group w-auto my-auto d-none d-sm-flex">
+                            <label>
+                                <input
+                                        autocomplete="off"
+                                        type="search"
+                                        class="form-control rounded"
+                                        placeholder="Search"
+                                        style="min-width: 125px;"
+                                />
+                            </label>
+                            <span class="input-group-text border-0 d-none d-lg-flex"
+                            ><i class="fa-regular fa-search"></i
+                            ></span>
                         </form>
                     </div>
-                    </div>
+                    <!-- Left elements -->
+
+                    <!-- Center elements -->
+                    <ul class="navbar-nav flex-row d-none d-md-flex">
+                        <li class="nav-item me-3 me-lg-1 active">
+
+                            <a class="nav-link" href = "index.html">
+                                <i class="fa-regular fa-home fa-2xl  link-info">
+
+                                </i>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1">
+                            <a class="nav-link" href = "login.html">
+                                <span><i class="fa-regular fa-door-open fa-2xl  link-info"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1">
+                            <a class="nav-link" href = "search.html">
+                                <span><i class="fa-regular fa-crate-apple fa-2xl  link-info"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1">
+                            <a class="nav-link"  href = "cart.html">
+                                <span><i class="fa-regular fa-cart-shopping fa-2xl  link-info"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1">
+                            <a class="nav-link" onclick = "logout()">
+                                <span><i class="fa-regular fa-right-from-bracket fa-2xl  link-info"></i></span>
+
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Center elements -->
+
+                    <!-- Right elements -->
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item me-3 me-lg-1">
+                            <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+
+                                <strong class="d-none d-sm-block ms-1 username-title">John</strong>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <!-- Right elements -->
                 </div>
-            </div>
             </nav>
         </header>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
         <div class="container mt-5">
             <div class="row">
-                <div id="carouselExampleSlidesOnly border border-primary bg-dark" class="carousel slide" data-ride="carousel">
-                    
-                    
-                    <div class="carousel-inner" id = "carousel-inner">
-                      
-                      
+                <!-- Product Images -->
+                <div class="col-md-6 mb-4">
+                    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselId"
+                            data-bs-slide="prev"
+                        >
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselId"
+                            data-bs-slide="next"
+                        >
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="false"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                  </div>
+                    
+                </div>
+
+                <!-- Product Details -->
                 <div class="col-md-6">
+                    <h2 class="mb-3" id = "name">Premium Wireless Headphones</h2>
+                    <p class="text-muted mb-4" id = "id">SKU: WH1000XM4</p>
+                    <div class="mb-3">
+                        <span class="h4 me-2" id = "lowprice">$349.99</span>
+                        <span class="text-muted" id = "highprice"><s>$399.99</s></span>
+                    </div>
+
                     
-                    <h1 id = "title">Product Name</h1>
-                    <p class="text-muted" id = "category">Category: Product Category</p><div
-                    class="card border-primary sticky-top" style ="width:40%"
-                >
-                    <img class="card-img-top float-right" src="holder.js/100px180/" alt="Title" id = "noimg"/>
-                    
+                    <p class="mb-4" id = "description">Experience premium sound quality and industry-leading noise cancellation with these wireless
+                        headphones. Perfect for music lovers and frequent travelers.</p>
+
+                    <div class="mb-4">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
+                    </div>
+                    <button class="btn btn-primary btn-lg mb-3 me-2">
+                        <i class="bi bi-cart-plus"></i> Add to Cart
+                    </button>
+
+                    <div class="mt-4">
+                        <h5>Key Features:</h5>
+                        <ul>
+                            <li>Dimensions: <p id = "dimensions"></p></li>
+                            <li>Warranty: <p id = "warranty"></p></li>
+                            <li>Shipping: <p id = "shipping"></p></li>
+                            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+                        </ul>
+                    </div>
                 </div>
-                    <h2 id = "prices">$99.99</h2>
-                    <p class="lead">This is a short description of the product. It highlights the key features and benefits of the product.</p>
-                    <button class="btn btn-primary btn-lg">Add to Cart</button>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h3>Product Details</h3>
-                    <p id = "description">Here you can provide a more detailed description of the product. Include information about its specifications, usage, and any other relevant details that might help the customer make a purchasing decision.</p>
-                <table class="table table-striped mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col">Specification</th>
-                            <th scope="col">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Weight</td>
-                            <td id = "weight">1.5 kg</td>
-                        </tr>
-                        <tr>
-                            <td>Dimensions</td>
-                            <td id =  "dimensions">25 x 15 x 10 cm</td>
-                        </tr>
-                        <tr>
-                            <td>Warranty</td>
-                            <td id = "warranty">2 years</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            <div class = "row mt-5" id = "reviews">
-               
-                
-                
             </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // function changeImage(event, src) {
+            //     document.getElementById('mainImage').src = src;
+            //     document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            //     event.target.classList.add('active');
+            // }
+        </script>
         <script src = "js/scripts.js"></script>
         <script src = "js/product.js"></script>
         <script>
-            loadProductPage()
+
+            loadPage()
         </script>
         <!-- Bootstrap JavaScript Libraries -->
         <script
