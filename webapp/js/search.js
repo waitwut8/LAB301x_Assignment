@@ -2,13 +2,22 @@ const dataset = api.get("/products_name").then((res) => {
     localStorage.setItem('data', JSON.stringify(res));
     console.log(JSON.stringify(res));
 });
+api.get("/get_filters").then((res)=> {
+        localStorage.setItem("filters", JSON.stringify(res.data))
 
-let data = JSON.parse(localStorage.getItem(('data'))).data
+
+    }
+);
+let data = JSON.parse(localStorage.getItem(('data')))
+let filter_data = JSON.parse(localStorage.getItem("filters"))
 let _input = document.getElementById('search-input');
-let brand_filters = new Set()
-let category_filters = new Set()
-
-
+let brand_filters = new Set(filter_data[0])
+let category_filters = new Set(filter_data[1])
+let b_filters = new Set(), c_filters = new Set();
+$("btn-success").on('click', function(){
+    const keyword = $("#search-input").val()
+    searchProducts(keyword, b_filters, c_filters)
+})
 // constructs the suggestion engine
 var products = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -18,15 +27,17 @@ var products = new Bloodhound({
 
 });
 
-
+var brands = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: filter_data[0]
+})
 $('#bloodhound .typeahead').typeahead({
         limit:10,
         hint: true,
         highlight: true,
         minLength: 1,
-        highlighter: function(item){
-            return `<div><button>hello?</button></div>`
-        },
+
 
     },
     {
@@ -35,16 +46,36 @@ $('#bloodhound .typeahead').typeahead({
     },
 
 );
+
 window.addEventListener("keydown", (event) =>{
     console.log(event.key)
     if (event.key==="Enter"){
         console.log($("#search-input")[0].value)
-        searchProducts($("#search-input")[0].value, brand_filters, category_filters)
+        searchProducts($("#search-input")[0].value, b_filters, c_filters)
     }
 })
 
 
+$('#o_bloodhound .o_typeahead').typeahead({
+        limit:10,
+        hint: true,
+        highlight: true,
+        minLength: 1,
 
+
+    },
+    {
+        name: 'products',
+        source: brands
+    },
+
+);
+$("#brand-filter-adder").on('click', function () {
+    addToBFilter()
+})
+function addToBFilter(){
+    b_filters.add($('.o_typeahead.tt-input').val())
+}
 
 
 const extracted = (product, resultsContainer) => {
@@ -54,7 +85,7 @@ const extracted = (product, resultsContainer) => {
     productDiv.innerHTML = `
             <div class="card-body">
                 <h4 class="card-title">${product.title}</h4>
-                <img src="${product.thumbnail}" class="img-fluid float-left mr-3" alt="${product.title}" />
+                <img src="${product.thumbnail}" class="img-fluid float-left mr-3 mb-1" alt="${product.title}" />
                 <p class="card-text">${product.description}</p>
                 <hr>
 
@@ -112,12 +143,7 @@ function searchProducts(keyword, b_filters, c_filters) {
         } else {
             resultsContainer.innerHTML = `<p class="text-danger">try <a href = 'login.html'>logging in</a>.</p>`;
         }
-        if (_.isEmpty(category_filters)){
-            dis_filter(new Set())
-        }
-        else{
-            dis_filter(category_filters)
-        }
+
 
 
 
@@ -133,15 +159,15 @@ function check_for_change() {
                 return this.value;
             })
             .get() // Get array.
-
+        
         console.log(enabledSettings);
-        category_filters = new Set(enabledSettings)
-        console.log(brand_filters, category_filters)
-        searchProducts($("#search-input")[0].value, brand_filters, category_filters)
+        c_filters = new Set(enabledSettings)
+
+        searchProducts($("#search-input")[0].value, b_filters, c_filters)
     });
 }
 
-function dis_filter(filter) {
+function make_filter(filter) {
     console.log(filter)
     brand_filter = $("#type-filter")[0]
 
@@ -166,6 +192,7 @@ function dis_filter(filter) {
 
 
 }
+make_filter(category_filters)
 
 
 

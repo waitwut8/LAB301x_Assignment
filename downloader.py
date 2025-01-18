@@ -1,9 +1,10 @@
 from backend_api.json_man import JSONManager
 from backend_api.lib_search import search
 import requests
+import os
 # from alive_progress import alive_bar
 products = JSONManager("database/products.json").data
-images = search("$.images", products)
+images = search("$.thumbnail", products)
 folders = []
 session = requests.Session()
 # note: very large list
@@ -17,9 +18,18 @@ for image in images:
     image = image.replace("%20", "_").split("/")
     file_name = f"{image[-2]}_{image[-1]}"
     try:
-        resp = session.get(org_image)
-        print(f"Downloading {file_name}")
-        open(f"images/{file_name}", "wb").write(resp.content)
+        
+        
+        if not os.path.exists("images"):
+            os.makedirs("images")
+
+        if not os.path.exists(f"images/tb_{file_name}"):
+            print(f"Downloading {file_name}")
+            resp = session.get(org_image)
+            open(f"images/{file_name}", "wb").write(resp.content)
+        else:
+            print(f"{file_name} already exists, skipping download.")
+   
     except Exception as e:
         print(e)
 #     folder_array = i.split("/")[6:8]

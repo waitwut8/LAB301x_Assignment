@@ -129,11 +129,9 @@ async def getProduct(products_needed: str):
     return random.sample(products, int(products_needed))
 
 
-@app.post("/search/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
+@app.post("/search/{keyword}", status_code=200)
 async def search_products(keyword: str, request: Request):
-    print(request.headers)
-    
-    print(keyword)
+
     data = search(
         f"$append($[$contains(title, /{keyword}/i) or $contains(description, /{keyword}/i) or $contains(category, /{keyword}/i) or $contains(brand, /{keyword}/i)], [])", products
     )

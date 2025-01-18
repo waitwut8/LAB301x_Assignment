@@ -2,6 +2,7 @@ let loadUsername = async function () {
     let username = localStorage.getItem("user_name");
     let topelement = $(".username-title")[0]
     let titleelement = $("#username")[0]
+
     if (username){
 
         username = username.slice(0, -1)
@@ -12,6 +13,7 @@ let loadUsername = async function () {
     else{
         setText(topelement, "Welcome!")
         setText(titleelement, "Welcome!")
+
     }
 }
 loadUsername()
@@ -33,8 +35,25 @@ async function loadHome() {
     let comment_username = await api.get(`/username`)
     setText(getDoc("comment_username"), comment_username.data[0])
     setText(getDoc("company_roles"), comment_username.data[1])
+    listenToNavBar()
     
   }
+
+function listenToNavBar(){
+    console.log($(".nav-link").on('click', function(){
+        console.log("clicked?")
+    }))
+
+}
+function hideLogin(){
+    if(localStorage.getItem('access_token') && localStorage.getItem('refresh_token')){
+        $(".fa-door-open").hide()
+    }
+}
+if (!window.location.href.endsWith("login.html")){
+    hideLogin()
+}
+
 
   function addCards(list_of_items, productsContainer) {
       let carousel_array;
@@ -68,13 +87,13 @@ async function loadHome() {
                   isFirst = true
                   carousel_array.push(`
           <div class="carousel-item active ms-5">
-      <img src="${i}" class=" " alt="..." style = "width: 10vw" data-bs-interval="2000">
+      <img src="${i}" class=" " alt="..." style = "width: 10em" data-bs-interval="2000">
     </div>
           `);
               } else {
                   carousel_array.push(`
           <div class="carousel-item ms-5">
-      <img src="${i}" class="  " alt="..." style = "width: 10vw" data-bs-interval="2000">
+      <img src="${i}" class="  " alt="..." style = "width: 10em" data-bs-interval="2000">
     </div>
           `);
               }
@@ -84,7 +103,7 @@ async function loadHome() {
 
 
       const productCard = `
-                      <div class="col-lg-4 mb-5">
+                      <div class="col-lg-4 mb-5 border border-black">
                             <div class="carousel slide" id = "${product.id}" data-bs-ride="carousel">
                                 
                                 <div class = "carousel-inner">
@@ -95,7 +114,7 @@ async function loadHome() {
                             </div>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2" id = "">$${discounted}</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">${product.title}</h5></a>
+                                    <h5 class="card-title mb-3">${product.title}</h5>
                                     <p class="card-text mb-0">${message}</p>
                                     <div>
                                     <button type = "button" class = "btn btn-outline-secondary" value = "Add to cart">Add to Cart</button>

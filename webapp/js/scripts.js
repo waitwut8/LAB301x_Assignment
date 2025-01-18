@@ -170,15 +170,22 @@ async function addToCart(id) {
 
 }
 
-function hideLogin(){
-  if(localStorage.getItem('access_token') && localStorage.getItem('refresh_token')){
-    $("a[href*=login]").hide()
+let load_Username = async function () {
+  let username = localStorage.getItem("user_name");
+  let topelement = $(".username-title")[0]
+
+  if (username){
+
+    username = username.slice(0, -1)
+    console.log(username)
+    topelement.innerHTML = username;
+    titleelement.innerHTML = "Hello, " + username;
+  }
+  else{
+    setText(topelement, "Welcome!")
+
   }
 }
-if (!window.location.href.endsWith("login.html")){
-  hideLogin()
-}
-
 
 
 
