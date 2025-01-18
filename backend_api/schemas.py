@@ -1,6 +1,13 @@
 from datetime import datetime
 from typing import Literal
+import enum
 from pydantic import BaseModel, Field, field_serializer, computed_field, ConfigDict
+
+class DeliveryState(str, enum.Enum):
+    ST_01 = "Processing"
+    ST_02 = "At delivery warehouse"
+    ST_03 = "On the way"
+    ST_04 = "Delivered"
 
 class LoginInfo(BaseModel):
     username: str
@@ -76,6 +83,7 @@ class Order(BaseModel):
     total: float
     promoCode: str = 'NO CODE'
     userId: int
+    progress: str = 'Processing'
     
 
     @computed_field

@@ -13,14 +13,14 @@ users = user_man.data
 
 def generate_random_order(user_id: int) -> Order:
     # Randomly select products for the order
-    num_products = random.randint(1, 10)
+    num_products = random.randint(1, 5)
     
     selected_products = random.sample(products, num_products)
 
     # Create order products with random quantities
     order_products = []
     for product in selected_products:
-        quantity = random.randint(1, 9)
+        quantity = random.randint(1, 5)
         # order_product = Product(
         #     title=product['title'],
         #     price=product['price'],
@@ -48,7 +48,7 @@ def generate_random_order(user_id: int) -> Order:
     total_price = sum(p.price * p.quantity for p in order_products)
 
     # Create the order
-    order = Order(
+    order = Order( 
         id = str(uuid.uuid4()),
         userId=user_id,
         products=order_products,
@@ -62,10 +62,12 @@ def generate_random_order(user_id: int) -> Order:
 
 # Example usage
 if __name__ == "__main__":
-    
-        for i in range(20):
-            with alive_progress.alive_bar(20) as _bar:
-                for j in range(20):
+    order_data = []
+    orders = JSONManager('../database/orders.json')
+    order_data = orders.data
+    for i in range(2):
+        with alive_progress.alive_bar(100) as bar:
+            for i in range(100):
                     user = random.choice(users)
                     
                     try:
@@ -73,13 +75,13 @@ if __name__ == "__main__":
                     except:
                         user_id = random.randint(1, 208)  # Example user ID
                     random_order = generate_random_order(user_id)
-                    orders = JSONManager('../database/orders.json')
-                    order_data = orders.data
-                    order_data.append(random_order.model_dump())
                     
-                    orders.data = order_data
-                    _bar()
-            
-            
-            orders.dump_json()
+                    order_data.append(random_order.model_dump())
+                    bar()
+                    
+                
+                
+    orders.data = order_data
+
+    orders.dump_json()
     

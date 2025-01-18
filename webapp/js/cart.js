@@ -51,7 +51,7 @@ async function cartLoad() {
     </div>
     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
-        onclick=" reduceCart('${product.title}');this.parentNode.querySelector('input[type=number]').stepDown();">
+        onclick=" reduceCart('${product.title}').then((res)=>{this.parentNode.querySelector('input[type=number]').stepDown()})">
         <i class="fas fa-minus"></i>
       </button>
 
@@ -59,7 +59,7 @@ async function cartLoad() {
         class="form-control form-control-sm" style = "width:5rem" readonly/>
 
       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
-        onclick=" increaseCart('${product.title}');this.parentNode.querySelector('input[type=number]').stepUp();">
+        onclick=" increaseCart('${product.title}').then((res)=>{this.parentNode.querySelector('input[type=number]').stepUp()});">
         <i class="fas fa-plus"></i>
       </button>
     </div>

@@ -19,7 +19,7 @@ function makeGraph(url, ctx, type, title) {
                     }
                 }
             })
-            console.log(res.data[2])
+            console.log(res.data[2], title)
             localStorage.setItem(title, res.data[2])
             return res
 

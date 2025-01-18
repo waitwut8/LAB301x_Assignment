@@ -9,7 +9,7 @@ from datetime import timezone
 from fastapi import FastAPI, HTTPException, status, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from .lib_jwt import sign_jwt, decode_jwt, ExpiryTime, JWTBearer, get_current_user
-from .lib_sender import send_email, get_email_from_cart
+from .lib_sender import send_email, get_email_from_cart, generic_email
 from .codegenerator import get_promo_code
 from .schemas import (
     LoginInfo,
@@ -19,6 +19,7 @@ from .schemas import (
     Cart,
     CartItem,
     Order,
+    DeliveryState,
 )
 from .schemas import KeywordFilter as keywordFilter
 from .json_man import JSONManager
@@ -26,8 +27,9 @@ import jinja2
 from .lib_analytics import top_products, rev_over_time, plot_orders_over_time, prod_over_time
 from dotenv import load_dotenv
 from os import getenv
+from .lib_recommender_peer import recommend_for_user, user_item_table
 load_dotenv()
-
+## GLOBAL VARIABLES #################################################
 app = FastAPI()
 alg_appid = getenv("ALGOLIA_APPID")
 alg_searchkey = getenv("ALGOLIA_SEARCHKEY")
@@ -38,6 +40,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 users_manager = JSONManager("database/users.json")
 users = users_manager.data
@@ -54,6 +57,16 @@ order_manager = JSONManager("database/orders.json")
 orders = order_manager.data
 
 
+stages = {
+        1: DeliveryState.ST_01,
+        2: DeliveryState.ST_02,
+        3: DeliveryState.ST_03,
+        4: DeliveryState.ST_04,
+    }
+## GLOBAL VARIABLES #################################################
+
+
+
 @app.post("/validate", status_code=200)
 async def validate(token: str):
     return decode_jwt(token)
@@ -65,7 +78,7 @@ async def login(login_info: LoginInfo):
     
     if user := check_login(login_info.username, login_info.password):
         print(f"User {login_info.username} logged in")
-        return sign_jwt(user.get("username"), user.get("id"), ExpiryTime.FIFTEEN_MINUTES)
+        return sign_jwt(user.get("username"), user.get("id"), 3600*2)
     else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
@@ -116,18 +129,9 @@ async def getProduct(products_needed: str):
     return random.sample(products, int(products_needed))
 
 
-@app.post("/search/{keyword}", status_code=200, dependencies=[Depends(JWTBearer())])
+@app.post("/search/{keyword}", status_code=200)
 async def search_products(keyword: str, request: Request):
-    print(request.headers)
-    # return jmespath.search(
-    #     f"[?contains(title, '{keyword}') || contains(description, '{keyword}')|| contains(category, '{keyword}')|| contains(brand, '{keyword}') && stock > `0`]",
-    #     products,
-    # )
-    # return search(
-    #     f"$[$contains(id, '{keyword}') or $contains(title, '{keyword}') or $contains(description, '{keyword}') or $contains(category, '{keyword}') or $contains(brand, '{keyword}')][stock>0]"
-    #     , products
-    # )
-    print(keyword)
+
     data = search(
         f"$append($[$contains(title, /{keyword}/i) or $contains(description, /{keyword}/i) or $contains(category, /{keyword}/i) or $contains(brand, /{keyword}/i)], [])", products
     )
@@ -241,9 +245,22 @@ async def delete_from_cart(
 ):
 
     user_id = current_user.get("user_id")
+    product_name = cart_request.product_name
+    quantity = cart_request.quantity
     if not user_id:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="invalid user"
+        )
+    if not isinstance(product_name, str) or not isinstance(quantity, (int, float)):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid input types for product_name or quantity"
+        )
+
+    if quantity < 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Quantity cannot be negative"
         )
     user_cart = search(f"$[userId={user_id}]", carts)
     if not user_cart:
@@ -311,12 +328,12 @@ async def checkout(promo: str, current_user=Depends(get_current_user)):
     print(cart)
     if not cart:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found, try creating one?"
         )
 
       # Get the first matching cart
     cart_index = carts.index(cart)
-    message = get_message(cart)
+
     for item in cart.get("products", []):
         reduce_stock(item.get("title"), item.get("quantity"))
 
@@ -388,14 +405,6 @@ def personalize_message(name, message):
     """
 
 
-def get_message(cart):
-    msg = ""
-    count = 1
-    for i in cart.get("products"):
-        msg += f"{count}. {i.get('quantity')} x {i.get('title')}\n "
-        count += 1
-    return msg
-
 
 @app.get("/promo", status_code=200)
 async def get_promo():
@@ -433,7 +442,82 @@ async def get_prod_over_time():
 @app.get("/get_algolia_keys", status_code=200)
 async def get_search_keys():
     return [alg_appid, alg_searchkey]
+
+
+@app.get("/get_orders", status_code=200)
+def get_orders():
     
+    return orders
+
+@app.get("/get_filters", status_code=200)
+def get_filters():
+    brands = list(set(search("$[].brand", products)))
+    categories = list(set(search("$[].category", products)))
+    return [brands, categories]
+
+def get_user_role(user_id: int) -> str:
+    user = search(f"$[id={user_id}]", users)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
+        )
+    return user.get("role", "user")
+# TODO: endpoint for spec. orders
+def get_user_name(user_id: int) -> str:
+    user = search(f"$[id={user_id}]", users)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
+        )
+    return user.get("firstName", "user")
+
+
+@app.post("/update_order_stage", status_code=200, dependencies=[Depends(JWTBearer())])
+def update_order_stage(order_id: str, stage: int, current_user = Depends(get_current_user)):
+    print(current_user)
+    role = get_user_role(current_user.get("user_id"))
+
+    if role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, detail="Unauthorized"
+        )
+    order = search(f"$[id='{order_id}']", orders)
+    index = orders.index(order)
+    if not order:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
+        )
+    
+    
+    if stage not in stages.keys():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid stage"
+        )
+    order["progress"] = stages.get(stage)
+    orders[index] = order 
+    send_email(
+        "waitwut8@gmail.com",
+        "waitwut8@gmail.com",
+        "Your order is on it's way",
+        generic_email({
+            "user": get_user_role(current_user.get("user_id")),
+            "stage": stages.get(stage).value
+        },
+        "order_stage.html")
+    )  
+
+@app.get("/rec_products", status_code=200, dependencies=[Depends(JWTBearer())])
+def get_recommended_products(current_user=Depends(get_current_user)):
+    user_id = current_user.get("user_id")
+    
+    table = user_item_table(orders)
+    return recommend_for_user(user_id, orders, table, n=4)
+
+@app.get("/get_role", status_code=200)
+def get_role(user_id: int):
+    return get_user_role(user_id)
+    
+
 if __name__ == "__main__":
     import uvicorn
 

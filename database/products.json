@@ -24,9 +24,9 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 24,
         "images": [
-            "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+            "assets/images/Essence_Mascara_Lash_Princess_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+        "thumbnail": "assets/images/Essence_Mascara_Lash_Princess_thumbnail.png"
     },
     {
         "id": "15c997cb-c1fb-46e3-8798-8b5249e6c8be",
@@ -53,9 +53,9 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 32,
         "images": [
-            "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
+            "assets/images/Eyeshadow_Palette_with_Mirror_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+        "thumbnail": "assets/images/Eyeshadow_Palette_with_Mirror_thumbnail.png"
     },
     {
         "id": "012de47f-f23b-49d2-a753-2d610a7952e1",
@@ -82,9 +82,9 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 25,
         "images": [
-            "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png"
+            "assets/images/Powder_Canister_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+        "thumbnail": "assets/images/Powder_Canister_thumbnail.png"
     },
     {
         "id": "ece60535-670c-45dd-a4c8-4d5504e5ac48",
@@ -111,9 +111,9 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 6,
         "images": [
-            "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/1.png"
+            "assets/images/Red_Lipstick_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png"
+        "thumbnail": "assets/images/Red_Lipstick_thumbnail.png"
     },
     {
         "id": "1557c974-3669-46af-b7a4-fc4812f92f8b",
@@ -140,9 +140,9 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 46,
         "images": [
-            "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/1.png"
+            "assets/images/Red_Nail_Polish_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/thumbnail.png"
+        "thumbnail": "assets/images/Red_Nail_Polish_thumbnail.png"
     },
     {
         "id": "fddc8eea-a5f3-4a94-ae3a-4b5df132f38b",
@@ -169,11 +169,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 20,
         "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
+            "assets/images/Calvin_Klein_CK_One_1.png",
+            "assets/images/Calvin_Klein_CK_One_2.png",
+            "assets/images/Calvin_Klein_CK_One_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png"
+        "thumbnail": "assets/images/Calvin_Klein_CK_One_thumbnail.png"
     },
     {
         "id": "c837ea6f-26d2-4b8b-8657-f393470aa22c",
@@ -200,11 +200,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/3.png"
+            "assets/images/Chanel_Coco_Noir_Eau_De_1.png",
+            "assets/images/Chanel_Coco_Noir_Eau_De_2.png",
+            "assets/images/Chanel_Coco_Noir_Eau_De_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png"
+        "thumbnail": "assets/images/Chanel_Coco_Noir_Eau_De_thumbnail.png"
     },
     {
         "id": "64e0a6fe-cf13-4ff6-8c9c-b811850875f8",
@@ -231,11 +231,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 8,
         "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/3.png"
+            "assets/images/Dior_J'adore_1.png",
+            "assets/images/Dior_J'adore_2.png",
+            "assets/images/Dior_J'adore_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/thumbnail.png"
+        "thumbnail": "assets/images/Dior_J'adore_thumbnail.png"
     },
     {
         "id": "3750cd9e-2ad8-47d1-9787-0883d394d5ac",
@@ -262,11 +262,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 9,
         "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
+            "assets/images/Dolce_Shine_Eau_de_1.png",
+            "assets/images/Dolce_Shine_Eau_de_2.png",
+            "assets/images/Dolce_Shine_Eau_de_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png"
+        "thumbnail": "assets/images/Dolce_Shine_Eau_de_thumbnail.png"
     },
     {
         "id": "12068e47-aeef-4afa-beab-128ae05831e2",
@@ -293,11 +293,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 10,
         "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/3.png"
+            "assets/images/Gucci_Bloom_Eau_de_1.png",
+            "assets/images/Gucci_Bloom_Eau_de_2.png",
+            "assets/images/Gucci_Bloom_Eau_de_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png"
+        "thumbnail": "assets/images/Gucci_Bloom_Eau_de_thumbnail.png"
     },
     {
         "id": "743f3905-cf99-4f23-b396-3c71e8922bce",
@@ -324,11 +324,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/3.png"
+            "assets/images/Annibale_Colombo_Bed_1.png",
+            "assets/images/Annibale_Colombo_Bed_2.png",
+            "assets/images/Annibale_Colombo_Bed_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png"
+        "thumbnail": "assets/images/Annibale_Colombo_Bed_thumbnail.png"
     },
     {
         "id": "06a61c38-398b-4131-8e45-f71692ef934b",
@@ -355,11 +355,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+            "assets/images/Annibale_Colombo_Sofa_1.png",
+            "assets/images/Annibale_Colombo_Sofa_2.png",
+            "assets/images/Annibale_Colombo_Sofa_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
+        "thumbnail": "assets/images/Annibale_Colombo_Sofa_thumbnail.png"
     },
     {
         "id": "270de56f-44c2-4169-a47b-3441916fde34",
@@ -386,11 +386,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+            "assets/images/Bedside_Table_African_Cherry_1.png",
+            "assets/images/Bedside_Table_African_Cherry_2.png",
+            "assets/images/Bedside_Table_African_Cherry_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png"
+        "thumbnail": "assets/images/Bedside_Table_African_Cherry_thumbnail.png"
     },
     {
         "id": "e139d98e-591a-4f2c-80ba-669dc976f221",
@@ -417,11 +417,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+            "assets/images/Knoll_Saarinen_Executive_Conference_Chair_1.png",
+            "assets/images/Knoll_Saarinen_Executive_Conference_Chair_2.png",
+            "assets/images/Knoll_Saarinen_Executive_Conference_Chair_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png"
+        "thumbnail": "assets/images/Knoll_Saarinen_Executive_Conference_Chair_thumbnail.png"
     },
     {
         "id": "44079b65-a5f9-46cc-a49b-526cec3c9c78",
@@ -448,11 +448,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/3.png"
+            "assets/images/Wooden_Bathroom_Sink_With_Mirror_1.png",
+            "assets/images/Wooden_Bathroom_Sink_With_Mirror_2.png",
+            "assets/images/Wooden_Bathroom_Sink_With_Mirror_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/thumbnail.png"
+        "thumbnail": "assets/images/Wooden_Bathroom_Sink_With_Mirror_thumbnail.png"
     },
     {
         "id": "050fb6b6-4580-4da7-b1ef-51794a92d5ed",
@@ -479,11 +479,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/3.png"
+            "assets/images/Apple_MacBook_Pro_14_Inch_Space_Grey_1.png",
+            "assets/images/Apple_MacBook_Pro_14_Inch_Space_Grey_2.png",
+            "assets/images/Apple_MacBook_Pro_14_Inch_Space_Grey_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        "thumbnail": "assets/images/Apple_MacBook_Pro_14_Inch_Space_Grey_thumbnail.png"
     },
     {
         "id": "5a4ecd46-9808-4c26-be7c-3858df15af2b",
@@ -509,11 +509,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/3.png"
+            "assets/images/Asus_Zenbook_Pro_Dual_Screen_Laptop_1.png",
+            "assets/images/Asus_Zenbook_Pro_Dual_Screen_Laptop_2.png",
+            "assets/images/Asus_Zenbook_Pro_Dual_Screen_Laptop_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/thumbnail.png"
+        "thumbnail": "assets/images/Asus_Zenbook_Pro_Dual_Screen_Laptop_thumbnail.png"
     },
     {
         "id": "befa7ba1-11d8-46ab-a790-933d453315cc",
@@ -539,11 +539,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/3.png"
+            "assets/images/Huawei_Matebook_X_Pro_1.png",
+            "assets/images/Huawei_Matebook_X_Pro_2.png",
+            "assets/images/Huawei_Matebook_X_Pro_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/thumbnail.png"
+        "thumbnail": "assets/images/Huawei_Matebook_X_Pro_thumbnail.png"
     },
     {
         "id": "08b4fe78-6c6c-47fb-9fb1-dce9241c32aa",
@@ -569,11 +569,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/3.png"
+            "assets/images/Lenovo_Yoga_920_1.png",
+            "assets/images/Lenovo_Yoga_920_2.png",
+            "assets/images/Lenovo_Yoga_920_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/thumbnail.png"
+        "thumbnail": "assets/images/Lenovo_Yoga_920_thumbnail.png"
     },
     {
         "id": "e109fb8e-86f1-403b-ac7c-0182a07071a6",
@@ -599,11 +599,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/3.png"
+            "assets/images/New_DELL_XPS_13_9300_Laptop_1.png",
+            "assets/images/New_DELL_XPS_13_9300_Laptop_2.png",
+            "assets/images/New_DELL_XPS_13_9300_Laptop_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/thumbnail.png"
+        "thumbnail": "assets/images/New_DELL_XPS_13_9300_Laptop_thumbnail.png"
     },
     {
         "id": "a5dbc595-54a4-4210-8592-b8e42a4ba54b",
@@ -630,12 +630,12 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 4,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/4.png"
+            "assets/images/Blue_&_Black_Check_Shirt_1.png",
+            "assets/images/Blue_&_Black_Check_Shirt_2.png",
+            "assets/images/Blue_&_Black_Check_Shirt_3.png",
+            "assets/images/Blue_&_Black_Check_Shirt_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/thumbnail.png"
+        "thumbnail": "assets/images/Blue_&_Black_Check_Shirt_thumbnail.png"
     },
     {
         "id": "0987eb5a-1b45-4cea-b028-7e58b58f7682",
@@ -662,12 +662,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 4,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/4.png"
+            "assets/images/Gigabyte_Aorus_Men_Tshirt_1.png",
+            "assets/images/Gigabyte_Aorus_Men_Tshirt_2.png",
+            "assets/images/Gigabyte_Aorus_Men_Tshirt_3.png",
+            "assets/images/Gigabyte_Aorus_Men_Tshirt_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/thumbnail.png"
+        "thumbnail": "assets/images/Gigabyte_Aorus_Men_Tshirt_thumbnail.png"
     },
     {
         "id": "428e6762-0516-4b66-965a-cd398260a969",
@@ -694,12 +694,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/4.png"
+            "assets/images/Man_Plaid_Shirt_1.png",
+            "assets/images/Man_Plaid_Shirt_2.png",
+            "assets/images/Man_Plaid_Shirt_3.png",
+            "assets/images/Man_Plaid_Shirt_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png"
+        "thumbnail": "assets/images/Man_Plaid_Shirt_thumbnail.png"
     },
     {
         "id": "0ec12535-b3f8-4f8a-a1bf-574ac27d439f",
@@ -726,12 +726,12 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/4.png"
+            "assets/images/Man_Short_Sleeve_Shirt_1.png",
+            "assets/images/Man_Short_Sleeve_Shirt_2.png",
+            "assets/images/Man_Short_Sleeve_Shirt_3.png",
+            "assets/images/Man_Short_Sleeve_Shirt_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/thumbnail.png"
+        "thumbnail": "assets/images/Man_Short_Sleeve_Shirt_thumbnail.png"
     },
     {
         "id": "ed8bcb18-d50c-4a33-989e-3fed2fa011fd",
@@ -758,12 +758,12 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 8,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/4.png"
+            "assets/images/Men_Check_Shirt_1.png",
+            "assets/images/Men_Check_Shirt_2.png",
+            "assets/images/Men_Check_Shirt_3.png",
+            "assets/images/Men_Check_Shirt_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/thumbnail.png"
+        "thumbnail": "assets/images/Men_Check_Shirt_thumbnail.png"
     },
     {
         "id": "4744b455-082b-4209-9e13-9ed3f50a0575",
@@ -790,12 +790,12 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/4.png"
+            "assets/images/Nike_Air_Jordan_1_Red_And_Black_1.png",
+            "assets/images/Nike_Air_Jordan_1_Red_And_Black_2.png",
+            "assets/images/Nike_Air_Jordan_1_Red_And_Black_3.png",
+            "assets/images/Nike_Air_Jordan_1_Red_And_Black_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/thumbnail.png"
+        "thumbnail": "assets/images/Nike_Air_Jordan_1_Red_And_Black_thumbnail.png"
     },
     {
         "id": "baf223e0-7428-4b5a-b626-15ce76ff25b0",
@@ -822,12 +822,12 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/4.png"
+            "assets/images/Nike_Baseball_Cleats_1.png",
+            "assets/images/Nike_Baseball_Cleats_2.png",
+            "assets/images/Nike_Baseball_Cleats_3.png",
+            "assets/images/Nike_Baseball_Cleats_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png"
+        "thumbnail": "assets/images/Nike_Baseball_Cleats_thumbnail.png"
     },
     {
         "id": "64dd6cae-56c7-48f8-8b65-edfe5f43ffff",
@@ -854,12 +854,12 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 9,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/4.png"
+            "assets/images/Puma_Future_Rider_Trainers_1.png",
+            "assets/images/Puma_Future_Rider_Trainers_2.png",
+            "assets/images/Puma_Future_Rider_Trainers_3.png",
+            "assets/images/Puma_Future_Rider_Trainers_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/thumbnail.png"
+        "thumbnail": "assets/images/Puma_Future_Rider_Trainers_thumbnail.png"
     },
     {
         "id": "6a45b43b-0664-4f48-82c2-b8abb5d6ee4c",
@@ -886,12 +886,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/4.png"
+            "assets/images/Sports_Sneakers_Off_White_&_Red_1.png",
+            "assets/images/Sports_Sneakers_Off_White_&_Red_2.png",
+            "assets/images/Sports_Sneakers_Off_White_&_Red_3.png",
+            "assets/images/Sports_Sneakers_Off_White_&_Red_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/thumbnail.png"
+        "thumbnail": "assets/images/Sports_Sneakers_Off_White_&_Red_thumbnail.png"
     },
     {
         "id": "056f3a1e-e8d6-4d13-85dd-793041a1b44e",
@@ -918,12 +918,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/3.png",
-            "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/4.png"
+            "assets/images/Sports_Sneakers_Off_White_Red_1.png",
+            "assets/images/Sports_Sneakers_Off_White_Red_2.png",
+            "assets/images/Sports_Sneakers_Off_White_Red_3.png",
+            "assets/images/Sports_Sneakers_Off_White_Red_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/thumbnail.png"
+        "thumbnail": "assets/images/Sports_Sneakers_Off_White_Red_thumbnail.png"
     },
     {
         "id": "3a2eccd8-c133-413c-b717-4a08e7abcf2c",
@@ -950,11 +950,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 10,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/3.png"
+            "assets/images/Brown_Leather_Belt_Watch_1.png",
+            "assets/images/Brown_Leather_Belt_Watch_2.png",
+            "assets/images/Brown_Leather_Belt_Watch_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/thumbnail.png"
+        "thumbnail": "assets/images/Brown_Leather_Belt_Watch_thumbnail.png"
     },
     {
         "id": "ea360935-0018-4abd-b4a2-322a7c5c4ff0",
@@ -981,11 +981,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Longines%20Master%20Collection/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Longines%20Master%20Collection/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Longines%20Master%20Collection/3.png"
+            "assets/images/Longines_Master_Collection_1.png",
+            "assets/images/Longines_Master_Collection_2.png",
+            "assets/images/Longines_Master_Collection_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Longines%20Master%20Collection/thumbnail.png"
+        "thumbnail": "assets/images/Longines_Master_Collection_thumbnail.png"
     },
     {
         "id": "f42c5240-5fb7-4fad-9bd2-7403abca5ca1",
@@ -1012,11 +1012,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Date%20Black%20Dial/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Date%20Black%20Dial/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Date%20Black%20Dial/3.png"
+            "assets/images/Rolex_Cellini_Date_Black_Dial_1.png",
+            "assets/images/Rolex_Cellini_Date_Black_Dial_2.png",
+            "assets/images/Rolex_Cellini_Date_Black_Dial_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Date%20Black%20Dial/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Cellini_Date_Black_Dial_thumbnail.png"
     },
     {
         "id": "5a812975-a415-4545-b138-215ef7371773",
@@ -1043,11 +1043,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Moonphase/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Moonphase/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Moonphase/3.png"
+            "assets/images/Rolex_Cellini_Moonphase_1.png",
+            "assets/images/Rolex_Cellini_Moonphase_2.png",
+            "assets/images/Rolex_Cellini_Moonphase_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Cellini%20Moonphase/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Cellini_Moonphase_thumbnail.png"
     },
     {
         "id": "7ca20d39-0da7-4e10-8ba0-d3ad820bd926",
@@ -1074,11 +1074,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/3.png"
+            "assets/images/Rolex_Datejust_1.png",
+            "assets/images/Rolex_Datejust_2.png",
+            "assets/images/Rolex_Datejust_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Datejust_thumbnail.png"
     },
     {
         "id": "b777ede9-87d1-4b1b-a1c0-a7d72d8f7e64",
@@ -1105,11 +1105,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/1.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/2.png",
-            "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/3.png"
+            "assets/images/Rolex_Submariner_Watch_1.png",
+            "assets/images/Rolex_Submariner_Watch_2.png",
+            "assets/images/Rolex_Submariner_Watch_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Submariner_Watch_thumbnail.png"
     },
     {
         "id": "af5bc76c-5046-4635-bf32-e52036679778",
@@ -1136,10 +1136,10 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/2.png"
+            "assets/images/Amazon_Echo_Plus_1.png",
+            "assets/images/Amazon_Echo_Plus_2.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/thumbnail.png"
+        "thumbnail": "assets/images/Amazon_Echo_Plus_thumbnail.png"
     },
     {
         "id": "13da2da6-765a-461a-bcf1-27ad487f29d8",
@@ -1166,11 +1166,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/2.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/3.png"
+            "assets/images/Apple_Airpods_1.png",
+            "assets/images/Apple_Airpods_2.png",
+            "assets/images/Apple_Airpods_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png"
+        "thumbnail": "assets/images/Apple_Airpods_thumbnail.png"
     },
     {
         "id": "24993b58-29d3-46fa-98f9-041c01f3b9a2",
@@ -1197,9 +1197,9 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/1.png"
+            "assets/images/Apple_AirPods_Max_Silver_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/thumbnail.png"
+        "thumbnail": "assets/images/Apple_AirPods_Max_Silver_thumbnail.png"
     },
     {
         "id": "65ec9dc2-f551-43de-8440-2a5c5c7e2eba",
@@ -1226,9 +1226,9 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 8,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/1.png"
+            "assets/images/Apple_Airpower_Wireless_Charger_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/thumbnail.png"
+        "thumbnail": "assets/images/Apple_Airpower_Wireless_Charger_thumbnail.png"
     },
     {
         "id": "afdc4b06-b542-4cec-b968-7671b8d6b977",
@@ -1255,9 +1255,9 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 8,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20HomePod%20Mini%20Cosmic%20Grey/1.png"
+            "assets/images/Apple_HomePod_Mini_Cosmic_Grey_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20HomePod%20Mini%20Cosmic%20Grey/thumbnail.png"
+        "thumbnail": "assets/images/Apple_HomePod_Mini_Cosmic_Grey_thumbnail.png"
     },
     {
         "id": "fa17c8d0-6000-4812-8445-b41b2c44ef60",
@@ -1284,10 +1284,10 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 43,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/2.png"
+            "assets/images/Apple_iPhone_Charger_1.png",
+            "assets/images/Apple_iPhone_Charger_2.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/thumbnail.png"
+        "thumbnail": "assets/images/Apple_iPhone_Charger_thumbnail.png"
     },
     {
         "id": "b58e2cf7-d0ac-45ac-ac07-53fe1ba6dff0",
@@ -1314,10 +1314,10 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 4,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/2.png"
+            "assets/images/Apple_MagSafe_Battery_Pack_1.png",
+            "assets/images/Apple_MagSafe_Battery_Pack_2.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/thumbnail.png"
+        "thumbnail": "assets/images/Apple_MagSafe_Battery_Pack_thumbnail.png"
     },
     {
         "id": "33e0cb4b-1256-4374-8375-bcde9d2fcf9d",
@@ -1344,11 +1344,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/2.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/3.png"
+            "assets/images/Apple_Watch_Series_4_Gold_1.png",
+            "assets/images/Apple_Watch_Series_4_Gold_2.png",
+            "assets/images/Apple_Watch_Series_4_Gold_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/thumbnail.png"
+        "thumbnail": "assets/images/Apple_Watch_Series_4_Gold_thumbnail.png"
     },
     {
         "id": "609e61a4-eb94-4312-8d94-a44376a05a95",
@@ -1375,9 +1375,9 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 19,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Beats%20Flex%20Wireless%20Earphones/1.png"
+            "assets/images/Beats_Flex_Wireless_Earphones_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Beats%20Flex%20Wireless%20Earphones/thumbnail.png"
+        "thumbnail": "assets/images/Beats_Flex_Wireless_Earphones_thumbnail.png"
     },
     {
         "id": "a22be7c4-e3ec-475a-a412-97df3c475881",
@@ -1404,12 +1404,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 19,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/2.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/3.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/4.png"
+            "assets/images/iPhone_12_Silicone_Case_with_MagSafe_Plum_1.png",
+            "assets/images/iPhone_12_Silicone_Case_with_MagSafe_Plum_2.png",
+            "assets/images/iPhone_12_Silicone_Case_with_MagSafe_Plum_3.png",
+            "assets/images/iPhone_12_Silicone_Case_with_MagSafe_Plum_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/thumbnail.png"
+        "thumbnail": "assets/images/iPhone_12_Silicone_Case_with_MagSafe_Plum_thumbnail.png"
     },
     {
         "id": "697adb28-fb36-4e3d-b06a-d2848ce1854b",
@@ -1436,10 +1436,10 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 10,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/1.png",
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/2.png"
+            "assets/images/Monopod_1.png",
+            "assets/images/Monopod_2.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/thumbnail.png"
+        "thumbnail": "assets/images/Monopod_thumbnail.png"
     },
     {
         "id": "4285f146-b11c-4401-b832-524eb347e791",
@@ -1466,9 +1466,9 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 4,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Lamp%20with%20iPhone/1.png"
+            "assets/images/Selfie_Lamp_with_iPhone_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Lamp%20with%20iPhone/thumbnail.png"
+        "thumbnail": "assets/images/Selfie_Lamp_with_iPhone_thumbnail.png"
     },
     {
         "id": "ed9807f2-d8ce-4b08-90b5-06a3d1abe0f9",
@@ -1495,9 +1495,9 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 10,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Stick%20Monopod/1.png"
+            "assets/images/Selfie_Stick_Monopod_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Stick%20Monopod/thumbnail.png"
+        "thumbnail": "assets/images/Selfie_Stick_Monopod_thumbnail.png"
     },
     {
         "id": "1c68e237-55ba-4579-b662-38aa9d15a9bc",
@@ -1524,9 +1524,9 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/mobile-accessories/TV%20Studio%20Camera%20Pedestal/1.png"
+            "assets/images/TV_Studio_Camera_Pedestal_1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/TV%20Studio%20Camera%20Pedestal/thumbnail.png"
+        "thumbnail": "assets/images/TV_Studio_Camera_Pedestal_thumbnail.png"
     },
     {
         "id": "497640e9-0d68-41bc-b1c3-7bee17dd8fdd",
@@ -1552,12 +1552,12 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/motorcycle/Generic%20Motorcycle/1.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Generic%20Motorcycle/2.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Generic%20Motorcycle/3.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Generic%20Motorcycle/4.png"
+            "assets/images/Generic_Motorcycle_1.png",
+            "assets/images/Generic_Motorcycle_2.png",
+            "assets/images/Generic_Motorcycle_3.png",
+            "assets/images/Generic_Motorcycle_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/Generic%20Motorcycle/thumbnail.png"
+        "thumbnail": "assets/images/Generic_Motorcycle_thumbnail.png"
     },
     {
         "id": "7f9020af-bf37-476e-90db-cce7800a6928",
@@ -1584,12 +1584,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/motorcycle/Kawasaki%20Z800/1.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Kawasaki%20Z800/2.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Kawasaki%20Z800/3.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Kawasaki%20Z800/4.png"
+            "assets/images/Kawasaki_Z800_1.png",
+            "assets/images/Kawasaki_Z800_2.png",
+            "assets/images/Kawasaki_Z800_3.png",
+            "assets/images/Kawasaki_Z800_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/Kawasaki%20Z800/thumbnail.png"
+        "thumbnail": "assets/images/Kawasaki_Z800_thumbnail.png"
     },
     {
         "id": "fd7f475b-194c-4b83-b3d6-48e3f00cb00f",
@@ -1616,12 +1616,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/motorcycle/MotoGP%20CI.H1/1.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/MotoGP%20CI.H1/2.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/MotoGP%20CI.H1/3.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/MotoGP%20CI.H1/4.png"
+            "assets/images/MotoGP_CI.H1_1.png",
+            "assets/images/MotoGP_CI.H1_2.png",
+            "assets/images/MotoGP_CI.H1_3.png",
+            "assets/images/MotoGP_CI.H1_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/MotoGP%20CI.H1/thumbnail.png"
+        "thumbnail": "assets/images/MotoGP_CI.H1_thumbnail.png"
     },
     {
         "id": "3d2d0506-ad7b-4d2d-a543-6a9cdb38e54e",
@@ -1648,12 +1648,12 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/motorcycle/Scooter%20Motorcycle/1.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Scooter%20Motorcycle/2.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Scooter%20Motorcycle/3.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Scooter%20Motorcycle/4.png"
+            "assets/images/Scooter_Motorcycle_1.png",
+            "assets/images/Scooter_Motorcycle_2.png",
+            "assets/images/Scooter_Motorcycle_3.png",
+            "assets/images/Scooter_Motorcycle_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/Scooter%20Motorcycle/thumbnail.png"
+        "thumbnail": "assets/images/Scooter_Motorcycle_thumbnail.png"
     },
     {
         "id": "eca3913e-ac7f-4e49-a56f-71f54109b69f",
@@ -1680,12 +1680,12 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/1.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/2.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/3.png",
-            "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/4.png"
+            "assets/images/Sportbike_Motorcycle_1.png",
+            "assets/images/Sportbike_Motorcycle_2.png",
+            "assets/images/Sportbike_Motorcycle_3.png",
+            "assets/images/Sportbike_Motorcycle_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/thumbnail.png"
+        "thumbnail": "assets/images/Sportbike_Motorcycle_thumbnail.png"
     },
     {
         "id": "4a22e39f-8d67-43b0-8384-6056865945ba",
@@ -1712,11 +1712,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 32,
         "images": [
-            "https://cdn.dummyjson.com/products/images/skin-care/Attitude%20Super%20Leaves%20Hand%20Soap/1.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Attitude%20Super%20Leaves%20Hand%20Soap/2.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Attitude%20Super%20Leaves%20Hand%20Soap/3.png"
+            "assets/images/Attitude_Super_Leaves_Hand_Soap_1.png",
+            "assets/images/Attitude_Super_Leaves_Hand_Soap_2.png",
+            "assets/images/Attitude_Super_Leaves_Hand_Soap_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/skin-care/Attitude%20Super%20Leaves%20Hand%20Soap/thumbnail.png"
+        "thumbnail": "assets/images/Attitude_Super_Leaves_Hand_Soap_thumbnail.png"
     },
     {
         "id": "3ea310d0-2713-4a0b-bc73-dc52ae99272b",
@@ -1743,11 +1743,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 23,
         "images": [
-            "https://cdn.dummyjson.com/products/images/skin-care/Olay%20Ultra%20Moisture%20Shea%20Butter%20Body%20Wash/1.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Olay%20Ultra%20Moisture%20Shea%20Butter%20Body%20Wash/2.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Olay%20Ultra%20Moisture%20Shea%20Butter%20Body%20Wash/3.png"
+            "assets/images/Olay_Ultra_Moisture_Shea_Butter_Body_Wash_1.png",
+            "assets/images/Olay_Ultra_Moisture_Shea_Butter_Body_Wash_2.png",
+            "assets/images/Olay_Ultra_Moisture_Shea_Butter_Body_Wash_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/skin-care/Olay%20Ultra%20Moisture%20Shea%20Butter%20Body%20Wash/thumbnail.png"
+        "thumbnail": "assets/images/Olay_Ultra_Moisture_Shea_Butter_Body_Wash_thumbnail.png"
     },
     {
         "id": "3500eef2-aa92-4f34-827a-6179562e3359",
@@ -1774,11 +1774,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 48,
         "images": [
-            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/1.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/2.png",
-            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/3.png"
+            "assets/images/Vaseline_Men_Body_and_Face_Lotion_1.png",
+            "assets/images/Vaseline_Men_Body_and_Face_Lotion_2.png",
+            "assets/images/Vaseline_Men_Body_and_Face_Lotion_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png"
+        "thumbnail": "assets/images/Vaseline_Men_Body_and_Face_Lotion_thumbnail.png"
     },
     {
         "id": "ccab5bc8-9425-4912-995a-3ce9a1705037",
@@ -1805,11 +1805,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/3.png"
+            "assets/images/iPhone_5s_1.png",
+            "assets/images/iPhone_5s_2.png",
+            "assets/images/iPhone_5s_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/thumbnail.png"
+        "thumbnail": "assets/images/iPhone_5s_thumbnail.png"
     },
     {
         "id": "e5e6a42e-5cce-404e-a9c3-cedb569b3b7d",
@@ -1836,11 +1836,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/3.png"
+            "assets/images/iPhone_6_1.png",
+            "assets/images/iPhone_6_2.png",
+            "assets/images/iPhone_6_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/thumbnail.png"
+        "thumbnail": "assets/images/iPhone_6_thumbnail.png"
     },
     {
         "id": "64394358-ef92-4013-8902-566c499e9ff3",
@@ -1867,11 +1867,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
+            "assets/images/iPhone_13_Pro_1.png",
+            "assets/images/iPhone_13_Pro_2.png",
+            "assets/images/iPhone_13_Pro_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png"
+        "thumbnail": "assets/images/iPhone_13_Pro_thumbnail.png"
     },
     {
         "id": "5155bb21-ea6d-421b-a4e7-edbca52e6493",
@@ -1898,11 +1898,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/3.png"
+            "assets/images/iPhone_X_1.png",
+            "assets/images/iPhone_X_2.png",
+            "assets/images/iPhone_X_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
+        "thumbnail": "assets/images/iPhone_X_thumbnail.png"
     },
     {
         "id": "848239c5-3135-4a36-968e-1443b39c6509",
@@ -1929,11 +1929,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/3.png"
+            "assets/images/Oppo_A57_1.png",
+            "assets/images/Oppo_A57_2.png",
+            "assets/images/Oppo_A57_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/thumbnail.png"
+        "thumbnail": "assets/images/Oppo_A57_thumbnail.png"
     },
     {
         "id": "7cc5540f-aa8c-4c31-9bd0-3a08620a85e0",
@@ -1960,11 +1960,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/3.png"
+            "assets/images/Oppo_F19_Pro_Plus_1.png",
+            "assets/images/Oppo_F19_Pro_Plus_2.png",
+            "assets/images/Oppo_F19_Pro_Plus_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/thumbnail.png"
+        "thumbnail": "assets/images/Oppo_F19_Pro_Plus_thumbnail.png"
     },
     {
         "id": "ef4baa2f-b5d7-46bf-9be5-ced6de315874",
@@ -1991,12 +1991,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/3.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/4.png"
+            "assets/images/Oppo_K1_1.png",
+            "assets/images/Oppo_K1_2.png",
+            "assets/images/Oppo_K1_3.png",
+            "assets/images/Oppo_K1_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/thumbnail.png"
+        "thumbnail": "assets/images/Oppo_K1_thumbnail.png"
     },
     {
         "id": "8150bde8-5faa-4936-b674-357148020130",
@@ -2023,11 +2023,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/3.png"
+            "assets/images/Realme_C35_1.png",
+            "assets/images/Realme_C35_2.png",
+            "assets/images/Realme_C35_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/thumbnail.png"
+        "thumbnail": "assets/images/Realme_C35_thumbnail.png"
     },
     {
         "id": "ca66f0ae-a0a1-4995-9826-2e856a0806ef",
@@ -2054,11 +2054,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/3.png"
+            "assets/images/Realme_X_1.png",
+            "assets/images/Realme_X_2.png",
+            "assets/images/Realme_X_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/thumbnail.png"
+        "thumbnail": "assets/images/Realme_X_thumbnail.png"
     },
     {
         "id": "8526ddef-01d9-4d74-b3c9-922a1a5b23f0",
@@ -2085,11 +2085,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/3.png"
+            "assets/images/Realme_XT_1.png",
+            "assets/images/Realme_XT_2.png",
+            "assets/images/Realme_XT_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/thumbnail.png"
+        "thumbnail": "assets/images/Realme_XT_thumbnail.png"
     },
     {
         "id": "2e66458a-049f-44ae-98b5-b521915bc502",
@@ -2116,11 +2116,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/3.png"
+            "assets/images/Samsung_Galaxy_S7_1.png",
+            "assets/images/Samsung_Galaxy_S7_2.png",
+            "assets/images/Samsung_Galaxy_S7_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/thumbnail.png"
+        "thumbnail": "assets/images/Samsung_Galaxy_S7_thumbnail.png"
     },
     {
         "id": "6a301c15-bf64-49e9-a3b2-661b1802b7c3",
@@ -2147,11 +2147,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/3.png"
+            "assets/images/Samsung_Galaxy_S8_1.png",
+            "assets/images/Samsung_Galaxy_S8_2.png",
+            "assets/images/Samsung_Galaxy_S8_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/thumbnail.png"
+        "thumbnail": "assets/images/Samsung_Galaxy_S8_thumbnail.png"
     },
     {
         "id": "aac6806b-2688-4da0-860d-ea7b6db971a3",
@@ -2178,11 +2178,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/3.png"
+            "assets/images/Samsung_Galaxy_S10_1.png",
+            "assets/images/Samsung_Galaxy_S10_2.png",
+            "assets/images/Samsung_Galaxy_S10_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/thumbnail.png"
+        "thumbnail": "assets/images/Samsung_Galaxy_S10_thumbnail.png"
     },
     {
         "id": "4c0f20a7-846f-41ae-a266-ffd5e78454aa",
@@ -2209,11 +2209,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/3.png"
+            "assets/images/Vivo_S1_1.png",
+            "assets/images/Vivo_S1_2.png",
+            "assets/images/Vivo_S1_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/thumbnail.png"
+        "thumbnail": "assets/images/Vivo_S1_thumbnail.png"
     },
     {
         "id": "faa38a07-73e9-4119-b27b-9e8d2972afc3",
@@ -2240,11 +2240,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/3.png"
+            "assets/images/Vivo_V9_1.png",
+            "assets/images/Vivo_V9_2.png",
+            "assets/images/Vivo_V9_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/thumbnail.png"
+        "thumbnail": "assets/images/Vivo_V9_thumbnail.png"
     },
     {
         "id": "1f249653-3c53-468e-86a8-d91793aa2eb6",
@@ -2271,11 +2271,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 4,
         "images": [
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/1.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/2.png",
-            "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/3.png"
+            "assets/images/Vivo_X21_1.png",
+            "assets/images/Vivo_X21_2.png",
+            "assets/images/Vivo_X21_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/thumbnail.png"
+        "thumbnail": "assets/images/Vivo_X21_thumbnail.png"
     },
     {
         "id": "3846d40b-84b0-4445-8e26-92f6554b8237",
@@ -2302,11 +2302,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 18,
         "images": [
-            "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/1.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/2.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/3.png"
+            "assets/images/Black_Sun_Glasses_1.png",
+            "assets/images/Black_Sun_Glasses_2.png",
+            "assets/images/Black_Sun_Glasses_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/thumbnail.png"
+        "thumbnail": "assets/images/Black_Sun_Glasses_thumbnail.png"
     },
     {
         "id": "171b5a2b-b4ae-49d8-956d-9cb7a607b7c6",
@@ -2333,11 +2333,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/1.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/2.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/3.png"
+            "assets/images/Classic_Sun_Glasses_1.png",
+            "assets/images/Classic_Sun_Glasses_2.png",
+            "assets/images/Classic_Sun_Glasses_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/thumbnail.png"
+        "thumbnail": "assets/images/Classic_Sun_Glasses_thumbnail.png"
     },
     {
         "id": "fd6eab24-8259-4e02-87a7-8bcbcfe72f59",
@@ -2364,11 +2364,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 12,
         "images": [
-            "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/1.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/2.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/3.png"
+            "assets/images/Green_and_Black_Glasses_1.png",
+            "assets/images/Green_and_Black_Glasses_2.png",
+            "assets/images/Green_and_Black_Glasses_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/thumbnail.png"
+        "thumbnail": "assets/images/Green_and_Black_Glasses_thumbnail.png"
     },
     {
         "id": "7c9a96d4-a8a9-403e-bba1-9d8550f95fbe",
@@ -2395,11 +2395,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 19,
         "images": [
-            "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/1.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/2.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/3.png"
+            "assets/images/Party_Glasses_1.png",
+            "assets/images/Party_Glasses_2.png",
+            "assets/images/Party_Glasses_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/thumbnail.png"
+        "thumbnail": "assets/images/Party_Glasses_thumbnail.png"
     },
     {
         "id": "d436d688-8d97-48a3-af9c-74ae549da94f",
@@ -2426,11 +2426,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 11,
         "images": [
-            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/1.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/2.png",
-            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/3.png"
+            "assets/images/Sunglasses_1.png",
+            "assets/images/Sunglasses_2.png",
+            "assets/images/Sunglasses_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/thumbnail.png"
+        "thumbnail": "assets/images/Sunglasses_thumbnail.png"
     },
     {
         "id": "31058ea3-feac-47e3-a13a-d9eccf24ed1c",
@@ -2457,12 +2457,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/1.png",
-            "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/2.png",
-            "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/3.png",
-            "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/4.png"
+            "assets/images/iPad_Mini_2021_Starlight_1.png",
+            "assets/images/iPad_Mini_2021_Starlight_2.png",
+            "assets/images/iPad_Mini_2021_Starlight_3.png",
+            "assets/images/iPad_Mini_2021_Starlight_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/thumbnail.png"
+        "thumbnail": "assets/images/iPad_Mini_2021_Starlight_thumbnail.png"
     },
     {
         "id": "aaf4bd7a-dcbf-4c79-b230-b219128d2d67",
@@ -2489,12 +2489,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/1.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/2.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/3.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/4.png"
+            "assets/images/Samsung_Galaxy_Tab_S8_Plus_Grey_1.png",
+            "assets/images/Samsung_Galaxy_Tab_S8_Plus_Grey_2.png",
+            "assets/images/Samsung_Galaxy_Tab_S8_Plus_Grey_3.png",
+            "assets/images/Samsung_Galaxy_Tab_S8_Plus_Grey_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/thumbnail.png"
+        "thumbnail": "assets/images/Samsung_Galaxy_Tab_S8_Plus_Grey_thumbnail.png"
     },
     {
         "id": "e08e0f83-1122-47d7-9679-f905bf80d32f",
@@ -2521,12 +2521,12 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/1.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/2.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/3.png",
-            "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/4.png"
+            "assets/images/Samsung_Galaxy_Tab_White_1.png",
+            "assets/images/Samsung_Galaxy_Tab_White_2.png",
+            "assets/images/Samsung_Galaxy_Tab_White_3.png",
+            "assets/images/Samsung_Galaxy_Tab_White_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/thumbnail.png"
+        "thumbnail": "assets/images/Samsung_Galaxy_Tab_White_thumbnail.png"
     },
     {
         "id": "42577e38-9f31-423a-a86b-ea2ec708ec07",
@@ -2553,14 +2553,14 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/1.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/2.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/3.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/4.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/5.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/6.png"
+            "assets/images/300_Touring_1.png",
+            "assets/images/300_Touring_2.png",
+            "assets/images/300_Touring_3.png",
+            "assets/images/300_Touring_4.png",
+            "assets/images/300_Touring_5.png",
+            "assets/images/300_Touring_6.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/thumbnail.png"
+        "thumbnail": "assets/images/300_Touring_thumbnail.png"
     },
     {
         "id": "d5345b66-8dc9-40d7-b514-968b2fa8c422",
@@ -2588,14 +2588,14 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/1.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/2.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/3.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/4.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/5.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/6.png"
+            "assets/images/Charger_SXT_RWD_1.png",
+            "assets/images/Charger_SXT_RWD_2.png",
+            "assets/images/Charger_SXT_RWD_3.png",
+            "assets/images/Charger_SXT_RWD_4.png",
+            "assets/images/Charger_SXT_RWD_5.png",
+            "assets/images/Charger_SXT_RWD_6.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        "thumbnail": "assets/images/Charger_SXT_RWD_thumbnail.png"
     },
     {
         "id": "f9063559-bb48-4706-a76e-c107a111b0b6",
@@ -2623,14 +2623,14 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/1.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/2.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/3.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/4.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/5.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/6.png"
+            "assets/images/Dodge_Hornet_GT_Plus_1.png",
+            "assets/images/Dodge_Hornet_GT_Plus_2.png",
+            "assets/images/Dodge_Hornet_GT_Plus_3.png",
+            "assets/images/Dodge_Hornet_GT_Plus_4.png",
+            "assets/images/Dodge_Hornet_GT_Plus_5.png",
+            "assets/images/Dodge_Hornet_GT_Plus_6.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/vehicle/Dodge%20Hornet%20GT%20Plus/thumbnail.png"
+        "thumbnail": "assets/images/Dodge_Hornet_GT_Plus_thumbnail.png"
     },
     {
         "id": "b4e15ee1-47b4-47f2-bee0-f57e0469a03a",
@@ -2657,14 +2657,14 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/1.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/2.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/3.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/4.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/5.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/6.png"
+            "assets/images/Durango_SXT_RWD_1.png",
+            "assets/images/Durango_SXT_RWD_2.png",
+            "assets/images/Durango_SXT_RWD_3.png",
+            "assets/images/Durango_SXT_RWD_4.png",
+            "assets/images/Durango_SXT_RWD_5.png",
+            "assets/images/Durango_SXT_RWD_6.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/vehicle/Durango%20SXT%20RWD/thumbnail.png"
+        "thumbnail": "assets/images/Durango_SXT_RWD_thumbnail.png"
     },
     {
         "id": "b777d20b-4cb7-465e-bb45-d59ad30784a9",
@@ -2691,14 +2691,14 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/1.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/2.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/3.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/4.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/5.png",
-            "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/6.png"
+            "assets/images/Pacifica_Touring_1.png",
+            "assets/images/Pacifica_Touring_2.png",
+            "assets/images/Pacifica_Touring_3.png",
+            "assets/images/Pacifica_Touring_4.png",
+            "assets/images/Pacifica_Touring_5.png",
+            "assets/images/Pacifica_Touring_6.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/vehicle/Pacifica%20Touring/thumbnail.png"
+        "thumbnail": "assets/images/Pacifica_Touring_thumbnail.png"
     },
     {
         "id": "0706e434-b8da-434b-b0a7-86bdb64d1edc",
@@ -2725,11 +2725,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 15,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-bags/Blue%20Women's%20Handbag/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Blue%20Women's%20Handbag/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Blue%20Women's%20Handbag/3.png"
+            "assets/images/Blue_Women's_Handbag_1.png",
+            "assets/images/Blue_Women's_Handbag_2.png",
+            "assets/images/Blue_Women's_Handbag_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/Blue%20Women's%20Handbag/thumbnail.png"
+        "thumbnail": "assets/images/Blue_Women's_Handbag_thumbnail.png"
     },
     {
         "id": "5759133e-146b-4437-95d3-0674b75feb92",
@@ -2756,11 +2756,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 5,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-bags/Heshe%20Women's%20Leather%20Bag/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Heshe%20Women's%20Leather%20Bag/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Heshe%20Women's%20Leather%20Bag/3.png"
+            "assets/images/Heshe_Women's_Leather_Bag_1.png",
+            "assets/images/Heshe_Women's_Leather_Bag_2.png",
+            "assets/images/Heshe_Women's_Leather_Bag_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/Heshe%20Women's%20Leather%20Bag/thumbnail.png"
+        "thumbnail": "assets/images/Heshe_Women's_Leather_Bag_thumbnail.png"
     },
     {
         "id": "1e0e42ae-5a18-4c62-84e7-c59b794c25ff",
@@ -2787,11 +2787,11 @@
         "returnPolicy": "7 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/3.png"
+            "assets/images/Prada_Women_Bag_1.png",
+            "assets/images/Prada_Women_Bag_2.png",
+            "assets/images/Prada_Women_Bag_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/thumbnail.png"
+        "thumbnail": "assets/images/Prada_Women_Bag_thumbnail.png"
     },
     {
         "id": "63de96dd-3444-4444-aa1c-c152d48be5a6",
@@ -2818,11 +2818,11 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 16,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-bags/White%20Faux%20Leather%20Backpack/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/White%20Faux%20Leather%20Backpack/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/White%20Faux%20Leather%20Backpack/3.png"
+            "assets/images/White_Faux_Leather_Backpack_1.png",
+            "assets/images/White_Faux_Leather_Backpack_2.png",
+            "assets/images/White_Faux_Leather_Backpack_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/White%20Faux%20Leather%20Backpack/thumbnail.png"
+        "thumbnail": "assets/images/White_Faux_Leather_Backpack_thumbnail.png"
     },
     {
         "id": "282ed53c-15ba-4295-b995-dbcdc305630e",
@@ -2849,11 +2849,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 8,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-bags/Women%20Handbag%20Black/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Women%20Handbag%20Black/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-bags/Women%20Handbag%20Black/3.png"
+            "assets/images/Women_Handbag_Black_1.png",
+            "assets/images/Women_Handbag_Black_2.png",
+            "assets/images/Women_Handbag_Black_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/Women%20Handbag%20Black/thumbnail.png"
+        "thumbnail": "assets/images/Women_Handbag_Black_thumbnail.png"
     },
     {
         "id": "c8cdc7ae-ddc7-48a9-b9d7-bedaaf7fc968",
@@ -2880,12 +2880,12 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 29,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/3.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/4.png"
+            "assets/images/Black_&_Brown_Slipper_1.png",
+            "assets/images/Black_&_Brown_Slipper_2.png",
+            "assets/images/Black_&_Brown_Slipper_3.png",
+            "assets/images/Black_&_Brown_Slipper_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/thumbnail.png"
+        "thumbnail": "assets/images/Black_&_Brown_Slipper_thumbnail.png"
     },
     {
         "id": "c92e2bb3-61bc-42b8-9b21-c3eaba19d9f2",
@@ -2912,12 +2912,12 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 3,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/3.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/4.png"
+            "assets/images/Calvin_Klein_Heel_Shoes_1.png",
+            "assets/images/Calvin_Klein_Heel_Shoes_2.png",
+            "assets/images/Calvin_Klein_Heel_Shoes_3.png",
+            "assets/images/Calvin_Klein_Heel_Shoes_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/thumbnail.png"
+        "thumbnail": "assets/images/Calvin_Klein_Heel_Shoes_thumbnail.png"
     },
     {
         "id": "c042f7b4-af79-48e1-96f3-30d221fdf97b",
@@ -2944,12 +2944,12 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 19,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/3.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/4.png"
+            "assets/images/Golden_Shoes_Woman_1.png",
+            "assets/images/Golden_Shoes_Woman_2.png",
+            "assets/images/Golden_Shoes_Woman_3.png",
+            "assets/images/Golden_Shoes_Woman_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/thumbnail.png"
+        "thumbnail": "assets/images/Golden_Shoes_Woman_thumbnail.png"
     },
     {
         "id": "5b0917de-9722-49f0-9f80-b3242aec4acb",
@@ -2976,12 +2976,12 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 9,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/3.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/4.png"
+            "assets/images/Pampi_Shoes_1.png",
+            "assets/images/Pampi_Shoes_2.png",
+            "assets/images/Pampi_Shoes_3.png",
+            "assets/images/Pampi_Shoes_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/thumbnail.png"
+        "thumbnail": "assets/images/Pampi_Shoes_thumbnail.png"
     },
     {
         "id": "87019e56-3a01-4d8d-9b63-50e55ff46e2d",
@@ -3008,12 +3008,12 @@
         "returnPolicy": "30 days return policy",
         "minimumOrderQuantity": 17,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/3.png",
-            "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/4.png"
+            "assets/images/Red_Shoes_1.png",
+            "assets/images/Red_Shoes_2.png",
+            "assets/images/Red_Shoes_3.png",
+            "assets/images/Red_Shoes_4.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/thumbnail.png"
+        "thumbnail": "assets/images/Red_Shoes_thumbnail.png"
     },
     {
         "id": "711ba3b2-e2e9-4783-8e6c-be9e2503e106",
@@ -3040,11 +3040,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-watches/IWC%20Ingenieur%20Automatic%20Steel/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/IWC%20Ingenieur%20Automatic%20Steel/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/IWC%20Ingenieur%20Automatic%20Steel/3.png"
+            "assets/images/IWC_Ingenieur_Automatic_Steel_1.png",
+            "assets/images/IWC_Ingenieur_Automatic_Steel_2.png",
+            "assets/images/IWC_Ingenieur_Automatic_Steel_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/IWC%20Ingenieur%20Automatic%20Steel/thumbnail.png"
+        "thumbnail": "assets/images/IWC_Ingenieur_Automatic_Steel_thumbnail.png"
     },
     {
         "id": "79524acf-2fb7-4ddf-95f8-862264fb7f0d",
@@ -3071,11 +3071,11 @@
         "returnPolicy": "60 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/3.png"
+            "assets/images/Rolex_Cellini_Moonphase_1.png",
+            "assets/images/Rolex_Cellini_Moonphase_2.png",
+            "assets/images/Rolex_Cellini_Moonphase_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Cellini_Moonphase_thumbnail.png"
     },
     {
         "id": "8dc95724-9dac-439b-96d1-e7bdd8684cde",
@@ -3103,11 +3103,11 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/3.png"
+            "assets/images/Rolex_Datejust_Women_1.png",
+            "assets/images/Rolex_Datejust_Women_2.png",
+            "assets/images/Rolex_Datejust_Women_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/thumbnail.png"
+        "thumbnail": "assets/images/Rolex_Datejust_Women_thumbnail.png"
     },
     {
         "id": "f3108b1f-36db-42c6-b0e8-972e81bbf3c3",
@@ -3134,11 +3134,11 @@
         "returnPolicy": "No return policy",
         "minimumOrderQuantity": 2,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/3.png"
+            "assets/images/Watch_Gold_for_Women_1.png",
+            "assets/images/Watch_Gold_for_Women_2.png",
+            "assets/images/Watch_Gold_for_Women_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/thumbnail.png"
+        "thumbnail": "assets/images/Watch_Gold_for_Women_thumbnail.png"
     },
     {
         "id": "94688c35-d320-4240-9e21-0538a9b79ec5",
@@ -3165,10 +3165,10 @@
         "returnPolicy": "90 days return policy",
         "minimumOrderQuantity": 1,
         "images": [
-            "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/1.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/2.png",
-            "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/3.png"
+            "assets/images/Women's_Wrist_Watch_1.png",
+            "assets/images/Women's_Wrist_Watch_2.png",
+            "assets/images/Women's_Wrist_Watch_3.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/thumbnail.png"
+        "thumbnail": "assets/images/Women's_Wrist_Watch_thumbnail.png"
     }
 ]

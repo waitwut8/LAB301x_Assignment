@@ -1,4 +1,5 @@
 const api_url = "http://127.0.0.1:8000";
+localStorage.setItem('loadedBefore', window.location.href)
 function setModal_Login() {
   let modal = `<div id="login_modal" class="modal fade">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -132,6 +133,7 @@ function getDoc(id) {
 function logout() {
   localStorage.clear();
   alert("Logged out");
+  window.location.href = "index.html"
 }
 
 // async function loadPost(postId) {
@@ -166,6 +168,23 @@ async function addToCart(id) {
 
 
 
+}
+
+let load_Username = async function () {
+  let username = localStorage.getItem("user_name");
+  let topelement = $(".username-title")[0]
+
+  if (username){
+
+    username = username.slice(0, -1)
+    console.log(username)
+    topelement.innerHTML = username;
+    titleelement.innerHTML = "Hello, " + username;
+  }
+  else{
+    setText(topelement, "Welcome!")
+
+  }
 }
 
 
