@@ -2,19 +2,33 @@ const dataset = api.get("/products_name").then((res) => {
     localStorage.setItem('data', JSON.stringify(res));
     console.log(JSON.stringify(res));
 });
-api.get("/get_filters").then((res)=> {
-        localStorage.setItem("filters", JSON.stringify(res.data))
+api.get("/get_filters").then((res) => {
+    localStorage.setItem("filters", JSON.stringify(res.data))
 
 
-    }
+
+}
 );
+console.log(localStorage.getItem('filters'))
 let data = JSON.parse(localStorage.getItem(('data')))
-let filter_data = JSON.parse(localStorage.getItem("filters"))
+var filter_data = JSON.parse(localStorage.getItem("filters"))
 let _input = document.getElementById('search-input');
-let brand_filters = new Set(filter_data[0])
-let category_filters = new Set(filter_data[1])
+
 let b_filters = new Set(), c_filters = new Set();
-$("btn-success").on('click', function(){
+
+
+
+try {
+    var brand_filters = filter_data[0]
+var category_filters = filter_data[1]
+} catch (error) {
+    alert("the data required to run this page is not available. try reloading the page")
+    setTimeout(() => {location.reload()}, 500)
+}
+
+
+
+$("btn-success").on('click', function () {
     const keyword = $("#search-input").val()
     searchProducts(keyword, b_filters, c_filters)
 })
@@ -30,16 +44,16 @@ var products = new Bloodhound({
 var brands = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: filter_data[0]
+    local: brand_filters
 })
 $('#bloodhound .typeahead').typeahead({
-        limit:10,
-        hint: true,
-        highlight: true,
-        minLength: 1,
+    limit: 10,
+    hint: true,
+    highlight: true,
+    minLength: 1,
 
 
-    },
+},
     {
         name: 'products',
         source: products
@@ -47,9 +61,9 @@ $('#bloodhound .typeahead').typeahead({
 
 );
 
-window.addEventListener("keydown", (event) =>{
+window.addEventListener("keydown", (event) => {
     console.log(event.key)
-    if (event.key==="Enter"){
+    if (event.key === "Enter") {
         console.log($("#search-input")[0].value)
         searchProducts($("#search-input")[0].value, b_filters, c_filters)
     }
@@ -57,13 +71,13 @@ window.addEventListener("keydown", (event) =>{
 
 
 $('#o_bloodhound .o_typeahead').typeahead({
-        limit:10,
-        hint: true,
-        highlight: true,
-        minLength: 1,
+    limit: 10,
+    hint: true,
+    highlight: true,
+    minLength: 1,
 
 
-    },
+},
     {
         name: 'products',
         source: brands
@@ -71,10 +85,36 @@ $('#o_bloodhound .o_typeahead').typeahead({
 
 );
 $("#brand-filter-adder").on('click', function () {
+    if ($('.o_typeahead.tt-input').val() === "") {
+        return;
+    }
+    if (!brand_filters.has($('.o_typeahead.tt-input').val())) {
+        return;
+    }
     addToBFilter()
+    searchProducts($("#search-input").val(), b_filters, c_filters)
 })
-function addToBFilter(){
+
+function addToBFilter() {
+    $("#active-filters").html("")
     b_filters.add($('.o_typeahead.tt-input').val())
+    for (const i of b_filters) {
+        var toAdd = `<span value = "${i}">
+                                        ${i}
+                                        <span><i class="fa-regular fa-x  link-info filter-value"></i></span>
+                                        
+                                    </span>
+                                    <br>
+                                    <br>`
+        $("#active-filters").append(toAdd)
+    }
+    $(".fa-x").on('click', (event) => {
+
+        var el = $(event.currentTarget).parent().parent()
+        b_filters.delete(el.attr('value'))
+        el.remove()
+        searchProducts($("#search-input").val(), b_filters, c_filters)
+    })
 }
 
 
@@ -107,15 +147,15 @@ function searchProducts(keyword, b_filters, c_filters) {
 
     console.log(keyword)
     let resultsContainer = document.getElementById("search-results")
+    let searchURL = `/search/${keyword}`;
 
     if (!keyword) {
-        resultsContainer.innerHTML  = `<p class="text-danger">Please enter a keyword.</p>`;
-        return;
+        searchURL = "/products";
     }
 
-    api.post(`/search/${keyword}`).then((res) => {
+    api.get(searchURL).then((res) => {
         let results = res.data;
-        resultsContainer.innerHTML = "";
+        resultsContainer.innerHTML = "Are you looking for:   ";
         let _set = new Set()
         console.log(b_filters)
         if (res.status === 200) {
@@ -124,13 +164,14 @@ function searchProducts(keyword, b_filters, c_filters) {
                 return;
             }
 
-            if (b_filters.size===0 && c_filters.size===0){
+            if (b_filters.size === 0 && c_filters.size === 0) {
                 console.log("no filter")
-            results.forEach((product) => {
-                extracted(product, resultsContainer);
+                results.forEach((product) => {
+                    extracted(product, resultsContainer);
 
-            });}
-            else{
+                });
+            }
+            else {
                 console.log("there is a filter: ", b_filters, c_filters)
                 results.forEach((product) => {
 
@@ -159,11 +200,12 @@ function check_for_change() {
                 return this.value;
             })
             .get() // Get array.
-        
+
         console.log(enabledSettings);
         c_filters = new Set(enabledSettings)
 
         searchProducts($("#search-input")[0].value, b_filters, c_filters)
+
     });
 }
 
@@ -172,9 +214,9 @@ function make_filter(filter) {
     brand_filter = $("#type-filter")[0]
 
 
-        brand_filter.innerHTML=""
-        for (const el of filter) {
-            brand_filter.innerHTML += `
+    brand_filter.innerHTML = ""
+    for (const el of filter) {
+        brand_filter.innerHTML += `
             <div class="form-check">
   <input class="form-check-input  border border-dark" type="checkbox" value="${el}" name = "checker">
   <label class="form-check-label" for="defaultCheck1">
@@ -185,7 +227,7 @@ function make_filter(filter) {
             `
 
 
-        }
+    }
 
     localStorage.setItem("innerTypeHtml", brand_filter.innerHTML)
     check_for_change();
@@ -198,9 +240,9 @@ make_filter(category_filters)
 
 
 
-function show_filters(){
-
-}
+$("#search-button").on('click', function () {
+    searchProducts($("#search-input").val(), b_filters, c_filters)
+})
 
 
 

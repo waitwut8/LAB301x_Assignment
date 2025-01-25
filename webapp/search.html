@@ -56,31 +56,18 @@
                 </a>
 
                 <!-- Search form -->
-                <form class="input-group w-auto my-auto d-none d-sm-flex">
-                    <label>
-                        <input
-                                autocomplete="off"
-                                type="search"
-                                class="form-control rounded"
-                                placeholder="Search"
-                                style="min-width: 125px;"
-                        />
-                    </label>
-                    <span class="input-group-text border-0 d-none d-lg-flex"
-                    ><i class="fa-regular fa-search"></i
-                    ></span>
-                </form>
+               
             </div>
             <!-- Left elements -->
 
             <!-- Center elements -->
             <ul class="navbar-nav flex-row d-none d-md-flex">
-                <li class="nav-item me-3 me-lg-1 active">
+                <li class="nav-item me-3 me-lg-1 active" href="admin_index.html">
 
                     <a class="nav-link" href = "index.html">
-                        <i class="fa-regular fa-home fa-2xl  link-info">
+                       <i class="fa-regular fa-home fa-2xl  link-info">
 
-                        </i>
+                       </i>
 
                     </a>
                 </li>
@@ -97,7 +84,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item me-3 me-lg-1">
+                <li class="nav-item me-3 me-lg-1"?>
                     <a class="nav-link"  href = "cart.html">
                         <span><i class="fa-regular fa-cart-shopping fa-2xl  link-info"></i></span>
                     </a>
@@ -115,7 +102,7 @@
             <!-- Right elements -->
             <ul class="navbar-nav flex-row">
                 <li class="nav-item me-3 me-lg-1">
-                    <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                    <a class="nav-link d-sm-flex align-items-sm-center" href="profile.html">
 
                         <strong class="d-none d-sm-block ms-1 username-title">John</strong>
                     </a>
@@ -126,101 +113,67 @@
             <!-- Right elements -->
         </div>
     </nav></header>
-
-    <div class = "sidebar-brand row mt-4" style = "width: 25rem; padding-top: 3.5vw; position: fixed;">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Brand
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body container-fluid" id = "brand-filter" style ="height: auto">
-                        <label for="brand-search"></label>
-                        <div id = "o_bloodhound">
-                        <input type="text" class="brand border border-primary o_typeahead" id="brand-search" style = "height: auto; width: auto;">
-                            <button class = "btn btn-primary" id = "brand-filter-adder">Add filter</button>
-                        </div>
-
+    <div class="row">
+<div class = "col-4">
+    <div class="accordion py-5" id="accordionExample">
+        <div class="accordion-item show" style = "width: 100%">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style = "font-size: 1rem">
+                    Brand
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body container-fluid" id = "brand-filter" style ="height: auto">
+                    <label for="brand-search"></label>
+                    <div class = 'row'>
+                    <div id = "o_bloodhound">
+                    <input type="text" class="brand border border-primary o_typeahead" id="brand-search">
+                    <button class = "btn btn-primary col-3" id = "brand-filter-adder" style = "font-size: 0.75em">Add filter</button>
                     </div>
-                    <div class = "px-3">
-                        Active filters:
-                        <div id = "active-filters" class = "container px-2">
-
-                        </div>
-                    </div>
+                    
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Type
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body" id = "type-filter">
+
+                </div>
+                <div class = "px-3">
+
+                    <div id = "active-filters" class = "container mx-3">
                         
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Price
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    </div>
+        </div>
+
+
+
+
+        <div class="accordion-item w-100">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Type
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body" id = "type-filter">
+                    
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class=""  style = "padding-left: 24rem; width: 130rem">
+        
+    </div>  
+</div>
+    <div class="col-7" >
         <h1 class="my-4">Product Search</h1>
-<!--        <div class="search-container" id = "bloodhound">-->
 
-
-<!--                <div class="input-group-append">-->
-<!--                    <label for="search-input"></label><input id="search-input" class="form-control ms-1 typeahead" placeholder="Enter keyword" required style = "width: 55vw;">-->
-
-<!--                </div>-->
-
-
-
-
-<!--        </div>-->
-        <section class="intro w-100 mx-1">
-            <div class="bg-image h-100" style="
-
-        ">
-                <div class="mask d-flex align-items-center h-100">
-                    <div class="container">
-                        <div class="card">
-                            <div class="card-body p-3">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label class="form-label" for="search-input">Enter keywords?</label>
-                                        <div class="search-container">
-
-                                            <div class="form-outline flex-fill" id = "bloodhound">
-
-                                                <input type="text" id="search-input" class="form-control form-control-lg ms-1 typeahead" required style = "width: 55vw"/>
-                                                      </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="search-container">
+            <div class="input-group">
+                <input id="search-input" type="text" class="form-control" placeholder="Enter keyword" aria-label="Search">
+                <button class="btn btn-primary" type="button" id="search-button">Search</button>
             </div>
-        </section>
+        </div>
         <div class="search-results" id="search-results"></div>
     </div>
+</div>
 
 
  

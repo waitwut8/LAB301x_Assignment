@@ -2,8 +2,7 @@ import json
 import numpy as np
 from datetime import datetime, timedelta
 from .json_man import JSONManager
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
+
 
 
 def top_products(orders):

@@ -28,7 +28,7 @@ async function loadHome() {
     }
     else{
         let list_of_items = await api.get(`/rec_products`);
-        list_of_items = list_of_items.data;
+        list_of_items = list_of_items.data.slice(0,8);
         console.log(_.flatten(_.values((list_of_items))));
         addCards(_.flatten(_.values((list_of_items))), productsContainer);
     }
@@ -103,7 +103,7 @@ if (!window.location.href.endsWith("login.html")){
 
 
       const productCard = `
-                      <div class="col-lg-4 mb-5 border border-black">
+                      <div class="col-lg-3 mb-5 border border-black">
                             <div class="carousel slide" id = "${product.id}" data-bs-ride="carousel">
                                 
                                 <div class = "carousel-inner">

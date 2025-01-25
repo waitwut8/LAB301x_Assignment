@@ -8,10 +8,14 @@ const fmter = new Intl.NumberFormat(
 )
 
 
-makeGraph("/revenue_over_time", getDoc("revenue"), 'line', 'Gross Revenue')
-setText(getDoc('rev'), `${fmter.format(Number(localStorage.getItem('Gross Revenue')).toFixed(2))} USD`)
-makeGraph("/orders_over_time", getDoc('orders'), 'line', 'Orders Placed')
-setText(getDoc('order'), localStorage.getItem('Orders Placed'))
-makeGraph("/products_over_time", getDoc('productsSold'), 'line', 'Sold')
-setText(getDoc('shipped_p'), localStorage.getItem('Sold'))
-console.log(localStorage)
+makeGraph("/revenue_over_time", getDoc("revenue"), 'line', 'Gross Revenue').then(()=>{
+    var revenue = (`<p>${fmter.format(Number(localStorage.getItem('Gross Revenue')).toFixed(2))} USD</p>`)
+    $("#rev")[0].innerHTML=(revenue)
+})
+console.log(localStorage.getItem('Gross Revenue'))
+makeGraph("/orders_over_time", getDoc('orders'), 'line', 'Orders Placed').then(()=>{
+    setText(getDoc('order'), localStorage.getItem('Orders Placed'))})
+makeGraph("/products_over_time", getDoc('productsSold'), 'line', 'Sold').then(()=>{
+    setText(getDoc('shipped_p'), localStorage.getItem('Sold'))
+})
+

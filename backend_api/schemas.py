@@ -97,3 +97,12 @@ class Order(BaseModel):
 
     model_config = ConfigDict(extra='ignore')
     created_at: str = str(datetime.now())
+
+class ProfileChange(BaseModel):
+    username: str
+    first: str
+    last: str
+    location: str
+    email: str
+    phone: str
+    birthday: str

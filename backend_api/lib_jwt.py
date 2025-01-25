@@ -15,6 +15,9 @@ class ExpiryTime(int, Enum):
     FIFTEEN_MINUTES = 15 * 60
     THIRTY_MINUTES = 30 * 60
     ONE_HOUR = 60 * 60
+    TWO_HOURS = 2 * 60 * 60
+    FOUR_HOURS = 4 * 60 * 60
+    ONE_DAY = 24 * 60 * 60
 
 
 def decode_jwt(token: str) -> dict:

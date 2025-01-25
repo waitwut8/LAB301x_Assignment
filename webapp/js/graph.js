@@ -1,5 +1,5 @@
-function makeGraph(url, ctx, type, title) {
-    return api.get(url).then((res) => {
+async function makeGraph(url, ctx, type, title) {
+   res = await api.get(url)
 
             new Chart(ctx, {
                 type: type,
@@ -23,8 +23,8 @@ function makeGraph(url, ctx, type, title) {
             localStorage.setItem(title, res.data[2])
             return res
 
-        }
-    )
+        
+    
 
 }
 

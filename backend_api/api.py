@@ -20,6 +20,7 @@ from .schemas import (
     CartItem,
     Order,
     DeliveryState,
+    ProfileChange
 )
 from .schemas import KeywordFilter as keywordFilter
 from .json_man import JSONManager
@@ -28,6 +29,7 @@ from .lib_analytics import top_products, rev_over_time, plot_orders_over_time, p
 from dotenv import load_dotenv
 from os import getenv
 from .lib_recommender_peer import recommend_for_user, user_item_table
+from .lib_uploader import auth_params
 load_dotenv()
 ## GLOBAL VARIABLES #################################################
 app = FastAPI()
@@ -78,7 +80,7 @@ async def login(login_info: LoginInfo):
     
     if user := check_login(login_info.username, login_info.password):
         print(f"User {login_info.username} logged in")
-        return sign_jwt(user.get("username"), user.get("id"), 3600*2)
+        return sign_jwt(user.get("username"), user.get("id"), ExpiryTime.ONE_DAY)
     else:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
@@ -91,11 +93,11 @@ def check_login(username, password):
 @app.post("/refresh", status_code=200, dependencies=[Depends(JWTBearer())])
 async def refresh_token(current_user=Depends(get_current_user)):
     return sign_jwt(
-        current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.THIRTY_MINUTES
+        current_user.get("user_name"), current_user.get("user_id"), ExpiryTime.TWO_HOURS
     )
 
 
-@app.get("/products", status_code=200, dependencies=[Depends(JWTBearer())])
+@app.get("/products", status_code=200)
 async def get_all_products():
     return products
 
@@ -129,7 +131,7 @@ async def getProduct(products_needed: str):
     return random.sample(products, int(products_needed))
 
 
-@app.post("/search/{keyword}", status_code=200)
+@app.get("/search/{keyword}", status_code=200)
 async def search_products(keyword: str, request: Request):
 
     data = search(
@@ -516,8 +518,35 @@ def get_recommended_products(current_user=Depends(get_current_user)):
 @app.get("/get_role", status_code=200)
 def get_role(user_id: int):
     return get_user_role(user_id)
-    
 
+@app.get("/profile", status_code=200, dependencies=[Depends(JWTBearer())])
+def get_profile(current_user = Depends(get_current_user)):
+    requested_id = current_user.get("user_id")
+    if requested_id:
+        return search(f"$[id={requested_id}]", users)
+    
+@app.get("/get_auth_params", status_code=200)
+def get_auth_params():
+    return auth_params()
+@app.post("/change_profile", status_code=200, dependencies=[Depends(JWTBearer())])
+def change_profile(request: ProfileChange, current_user = Depends(get_current_user)):
+    requested_id = current_user.get("user_id")
+    if requested_id:
+        user = search(f"$[id={requested_id}]", users)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
+            )
+        index = users.index(user)
+        user["username"] = request.username
+        user["firstName"] = request.first
+        user["lastName"] = request.last
+        user["address"]['address'] = request.location
+        user["email"] = request.email
+        user["phone"] = request.phone
+        users[index] = user
+    
+    
 if __name__ == "__main__":
     import uvicorn
 

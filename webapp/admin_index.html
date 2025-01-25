@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
           integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src = "js/scripts.js"></script>
 
 </head>
@@ -43,7 +44,7 @@
                 <li class="nav-item"><a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i
                         class="bi bi-search"></i> </a></li> <!--end::Navbar Search-->  <!--begin::Menu Body-->
                 <!--end::Menu Body--> <!--begin::Menu Footer-->
-                <li class="user-footer"><a href="#" class="btn btn-default btn-flat">Shopping Page</a> <a onclick = "logout()"
+                <li class="user-footer"><a href="index.html" class="btn btn-default btn-flat">Shopping Page</a> <a onclick = "logout()"
                                                                                                     class="btn btn-default btn-flat float-end">Sign
                     out</a></li> <!--end::Menu Footer-->
             </ul>
@@ -92,7 +93,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "order">820</span> <span>Orders shipped in 48h</span>
+                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "order"></span> <span>Orders shipped in 48h</span>
                                     </p>
 
                                 </div> <!-- /.d-flex -->
@@ -124,7 +125,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "rev">$18,230.00</span> <span>Sales in the past 48h</span>
+                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "rev"></span> <span>Sales in the past 48h</span>
                                     </p>
 
                                 </div> <!-- /.d-flex -->
@@ -143,7 +144,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "shipped_p">Products Shipped</span> <span>Produccts shipped in 48h</span>
+                                    <p class="d-flex flex-column"><span class="fw-bold fs-5" id = "shipped_p"></span> <span>Produccts shipped in 48h</span>
                                     </p>
 
                                 </div> <!-- /.d-flex -->

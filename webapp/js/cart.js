@@ -1,12 +1,18 @@
 async function cartLoad() {
     let response = await api.get("/cart");
+    if (response.status === 200){
     let data = response.data;
     localStorage.setItem("cart", JSON.stringify(data));
     renderCart();
+    }
   }
   
   function renderCart() {
+    
     const cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart.products.length === 0) {
+      return 1;
+    }
     const productsContainer = document.querySelector("#productContainer");
     productsContainer.innerHTML = ""; // Clear existing products
   

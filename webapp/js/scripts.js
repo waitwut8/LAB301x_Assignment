@@ -123,6 +123,7 @@ function setTextByList(elementList, textList) {
   }
 }
 function setHTML(element, HTML) {
+  console.log(element, html)
   element.innerHTML = HTML;
 }
 function getDoc(id) {
@@ -156,7 +157,16 @@ function logout() {
 //     window.location.href = "login.html";
 //   }
 // }
+function hideLogin(){
+  if(localStorage.getItem('access_token') && localStorage.getItem('refresh_token')){
+      $(".fa-door-open").hide()
+      $('.fa-door-open').parent().parent().parent().width('0px').css('padding', '0px')
 
+  }
+}
+if (!window.location.href.endsWith("login.html")){
+  hideLogin()
+}
 async function addToCart(id) {
   const response = await api.post("/cart", {
     quantity: 1,

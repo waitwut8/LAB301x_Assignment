@@ -17,92 +17,79 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid justify-content-between">
-                <!-- Left elements -->
-                <div class="d-flex">
-                    <!-- Brand -->
-                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-                        <img
-                                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                                height="20"
-                                alt="MDB Logo"
-                                loading="lazy"
-                                style="margin-top: 2px;"
-                        />
-                    </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-between">
+            <!-- Left elements -->
+            <div class="d-flex">
+                <!-- Brand -->
+                <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                    <img
+                            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                            height="20"
+                            alt="MDB Logo"
+                            loading="lazy"
+                            style="margin-top: 2px;"
+                    />
+                </a>
 
-                    <!-- Search form -->
-                    <form class="input-group w-auto my-auto d-none d-sm-flex">
-                        <label>
-                            <input
-                                    autocomplete="off"
-                                    type="search"
-                                    class="form-control rounded"
-                                    placeholder="Search"
-                                    style="min-width: 125px;"
-                            />
-                        </label>
-                        <span class="input-group-text border-0 d-none d-lg-flex"
-                        ><i class="fa-regular fa-search"></i
-                        ></span>
-                    </form>
-                </div>
-                <!-- Left elements -->
-
-                <!-- Center elements -->
-                <ul class="navbar-nav flex-row d-none d-md-flex">
-                    <li class="nav-item me-3 me-lg-1 active" href="admin_index.html">
-
-                        <a class="nav-link" href = "index.html">
-                            <i class="fa-regular fa-home fa-2xl  link-info">
-
-                            </i>
-
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href = "login.html">
-                            <span><i class="fa-regular fa-door-open fa-2xl  link-info"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href = "search.html">
-                            <span><i class="fa-regular fa-crate-apple fa-2xl  link-info"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1" >
-                        <a class="nav-link" href = "cart.html">
-                            <span><i class="fa-regular fa-cart-shopping fa-2xl  link-info"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" onclick = "logout()">
-                            <span><i class="fa-regular fa-right-from-bracket fa-2xl  link-info"></i></span>
-
-                        </a>
-                    </li>
-                </ul>
-                <!-- Center elements -->
-
-                <!-- Right elements -->
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-
-                            <strong class="d-none d-sm-block ms-1 username-title">John</strong>
-                        </a>
-                    </li>
-
-
-                </ul>
-                <!-- Right elements -->
+                <!-- Search form -->
+               
             </div>
-        </nav>
+            <!-- Left elements -->
+
+            <!-- Center elements -->
+            <ul class="navbar-nav flex-row d-none d-md-flex">
+                <li class="nav-item me-3 me-lg-1 active" href="admin_index.html">
+
+                    <a class="nav-link" href = "index.html">
+                       <i class="fa-regular fa-home fa-2xl  link-info">
+
+                       </i>
+
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link" href = "login.html">
+                        <span><i class="fa-regular fa-door-open fa-2xl  link-info"></i></span>
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link" href = "search.html">
+                        <span><i class="fa-regular fa-crate-apple fa-2xl  link-info"></i></span>
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1"?>
+                    <a class="nav-link"  href = "cart.html">
+                        <span><i class="fa-regular fa-cart-shopping fa-2xl  link-info"></i></span>
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link" onclick = "logout()">
+                        <span><i class="fa-regular fa-right-from-bracket fa-2xl  link-info"></i></span>
+
+                    </a>
+                </li>
+            </ul>
+            <!-- Center elements -->
+
+            <!-- Right elements -->
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link d-sm-flex align-items-sm-center" href="profile.html">
+
+                        <strong class="d-none d-sm-block ms-1 username-title">John</strong>
+                    </a>
+                </li>
+
+
+            </ul>
+            <!-- Right elements -->
+        </div>
+    </nav>
     </header>
     <main>
         <section class="h-100 h-custom" style="background-color: #d2c9ff;">
@@ -119,7 +106,9 @@
 
                             </div>
                             
-                            <div id = "productContainer"></div>
+                            <div id = "productContainer">
+                              There's nothing here! Try <a href = "login.html">logging in</a>, or if you have, try adding some products to your cart.
+                            </div>
           
                             <div class="pt-5">
                               <h6 class="mb-0"><a href="#!" class="text-body"><i
