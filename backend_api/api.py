@@ -137,7 +137,7 @@ async def search_products(keyword: str, request: Request):
     data = search(
         f"$append($[$contains(title, /{keyword}/i) or $contains(description, /{keyword}/i) or $contains(category, /{keyword}/i) or $contains(brand, /{keyword}/i)], [])", products
     )
-    print(data)
+
     return data
 
 
@@ -181,7 +181,7 @@ async def get_reviews(product_id: int):
 
 @app.get("/cart", status_code=200, dependencies=[Depends(JWTBearer())])
 async def get_cart(current_user=Depends(get_current_user)):
-    print(current_user)
+
     _id = current_user.get("user_id")
     # _cart = jmespath.search(f"[?userId==`{_id}`]", carts)
     _cart = search(f"$[userId={_id}]", carts)
@@ -216,7 +216,20 @@ async def add_to_cart(
     # user_cart = jmespath.searchf"[?userId == `{user_id}`]", carts)
     user_cart = search(f"$[userId={user_id}]", carts)
     if not user_cart:
-        return {"message": "Cart not found"}
+        print('no cart found')
+        user_cart = Cart(
+            **{
+                "id": str(uuid.uuid4()),
+                "userId": user_id,
+                "products": [],
+                "totalProducts": 0,
+                "totalQuantity": 0,
+                "createdAt": datetime.now(timezone.utc).isoformat(),
+                "updatedAt": datetime.now(timezone.utc).isoformat(),
+            }
+        ).model_dump()
+        carts.append(user_cart)
+       
 
     #user_cart = user_cart[0]  # Directly use the first result
     _index = carts.index(user_cart)
@@ -224,7 +237,7 @@ async def add_to_cart(
     # Use jmespath to find the cart product
    
     cart_product = search(f"$[title='{cart_request.product_name}']", products)
-    print(cart_product)
+
     # jmespath.search(
     #    f"[?title=='{cart_request.product_name}']", user_cart["products"]
     #)
@@ -285,7 +298,7 @@ async def delete_from_cart(
         x for x in user_cart.products if x.title == cart_request.product_name
     ]:
         _products = _products[0]
-        print(_products)
+
         _products.quantity -= cart_request.quantity
         if _products.quantity <= 0:
             user_cart.products.remove(_products)
@@ -301,7 +314,7 @@ async def get_post(id: int):
 
 @app.get("/posts_noLogin/{number}", status_code=200)
 async def get_random_posts(number: int):
-    print(type(posts))
+
     return random.sample(posts, number)
 
 
@@ -326,8 +339,7 @@ async def checkout(promo: str, current_user=Depends(get_current_user)):
     )
     orders.append(order.model_dump())
     order_manager.dump_json()
-    print(user_id)
-    print(cart)
+
     if not cart:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Cart not found, try creating one?"
@@ -431,7 +443,7 @@ async def get_top_products():
 @app.get("/revenue_over_time", status_code=200)
 async def get_rev_over_time():
     var = rev_over_time(orders)
-    print(var)
+
     return var
 
 @app.get("/orders_over_time", status_code=200)
@@ -476,7 +488,7 @@ def get_user_name(user_id: int) -> str:
 
 @app.post("/update_order_stage", status_code=200, dependencies=[Depends(JWTBearer())])
 def update_order_stage(order_id: str, stage: int, current_user = Depends(get_current_user)):
-    print(current_user)
+
     role = get_user_role(current_user.get("user_id"))
 
     if role != "admin":
@@ -497,12 +509,14 @@ def update_order_stage(order_id: str, stage: int, current_user = Depends(get_cur
         )
     order["progress"] = stages.get(stage)
     orders[index] = order 
+    userId = order.get("userId")
+    user = search(f"$[id={userId}]", users).get("firstName")
     send_email(
         "waitwut8@gmail.com",
         "waitwut8@gmail.com",
         "Your order is on it's way",
         generic_email({
-            "user": get_user_role(current_user.get("user_id")),
+            "user": user,
             "stage": stages.get(stage).value
         },
         "order_stage.html")

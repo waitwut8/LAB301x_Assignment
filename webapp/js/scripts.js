@@ -188,8 +188,8 @@ let load_Username = async function () {
 
     username = username.slice(0, -1)
     console.log(username)
-    topelement.innerHTML = username;
-    titleelement.innerHTML = "Hello, " + username;
+    topelement.innerHTML = capitalize(username);
+    titleelement.innerHTML = "Hello, " + capitalize(username);
   }
   else{
     setText(topelement, "Welcome!")

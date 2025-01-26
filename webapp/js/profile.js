@@ -35,7 +35,7 @@ async function start_profile(){
     $("#inputFirst").attr('value', profile.firstName)
     $("#inputLast").attr('value', profile.lastName)
     $("#inputPhone").attr('value', profile.phone)
-    $("#inputAddress").attr('value', profile.address)
+    $("#inputLocation").attr('value', profile.address.address)
     $("#inputBirthday").attr('value', profile.birthDate)
 }
 async function edit_profile(){
@@ -44,16 +44,18 @@ async function edit_profile(){
     let firstName = $("#inputFirst").val()
     let lastName = $("#inputLast").val()
     let phone = $("#inputPhone").val()
-    let address = $("#inputAddress").val()
+    let address = $("#inputLocation").val()
     let birthDate = $("#inputBirthday").val()
-    let res = await api.put("/profile", {
+    
+    let res = await api.post("/change_profile", {
         username: username,
         email: email,
-        firstName: firstName,
-        lastName: lastName,
+        first: firstName,
+        last: lastName,
+        location: address,
+        email: email,
         phone: phone,
-        address: address,
-        birthDate: birthDate
+        birthday: birthDate
     })
     if (res.status == 200){
         alert("Profile updated successfully")

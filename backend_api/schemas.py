@@ -4,10 +4,10 @@ import enum
 from pydantic import BaseModel, Field, field_serializer, computed_field, ConfigDict
 
 class DeliveryState(str, enum.Enum):
-    ST_01 = "Processing"
-    ST_02 = "At delivery warehouse"
-    ST_03 = "On the way"
-    ST_04 = "Delivered"
+    ST_01 = "currently processing"
+    ST_02 = "at the warehouse"
+    ST_03 = "on the way"
+    ST_04 = "delivered"
 
 class LoginInfo(BaseModel):
     username: str

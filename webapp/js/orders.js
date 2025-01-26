@@ -4,14 +4,7 @@ function updateStage(id, stage) {
         location.reload()
     }
 }
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
-}
+
 function populate_table() {
     $("#progress-bar").width("0%")
     $("#orders").hide()

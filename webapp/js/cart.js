@@ -134,11 +134,6 @@ function increaseCart(title){
     })
   }  
   async function checkout(promo){
-    let response = await api.post(`/checkout?promo=${promo}`);
-    if (response.status === 200) {
-      alert("Checkout successful");
-      window.location.href = "index.html";
-    } else {
-      alert("Failed to checkout");
-    }
+    let response = api.post(`/checkout?promo=${promo}`).then((res) => {alert('Checkout Successful'); window.location.href = "index.html";}).catch((err) => {alert('Checkout Failed')})
+
   }

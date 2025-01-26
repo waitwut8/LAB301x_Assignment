@@ -88,7 +88,7 @@ $("#brand-filter-adder").on('click', function () {
     if ($('.o_typeahead.tt-input').val() === "") {
         return;
     }
-    if (!brand_filters.has($('.o_typeahead.tt-input').val())) {
+    if (brand_filters.indexOf($('.o_typeahead.tt-input').val()) === -1) {
         return;
     }
     addToBFilter()
@@ -175,7 +175,7 @@ function searchProducts(keyword, b_filters, c_filters) {
                 console.log("there is a filter: ", b_filters, c_filters)
                 results.forEach((product) => {
 
-                    if (b_filters.has(product.brand) || c_filters.has(product.category)) {
+                    if ((b_filters.has(product.brand) || b_filters.size === 0) && (c_filters.has(product.category) || c_filters.size === 0)) {
                         extracted(product, resultsContainer)
                     }
                 });
